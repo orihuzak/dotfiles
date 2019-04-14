@@ -3,5 +3,9 @@
   "editor.fontSize": 12,
   "editor.tabSize": 2,
   "editor.renderWhitespace": "all",
-  "editor.wordWrap": "wordWrapColumn"
+  "editor.wordWrap": "wordWrapColumn",
+  "explorer.confirmDelete": false,
+  "editor.cursorBlinking": "solid",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
