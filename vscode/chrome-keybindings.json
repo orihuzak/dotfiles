@@ -1,6 +1,11 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
+    "key": "ctrl+d",
+    "command": "cursorRight",
+    "when": "textInputForcus"
+  },
+  {
     "key": "alt+a",
     "command": "editor.action.selectAll",
     "when": "textInputFocus"
@@ -53,6 +58,16 @@
   {
     "key": "shift+home",
     "command": "-cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "cursorUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "cursorDown",
     "when": "textInputFocus"
   },
   {
@@ -187,7 +202,7 @@
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
   {
-    "key": "meta+c",
+    "key": "ctrl+c",
     "command": "workbench.action.terminal.copySelection",
     "when": "terminalFocus && terminalTextSelected"
   },
@@ -197,7 +212,7 @@
     "when": "terminalFocus && terminalTextSelected"
   },
   {
-    "key": "meta+v",
+    "key": "ctrl+v",
     "command": "workbench.action.terminal.paste",
     "when": "terminalFocus"
   },
@@ -205,5 +220,26 @@
     "key": "ctrl+shift+v",
     "command": "-workbench.action.terminal.paste",
     "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "deleteAllLeft"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "deleteAllRight"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+shift+'",
+    "command": "workbench.action.focusActiveEditorGroup"
   }
 ]
