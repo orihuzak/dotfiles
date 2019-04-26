@@ -1,9 +1,84 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "ctrl+d",
+    "key": "ctrl+a",
+    "command": "cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "home",
+    "command": "-cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+home",
+    "command": "-cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "end",
+    "command": "-cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "cursorEndSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+end",
+    "command": "-cursorEndSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+f",
     "command": "cursorRight",
-    "when": "textInputForcus"
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "cursorLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "cursorUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "cursorDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+p",
+    "command": "cursorTop",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+home",
+    "command": "-cursorTop",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "cursorTopSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+home",
+    "command": "-cursorTopSelect",
+    "when": "textInputFocus"
   },
   {
     "key": "alt+a",
@@ -41,59 +116,9 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+a",
-    "command": "cursorHome",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "home",
-    "command": "-cursorHome",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+shift+a",
-    "command": "cursorHomeSelect",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+home",
-    "command": "-cursorHomeSelect",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "cursorUp",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "cursorDown",
-    "when": "textInputFocus"
-  },
-  {
     "key": "alt+p",
     "command": "-keybindings.editor.toggleSortByPrecedence",
     "when": "inKeybindings"
-  },
-  {
-    "key": "alt+p",
-    "command": "cursorTop",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+home",
-    "command": "-cursorTop",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+p",
-    "command": "cursorTopSelect",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+shift+home",
-    "command": "-cursorTopSelect",
-    "when": "textInputFocus"
   },
   {
     "key": "alt+e",
@@ -112,16 +137,6 @@
     "key": "ctrl+e",
     "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
     "when": "inFilesPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "cursorEnd",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "end",
-    "command": "-cursorEnd",
-    "when": "textInputFocus"
   },
   {
     "key": "shift+alt+e",
@@ -160,16 +175,6 @@
     "key": "alt+up",
     "command": "-editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "cursorEndSelect",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+end",
-    "command": "-cursorEndSelect",
-    "when": "textInputFocus"
   },
   {
     "key": "meta+space",
@@ -212,6 +217,11 @@
     "when": "terminalFocus && terminalTextSelected"
   },
   {
+    "key": "ctrl+y",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
     "key": "ctrl+v",
     "command": "workbench.action.terminal.paste",
     "when": "terminalFocus"
@@ -231,15 +241,135 @@
     "command": "deleteAllLeft"
   },
   {
-    "key": "ctrl+k",
-    "command": "deleteAllRight"
-  },
-  {
     "key": "ctrl+'",
     "command": "workbench.action.terminal.focus"
   },
   {
     "key": "ctrl+shift+'",
     "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "deleteRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "delete",
+    "command": "-deleteRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+f",
+    "command": "editor.action.extensioneditor.showfind",
+    "when": "activeEditor == 'workbench.editor.extension'"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-editor.action.extensioneditor.showfind",
+    "when": "activeEditor == 'workbench.editor.extension'"
+  },
+  {
+    "key": "alt+f",
+    "command": "editor.action.webvieweditor.showFind",
+    "when": "!editorFocus && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-editor.action.webvieweditor.showFind",
+    "when": "!editorFocus && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "alt+f",
+    "command": "keybindings.editor.searchKeybindings",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-keybindings.editor.searchKeybindings",
+    "when": "inKeybindings"
+  },
+  {
+    "key": "alt+f",
+    "command": "problems.action.focusFilter",
+    "when": "problemsViewFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-problems.action.focusFilter",
+    "when": "problemsViewFocus"
+  },
+  {
+    "key": "alt+f",
+    "command": "settings.action.search",
+    "when": "inSettingsEditor"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-settings.action.search",
+    "when": "inSettingsEditor"
+  },
+  {
+    "key": "alt+f",
+    "command": "actions.find"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-actions.find"
+  },
+  {
+    "key": "alt+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "-selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+]",
+    "command": "editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+Right",
+    "command": "editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-editor.action.startFindReplaceAction"
   }
 ]
