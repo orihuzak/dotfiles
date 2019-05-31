@@ -1,9 +1,0 @@
-alias ll='ls -la'
-
-# apt
-alias api='sudo apt install'
-alias apr='sudo apt remove'
-alias apu='sudo apt update'
-
-# docker
-alias dcr='docker-compose run --rm'
