@@ -1,5 +1,5 @@
 # short primary prompt string
-PS1="\w\$ "
+PS1='\w\$ '
 
 alias ll='ls -la'
 
