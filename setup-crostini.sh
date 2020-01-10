@@ -9,10 +9,38 @@ getNodejs() {
   # 詳しくはhttps://github.com/nodesource/distributions
   curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
   sudo apt install -y nodejs
+  # install yarn
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  sudo apt update && sudo apt install yarn
 }
 
 getDocker() {
-
+  # 詳しくはhttps://docs.docker.com/install/linux/docker-ce/debian/
+  sudo apt update
+  sudo apt install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+  sudo apt-key fingerprint 0EBFCD88
+  sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+  sudo apt update
+  sudo apt install docker-ce docker-ce-cli containerd.io
+  # post install steps
+  # sudoなしでdockerを使う
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  # install docker-compose
+  # 詳しくはhttps://docs.docker.com/compose/install/
+  # installするversionを変更したいときは1.25.0の部分を変える
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
 }
 
 getVSCode() {
@@ -27,6 +55,13 @@ getVSCode() {
   # install extension
   # たぶんこれだけインストールすればあとはこの拡張機能がやってくれるはず
   code --install-extension Shan.code-settings-sync
+}
+
+
+getYoutubeDL() {
+  # see https://github.com/ytdl-org/youtube-dl#installation
+  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+  sudo chmod a+rx /usr/local/bin/youtube-dl
 }
 
 # dotfilesをgithubからcloneする
