@@ -3,6 +3,33 @@
 DOTPATH=~/dotfiles
 # ここを別のrepositoryに変えれば他のrepoでも使える
 GITHUB_URL=https://github.com/orihuzak/dotfiles.git
+
+getNodejs() {
+  # installするversionを変えたいときはsetup_12をsetup_13のように変える
+  # 詳しくはhttps://github.com/nodesource/distributions
+  curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+  sudo apt install -y nodejs
+}
+
+getDocker() {
+
+}
+
+getVSCode() {
+  # install vscode
+  # see https://code.visualstudio.com/docs/setup/linux
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+  sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+  sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+  sudo apt install apt-transport-https
+  sudo apt update
+  sudo apt install code
+  # install extension
+  # たぶんこれだけインストールすればあとはこの拡張機能がやってくれるはず
+  code --install-extension Shan.code-settings-sync
+}
+
+# dotfilesをgithubからcloneする
 if has "git"; then
   git clone --recursive "$GITHUB_URL" "$DOTPATH"
 # gitが使えない場合はcurlかwgetを使用する
@@ -22,6 +49,8 @@ else
 fi
 
 #必要なパッケージのインストール
+sudo apt update
+
 
 cd "$DOTPATH"
 if [ $? -ne 0 ]; then
