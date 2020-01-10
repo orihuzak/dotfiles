@@ -1,9 +1,9 @@
 #!/bin/bash
-# ffmpegでvideoファイルをmp3に変換する実行文を短く書くためのshell script
+# ffmpegでmp4をmp3に変換するscript
 # 使い方
 #   path/to/tomp3.sh 変換したい動画ファイル
-# 出力
-#   拡張子以外の部分はinputファイルと同じ
+# output
+#   拡張子以外の名前の部分はinputと同じ
 #   拡張子はmp3になる
 input="$1"
 output=${input%.*}'.mp3'
