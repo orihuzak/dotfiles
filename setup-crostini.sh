@@ -64,6 +64,11 @@ getYoutubeDL() {
   sudo chmod a+rx /usr/local/bin/youtube-dl
 }
 
+#必要なパッケージのインストール
+sudo apt update
+# ffmpeg vlc
+sudo apt install ffmpeg vlc
+
 # dotfilesをgithubからcloneする
 if has "git"; then
   git clone --recursive "$GITHUB_URL" "$DOTPATH"
@@ -82,9 +87,6 @@ elif has "curl" || has "wget"; then
 else
   die "curl or wget required"
 fi
-
-#必要なパッケージのインストール
-sudo apt update
 
 
 cd "$DOTPATH"
