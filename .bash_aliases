@@ -12,5 +12,5 @@ alias ll='ls -la'
 alias dcr='docker-compose run --rm'
 
 # my command
-alias hls-url='~/dotfiles/get-hls-urls.sh'
+alias hls-url='~/dotfiles/get-hls-url.sh'
 alias tomp3='~/dotfiles/tomp3.sh'
