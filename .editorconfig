@@ -1,5 +1,6 @@
 # Editor configuration, see http://editorconfig.org
 # Please change this filename to '.editorconfig' to use
+# エディターを横断的に設定できるファイル
 
 root = true
 
