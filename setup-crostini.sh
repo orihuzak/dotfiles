@@ -57,6 +57,14 @@ getVSCode() {
   code --install-extension Shan.code-settings-sync
 }
 
+getFFmpeg() {
+  # see https://www.ffmpeg.org/download.html
+  # see https://packages.debian.org/sid/amd64/ffmpeg/download
+  sudo apt update
+  echo "deb http://ftp.jp.debian.org/debian sid main" >> /etc/apt/sources.list
+  sudo apt install ffmpeg -y
+}
+
 
 getYoutubeDL() {
   # see https://github.com/ytdl-org/youtube-dl#installation
@@ -67,7 +75,7 @@ getYoutubeDL() {
 #必要なパッケージのインストール
 sudo apt update
 # ffmpeg vlc
-sudo apt install curl wget ffmpeg vlc
+sudo apt install -y curl wget vlc
 
 # dotfilesをgithubからcloneする
 if has "git"; then
