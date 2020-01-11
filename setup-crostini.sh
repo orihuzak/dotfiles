@@ -72,10 +72,14 @@ getYoutubeDL() {
   sudo chmod a+rx /usr/local/bin/youtube-dl
 }
 
-#必要なパッケージのインストール
+# 必要なパッケージのインストール
 sudo apt update
-# ffmpeg vlc
 sudo apt install -y curl wget vlc
+getFFmpeg
+getYoutubeDL
+getNodejs
+getVSCode
+getDocker
 
 # dotfilesをgithubからcloneする
 if has "git"; then
