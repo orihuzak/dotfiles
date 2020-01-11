@@ -74,7 +74,7 @@ getYoutubeDL() {
 
 # 必要なパッケージのインストール
 sudo apt update
-sudo apt install -y curl wget vlc
+sudo apt install -y git curl wget vlc
 getFFmpeg
 getYoutubeDL
 getNodejs
@@ -82,24 +82,8 @@ getVSCode
 getDocker
 
 # dotfilesをgithubからcloneする
-if has "git"; then
-  git clone --recursive "$GITHUB_URL" "$DOTPATH"
-# gitが使えない場合はcurlかwgetを使用する
-elif has "curl" || has "wget"; then
-  tarball="https://github.com/orihuzak/dotfiles/archive/master.tar.gz"
-  # どちらかでDLしてtarに流す
-  if has "curl"; then
-    curl -L "$tarball"
-  elif has "wget"; then
-    wget -O - "$tarball"
-  fi | tar zxv
-
-  # 解凍したら, DOTPATHに置く
-  mv -f dotfiles-master "$DOTPATH"
-else
-  die "curl or wget required"
-fi
-
+git clone "$GITHUB_URL" "$DOTPATH"
+# dotfilesに移動
 cd "$DOTPATH"
 if [ $? -ne 0 ]; then
   die "not found: $DOTPATH"
@@ -114,3 +98,4 @@ do
 
   ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
+source ~/.bashrc
