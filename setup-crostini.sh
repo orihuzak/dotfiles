@@ -74,7 +74,7 @@ getYoutubeDL() {
 
 # 必要なパッケージのインストール
 sudo apt update
-sudo apt install -y git curl wget vlc
+sudo apt install -y git curl wget software-properties-common vlc
 getFFmpeg
 getYoutubeDL
 getNodejs
