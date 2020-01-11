@@ -1,5 +1,5 @@
 # short primary prompt string
-PS1='\w\$ '
+export PS1="\[\e[32m\]\u\[\e[m\]\[\e[34m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "
 
 alias ll='ls -la'
 

@@ -67,7 +67,7 @@ getYoutubeDL() {
 #必要なパッケージのインストール
 sudo apt update
 # ffmpeg vlc
-sudo apt install ffmpeg vlc
+sudo apt install curl wget ffmpeg vlc
 
 # dotfilesをgithubからcloneする
 if has "git"; then
@@ -87,7 +87,6 @@ elif has "curl" || has "wget"; then
 else
   die "curl or wget required"
 fi
-
 
 cd "$DOTPATH"
 if [ $? -ne 0 ]; then
