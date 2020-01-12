@@ -61,6 +61,7 @@ getFFmpeg() {
   # see https://www.ffmpeg.org/download.html
   # see https://packages.debian.org/sid/amd64/ffmpeg/download
   sudo apt update
+  # これたぶん動かないので変える
   echo "deb http://ftp.jp.debian.org/debian sid main" >> /etc/apt/sources.list
   sudo apt install ffmpeg -y
 }

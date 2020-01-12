@@ -12,6 +12,8 @@ alias ll='ls -la'
 alias dcr='docker-compose run --rm'
 
 # my command
-alias hls-url='~/dotfiles/get-hls-url.sh'
+# alias hls-url='~/dotfiles/get-hls-url.sh'
 alias tomp3='~/dotfiles/tomp3.sh'
 alias tom4a='~/dotfiles/tom4a.sh'
+# youtube liveの最高品質のhls urlを取得する
+alias getlive='youtube-dl -f best -g'

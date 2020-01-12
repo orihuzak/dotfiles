@@ -1,9 +1,10 @@
 #!/bin/bash
-# youtube-liveのhls-urlを取得するためのshell script
-#   取得されるhls-urlは最も解像度の低いもの
+# youtube liveのhls urlを取得するためのshell script
+#   フォーマット
+#     動画と音声が含まれる単一ファイルの最高品質のもの
 # 依存関係
-#   yotube-dl
+#   youtube-dl
 # 使い方
 #   path/to/get-hls-url.sh youtube-live-url
-youtube-dl -f 91 -g ${1}
+youtube-dl -f best -g ${1}
 exit 0
