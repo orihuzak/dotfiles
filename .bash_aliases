@@ -17,4 +17,5 @@ alias tom4a='~/dotfiles/tom4a.sh'
 # youtube liveの最高品質のhls urlを取得する
 alias getlive='youtube-dl -f best -g'
 # open youtube live with vlc without video
-alias audiolive='vlc --no-video'
+# alias audiolive='vlc --no-video'
+alias audiolive=`~/dotfiles/audiolive.sh`
