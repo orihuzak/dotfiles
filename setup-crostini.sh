@@ -76,6 +76,10 @@ getYoutubeDL() {
 # 必要なパッケージのインストール
 sudo apt update
 sudo apt install -y git curl wget software-properties-common fcitx-mozc vlc
+# fcitx autostart
+sudo echo "Environment='GTK_IM_MODULE=fcitx'\nEnvironment='QT_IM_MODULE=fcitx'\nEnvironment='XMODIFIERS=@im=fcitx'" >> /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
+sudo echo "/usr/bin/fcitx-autostart" >> ~/.sommelierrc
+
 getFFmpeg
 getYoutubeDL
 getNodejs
