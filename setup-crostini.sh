@@ -73,13 +73,35 @@ getYoutubeDL() {
   sudo chmod a+rx /usr/local/bin/youtube-dl
 }
 
+getSourceHanCodeJP() {
+  # 参考 https://www.axon.jp/entry/2018/10/18/201812
+  # you can get other versions from https://github.com/adobe-fonts/source-han-code-jp/releases
+  # how to use
+  #   set "Source Han Code JP"
+  curl -OL https://github.com/adobe-fonts/source-han-code-jp/archive/2.011R.tar.gz
+  tar zxf 2.011R.tar.gz
+  sudo cp ./source-han-code-jp-2.011R/OTF/* /usr/local/share/fonts
+  sudo fc-cache -fv
+  
+  # if you want to remove ./source-han-code-jp-2.011R and 2.011R.tar.gz, remove comment out below
+  # sudo rm 2.011R.tar.gz
+  # sudo rm -r ./source-han-code-jp-2.011R
+}
+
+getFcitx() {
+  # install fcitx-mozc ime
+  sudo apt install fcitx-mozc
+  # set fcitx autostart
+  sudo echo -e "Environment='GTK_IM_MODULE=fcitx'\nEnvironment='QT_IM_MODULE=fcitx'\nEnvironment='XMODIFIERS=@im=fcitx'" >> /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
+  sudo echo -e "/usr/bin/fcitx-autostart" >> ~/.sommelierrc
+}
+
+
 # 必要なパッケージのインストール
 sudo apt update
-sudo apt install -y git curl wget software-properties-common fcitx-mozc vlc
-# fcitx autostart
-sudo echo "Environment='GTK_IM_MODULE=fcitx'\nEnvironment='QT_IM_MODULE=fcitx'\nEnvironment='XMODIFIERS=@im=fcitx'" >> /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
-sudo echo "/usr/bin/fcitx-autostart" >> ~/.sommelierrc
-
+sudo apt install -y git curl wget software-properties-common vlc
+getSourceHanCodeJP
+getFcitx
 getFFmpeg
 getYoutubeDL
 getNodejs
