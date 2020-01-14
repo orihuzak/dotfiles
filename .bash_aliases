@@ -18,4 +18,3 @@ alias tom4a='~/dotfiles/tom4a.sh'
 alias gethls='youtube-dl -f best -g'
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
-
