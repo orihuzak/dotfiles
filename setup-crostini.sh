@@ -90,8 +90,8 @@ getFcitx() {
   echo \
     "Environment='GTK_IM_MODULE=fcitx' \
     Environment='QT_IM_MODULE=fcitx' \
-    Environment='XMODIFIERS=@im=fcitx'" \
-    | sudo tee -a /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
+    Environment='XMODIFIERS=@im=fcitx'" |
+    sudo tee -a /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
   echo "/usr/bin/fcitx-autostart" | sudo tee -a ~/.sommelierrc
 }
 
