@@ -110,6 +110,14 @@ getFcitx() {
   echo "/usr/bin/fcitx-autostart" | sudo tee -a ~/.sommelierrc
 }
 
+getTrashCLI() {
+  # install trash-cli, cli trashcan package
+  # see https://github.com/andreafrancia/trash-cli
+  git clone https://github.com/andreafrancia/trash-cli.git
+  cd trash-cli
+  sudo python setup.py install
+}
+
 
 # 必要なパッケージのインストール
 sudo apt-get update
