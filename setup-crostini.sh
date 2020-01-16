@@ -83,6 +83,21 @@ getSourceHanCodeJP() {
   # sudo rm -r ./source-han-code-jp-2.011R
 }
 
+getFiraCode() {
+  # Firacode
+  #   https://github.com/tonsky/FiraCode
+  # see FiraCode release
+  #   https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
+  # how to use
+  #   set "Fira Code"
+  curl -OL https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
+  unzip FiraCode_2.zip -d FiraCode_2
+  sudo cp ./FiraCode_2/otf/* /usr/local/share/fonts
+  sudo fc-cache -fv
+  # if you want to remove  FiraCode_2.zip and ./FiraCode_2 directory, remove comment out below
+  # sudo rm -r ./FiraCode_2.zip ./FiraCode_2
+}
+
 getFcitx() {
   # install fcitx-mozc ime
   sudo apt-get install fcitx-mozc
@@ -100,6 +115,7 @@ getFcitx() {
 sudo apt-get update
 sudo apt-get install -y git curl wget software-properties-common ffmpeg vlc
 getSourceHanCodeJP
+getFiraCode
 getFcitx
 getYoutubeDL
 getNodejs

@@ -1,14 +1,11 @@
 #!/bin/bash
-# 現状使えない
-#   font fileのダウンロードはできるけど使用できない
-# A shell script to install Firacode font manually
+# A shell script to install Firacode font
 # Firacode
 #   https://github.com/tonsky/FiraCode
-# How to install fonts for debian
-#   https://wiki.debian.org/Fonts
-# firacode_2.zip
-# https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
-
+# see FiraCode release
+#   https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
+# how to use
+#   set "Fira Code"
 curl -OL https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
 unzip FiraCode_2.zip -d FiraCode_2
 sudo cp ./FiraCode_2/otf/* /usr/local/share/fonts
