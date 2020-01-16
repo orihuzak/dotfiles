@@ -1,5 +1,5 @@
 #!/bin/bash
-# ffmpegでmp4から音声ファイルのm4aを取り出すshell script
+# ffmpegでmp4からm4a音声ファイルを取り出すshell script
 # 使い方
 #   path/to/tom4a.sh 変換したい動画ファイル
 # output
