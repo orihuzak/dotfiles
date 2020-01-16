@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# setup crostini
+# install packages 
+# clone dotfiles directory on github
+# symlink dotfiles to home diretory from dotfiles directory
+
 DOTPATH=~/dotfiles
 # ここを別のrepositoryに変えれば他のrepoでも使える
 GITHUB_URL=https://github.com/orihuzak/dotfiles.git
@@ -8,17 +13,17 @@ getNodejs() {
   # installするversionを変えたいときはsetup_12をsetup_13のように変える
   # 詳しくはhttps://github.com/nodesource/distributions
   curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
-  sudo apt install -y nodejs
+  sudo apt-get install -y nodejs
   # install yarn
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  sudo apt update && sudo apt install yarn
+  sudo apt-get update && sudo apt-get install yarn
 }
 
 getDocker() {
   # 詳しくはhttps://docs.docker.com/install/linux/docker-ce/debian/
-  sudo apt update
-  sudo apt install \
+  sudo apt-get update
+  sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -30,8 +35,8 @@ getDocker() {
    "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
    stable"
-  sudo apt update
-  sudo apt install docker-ce docker-ce-cli containerd.io
+  sudo apt-get update
+  sudo apt-get install docker-ce docker-ce-cli containerd.io
   # post install steps
   # sudoなしでdockerを使う
   sudo groupadd docker
@@ -49,23 +54,13 @@ getVSCode() {
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
   sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
   sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-  sudo apt install apt-transport-https
-  sudo apt update
-  sudo apt install code
+  sudo apt-get install apt-transport-https
+  sudo apt-get update
+  sudo apt-get install code
   # install extension
   # たぶんこれだけインストールすればあとはこの拡張機能がやってくれるはず
   code --install-extension Shan.code-settings-sync
 }
-
-getFFmpeg() {
-  # see https://www.ffmpeg.org/download.html
-  # see https://packages.debian.org/sid/amd64/ffmpeg/download
-  sudo apt update
-  # これたぶん動かないので変える
-  sudo echo -e "deb http://ftp.jp.debian.org/debian sid main" >> /etc/apt/sources.list
-  sudo apt install ffmpeg -y
-}
-
 
 getYoutubeDL() {
   # see https://github.com/ytdl-org/youtube-dl#installation
@@ -90,19 +85,22 @@ getSourceHanCodeJP() {
 
 getFcitx() {
   # install fcitx-mozc ime
-  sudo apt install fcitx-mozc
+  sudo apt-get install fcitx-mozc
   # set fcitx autostart
-  sudo echo -e "Environment='GTK_IM_MODULE=fcitx'\nEnvironment='QT_IM_MODULE=fcitx'\nEnvironment='XMODIFIERS=@im=fcitx'" >> /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
-  sudo echo -e "/usr/bin/fcitx-autostart" >> ~/.sommelierrc
+  echo \
+    "Environment='GTK_IM_MODULE=fcitx' \
+    Environment='QT_IM_MODULE=fcitx' \
+    Environment='XMODIFIERS=@im=fcitx'" \
+    | sudo tee -a /etc/systemd/user/cros-garcon.service.d/cros-garcon-override.conf
+  echo "/usr/bin/fcitx-autostart" | sudo tee -a ~/.sommelierrc
 }
 
 
 # 必要なパッケージのインストール
-sudo apt update
-sudo apt install -y git curl wget software-properties-common vlc
+sudo apt-get update
+sudo apt-get install -y git curl wget software-properties-common ffmpeg vlc
 getSourceHanCodeJP
 getFcitx
-getFFmpeg
 getYoutubeDL
 getNodejs
 getVSCode
