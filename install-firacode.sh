@@ -3,7 +3,7 @@
 # Firacode
 #   https://github.com/tonsky/FiraCode
 # see FiraCode release
-#   https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
+#   https://github.com/tonsky/FiraCode/releases
 # how to use
 #   set "Fira Code"
 curl -OL https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
