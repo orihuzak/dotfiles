@@ -121,7 +121,15 @@ getTrashCLI() {
 
 # 必要なパッケージのインストール
 sudo apt-get update
-sudo apt-get install -y git curl wget zip software-properties-common ffmpeg vlc
+sudo apt-get install -y \
+  git \
+  curl \
+  wget \
+  zip \
+  software-properties-common \
+  tmux \
+  ffmpeg \
+  vlc
 getTrashCLI
 getSourceHanCodeJP
 getFiraCode
