@@ -131,6 +131,7 @@ sudo apt-get install -y \
   zip \
   software-properties-common \
   tmux \
+  mate-terminal \
   ffmpeg \
   vlc
 getTrashCLI
