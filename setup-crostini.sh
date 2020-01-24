@@ -119,8 +119,11 @@ getTrashCLI() {
 }
 
 
-# 必要なパッケージのインストール
 sudo apt-get update
+# repositoryの追加
+echo "deb http://ftp.jp.debian.org/debian $(lsb_release -cs) main" \
+  | sudo tee -a /etc/apt/sources.list
+# 必要なパッケージのインストール
 sudo apt-get install -y \
   git \
   curl \
