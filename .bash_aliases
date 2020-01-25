@@ -1,5 +1,5 @@
 # short primary prompt string
-export PS1="\[\e[34m\]\w\[\e[m\] \[\e[35m\]>\[\e[m\]\[\e[36m\]>\[\e[m\]\[\e[35m\]>\[\e[m\] "
+export PS1="\[\033[38;5;212m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;27m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;33m\]>\[$(tput sgr0)\]\[\033[38;5;45m\]>\[$(tput sgr0)\]\[\033[38;5;87m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 alias ll='ls -la'
 
