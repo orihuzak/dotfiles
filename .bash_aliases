@@ -1,8 +1,16 @@
 # short primary prompt string
 # export PS1="\[\e[34m\]\w\[\e[m\]\[\e[32m\]\\$\[\e[m\] "
 # export PS1="\[\e[34m\]\w\[\e[m\] \[\e[35m\]>\[\e[m\]\[\e[36m\]>\[\e[m\]\[\e[35m\]>\[\e[m\] "
-export PS1="\[\e[42m\]\u\[\e[m\]\[\e[32m\]▶\[\e[m\]\[\e[46m\]\w\[\e[m\]\[\e[36m\]▶\[\e[m\] "
+# export PS1="\[\e[42m\]\u\[\e[m\]\[\e[32m\]▶\[\e[m\]\[\e[46m\]\w\[\e[m\]\[\e[36m\]▶\[\e[m\] "
 # export PS1='\[\e[30;47m\] \t \[\e[37;46m\]\[\e[30m\] \W \[\e[36;49m\]\[\e[0m\] '
+# powerline-shell
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 alias ll='ls -la'
 
