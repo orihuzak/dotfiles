@@ -22,6 +22,9 @@ alias gethls='youtube-dl -f best -g'
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
 
+# cd to google drive
+alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive'
+
 # setup ssh-agent
 if [ -f ~/.ssh-agent ]; then
   . ~/.ssh-agent
