@@ -130,7 +130,6 @@ sudo apt-get install -y \
   wget \
   zip \
   software-properties-common \
-  python3-pip \
   tmux \
   mate-terminal \
   ffmpeg \
