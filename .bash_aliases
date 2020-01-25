@@ -15,6 +15,8 @@ alias dcr='docker-compose run --rm'
 # my command
 alias tomp3='~/dotfiles/tomp3.sh'
 alias tom4a='~/dotfiles/tom4a.sh'
+# youtubeから音声をカレントディレクトリにDLする
+alias getaudio='youtube-dl --extract-audio'
 # youtube liveの最高品質のhls urlを取得する
 alias gethls='youtube-dl -f best -g'
 # open youtube live with vlc without video
