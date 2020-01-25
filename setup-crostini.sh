@@ -118,6 +118,18 @@ getTrashCLI() {
   sudo python setup.py install
 }
 
+getHomebrew() {
+  # install homebrew(linuxbrew)
+  # see https://docs.brew.sh/Homebrew-on-Linux
+  sudo apt-get install build-essential curl file git
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+  # PATHを追加
+  test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+  test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+  echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+}
+
 sudo apt-get update
 # repositoryの追加
 echo "deb http://ftp.jp.debian.org/debian $(lsb_release -cs) main" \
@@ -133,6 +145,8 @@ sudo apt-get install -y \
   mate-terminal \
   ffmpeg \
   vlc
+
+getHomebrew
 getTrashCLI
 getSourceHanCodeJP
 getFiraCode
