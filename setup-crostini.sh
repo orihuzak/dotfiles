@@ -144,7 +144,7 @@ getHyper() {
   # see https://github.com/zeit/hyper/
   curl -OL https://github.com/zeit/hyper/releases/download/3.0.2/hyper_3.0.2_amd64.deb
   sudo dpkg -i hyper_3.0.2_amd64.deb
-  sudo apt install -f
+  sudo apt-get install -f
 }
 
 sudo apt-get update
@@ -187,6 +187,10 @@ do
   # 除外したいファイル
   [ "$f" = ".git" ] && continue
   [ "$f" = ".gitignore"] && continue
+  if [ "$f" = ".hyper.js" ]; then
+    # hyperの設定ファイルを指定の場所に設置 https://hyper.is/#cfg
+    ln -snfv "$DOTPATH/$f" "$HOME"/.config/Hyper/"$f"
+  fi
 
   ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
