@@ -139,6 +139,14 @@ getUlauncher() {
   sudo apt install -f
 }
 
+getHyper() {
+  # install hyper
+  # see https://github.com/zeit/hyper/
+  curl -OL https://github.com/zeit/hyper/releases/download/3.0.2/hyper_3.0.2_amd64.deb
+  sudo dpkg -i hyper_3.0.2_amd64.deb
+  sudo apt install -f
+}
+
 sudo apt-get update
 # repositoryの追加
 echo "deb http://ftp.jp.debian.org/debian $(lsb_release -cs) main" \
@@ -154,6 +162,7 @@ sudo apt-get install -y \
   ffmpeg \
   vlc
 
+getHyper
 getHomebrew
 getTrashCLI
 getSourceHanCodeJP
