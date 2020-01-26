@@ -19,4 +19,4 @@ module.exports = {
     "editor:copy": "ctrl+c",
     "editor:paste": "ctrl+v",
   }
-}
+};
