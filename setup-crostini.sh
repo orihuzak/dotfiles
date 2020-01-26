@@ -130,6 +130,15 @@ getHomebrew() {
   echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 }
 
+
+getUlauncher() {
+  # install Ulauncher
+  # see https://ulauncher.io/
+  wget https://github.com/Ulauncher/Ulauncher/releases/download/5.6.1/ulauncher_5.6.1_all.deb
+  sudo dpkg -i ulauncher_5.6.1_all.deb
+  sudo apt install -f
+}
+
 sudo apt-get update
 # repositoryの追加
 echo "deb http://ftp.jp.debian.org/debian $(lsb_release -cs) main" \
