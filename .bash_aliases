@@ -14,6 +14,8 @@ alias dcr='docker-compose run --rm'
 # my command
 alias tomp3='~/dotfiles/tomp3.sh'
 alias tom4a='~/dotfiles/tom4a.sh'
+# concat audio or video files
+alias avconcat='~/dotfiles/avconcat.sh'
 # youtubeから音声をカレントディレクトリにDLする
 alias getaudio='youtube-dl --extract-audio'
 # youtube liveの最高品質のhls urlを取得する
