@@ -1,0 +1,6 @@
+# avconcatで連結したい音声や動画ファイルを指定するためのファイルです
+# 書き方
+#   file '/path/to/input1'
+#   file '/path/to/input2'
+#   file '/path/to/inputN'
+
