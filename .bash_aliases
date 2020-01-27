@@ -11,18 +11,19 @@ alias ll='ls -la'
 # docker
 alias dcr='docker-compose run --rm'
 
-# my command
+# aliases
 alias tomp3='~/dotfiles/tomp3.sh'
 alias tom4a='~/dotfiles/tom4a.sh'
 # concat audio or video files
 alias avconcat='~/dotfiles/avconcat.sh'
+# avconcatで連結したいファイルを書く~/mylist.txtをすぐに編集するためのalias
+alias mylist='vim ~/mylist.txt'
 # youtubeから音声をカレントディレクトリにDLする
 alias getaudio='youtube-dl --extract-audio'
 # youtube liveの最高品質のhls urlを取得する
 alias gethls='youtube-dl -f best -g'
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
-
 # cd to google drive
 alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive'
 # cd to GoogleDrive/koe
