@@ -25,6 +25,8 @@ alias vlcaudio='vlc --no-video'
 
 # cd to google drive
 alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive'
+# cd to GoogleDrive/koe
+alias tokoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe'
 
 # setup ssh-agent
 if [ -f ~/.ssh-agent ]; then
