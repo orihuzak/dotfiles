@@ -1,20 +1,20 @@
 module.exports = {
-  config: {
+  "config": {
     // 透明度の設定
-    opacity: 0.85,
+    // "opacity": 0.85,
     // 選択範囲をコピーする
-    copyOnSelect: true,
-    cursorBlink: true,
-    cursorShape: "BEAM",
+    "copyOnSelect": true,
+    "cursorBlink": true,
+    "cursorShape": "BEAM",
   },
-  plugins: [
+  "plugins": [
     "hyper-statusline",
     "hyper-search",
     "hyper-opacity",
     "hyper-pane",
     "hyper-tab-icons-plus"
   ],
-  keymaps: {
+  "keymaps": {
     "editor:cut": "ctrl+x",
     "editor:copy": "ctrl+c",
     "editor:paste": "ctrl+v",

@@ -189,7 +189,7 @@ do
   [ "$f" = ".gitignore"] && continue
   if [ "$f" = ".hyper.js" ]; then
     # hyperの設定ファイルを指定の場所に設置 https://hyper.is/#cfg
-    ln -snfv "$DOTPATH/$f" "$HOME"/.config/Hyper/"$f"
+    ln -snfv "$DOTPATH/$f" "$HOME"/.config/hyper/"$f"
   fi
 
   ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
