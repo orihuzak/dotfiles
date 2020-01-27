@@ -1,7 +1,7 @@
 module.exports = {
   "config": {
     // 透明度の設定
-    // "opacity": 0.85,
+    "opacity": 0.85,
     // 選択範囲をコピーする
     "copyOnSelect": true,
     "cursorBlink": true,
