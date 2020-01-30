@@ -5,7 +5,7 @@ module.exports = {
     // 選択範囲をコピーする
     "copyOnSelect": true,
     "cursorBlink": true,
-    "cursorShape": "BEAM",
+    "cursorShape": "BLOCK",
   },
   "plugins": [
     "hyper-statusline",
