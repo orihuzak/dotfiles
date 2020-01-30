@@ -1,3 +1,5 @@
+// hyper terminal setting file
+
 module.exports = {
   "config": {
     // 透明度の設定
