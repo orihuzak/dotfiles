@@ -50,3 +50,5 @@ path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'
 
 # add path for crostini
 export PATH=$PATH:/home/arxsolid/.local/bin
+# add path for yarn global packages
+export PATH="$(yarn global bin):$PATH"
