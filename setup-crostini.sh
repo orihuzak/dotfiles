@@ -10,9 +10,9 @@ DOTPATH=~/dotfiles
 GITHUB_URL=https://github.com/orihuzak/dotfiles.git
 
 getNodejs() {
-  # installするversionを変えたいときはsetup_12をsetup_13のように変える
-  # 詳しくはhttps://github.com/nodesource/distributions
-  curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+  # install nodejs13
+  # see https://github.com/nodesource/distributions
+  curl -sL https://deb.nodesource.com/setup_13.x | sudo  bash -
   sudo apt-get install -y nodejs
   # install yarn
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
