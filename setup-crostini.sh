@@ -147,6 +147,13 @@ getHyper() {
   sudo apt-get install -f
 }
 
+getVundle() {
+  # install Vundle
+  # see https://github.com/VundleVim/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+}
+
 sudo apt-get update
 # repositoryの追加
 echo "deb http://ftp.jp.debian.org/debian $(lsb_release -cs) main" \
@@ -194,4 +201,6 @@ do
 
   ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
+
+getVundle
 source ~/.bashrc
