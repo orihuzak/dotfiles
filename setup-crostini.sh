@@ -154,6 +154,15 @@ getVundle() {
   vim +PluginInstall +qall
 }
 
+getNerdFonts() {
+  # install Nerd Fonts
+  # see https://github.com/ryanoasis/nerd-fonts#option-1-download-and-install-manually
+  mkdir -p ~/.local/share/fonts
+  cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otfi
+  fc-cache -fv
+  cd ~
+}
+
 sudo apt-get update
 # repositoryの追加
 echo "deb http://ftp.jp.debian.org/debian $(lsb_release -cs) main" \
@@ -166,6 +175,7 @@ sudo apt-get install -y \
   zip \
   software-properties-common \
   tmux \
+  vim-nox \
   ffmpeg \
   vlc
 

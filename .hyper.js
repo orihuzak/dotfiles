@@ -2,6 +2,9 @@
 
 module.exports = {
   "config": {
+    fontSize: 11,
+    // フォントの設定
+    fontFamily: 'monospane, "DroidSansMono Nerd Font"',
     // 透明度の設定
     "opacity": 0.85,
     // 選択範囲をコピーする
