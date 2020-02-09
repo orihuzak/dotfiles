@@ -42,14 +42,14 @@ Plugin 'cohama/lexima.vim' " 括弧の自動補完
 Plugin 'tpope/vim-surround' " htmlタグや括弧のショートカット
 Plugin 'leafgarland/typescript-vim'
 
-" if has('nvim')
-"   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plugin 'Shougo/deoplete.nvim'
-"   Plugin 'roxma/nvim-yarp'
-"   Plugin 'roxma/vim-hug-neovim-rpc'
-" endif
-" let g:deoplete#enable_at_startup = 1 
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1 
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -205,5 +205,4 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
-
 
