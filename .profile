@@ -17,13 +17,12 @@
 #******************************************************************************
 
 # LANG
-export LANG=ja_jp.UTF-8
+# export LANG=ja_JP.UTF-8
+# export LANGUAGE="ja_JP:ja"
 
 # tree
 # 文字コード、ロケールを設定
 export TREE_CHARSET='UTF-8'
-export LC_CTYPE='ja_JP.UTF-8'
-
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
