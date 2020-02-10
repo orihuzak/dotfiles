@@ -40,7 +40,9 @@ Plugin 'tpope/vim-commentary' " commentをonoffできる
 " auto complete and syntax
 Plugin 'cohama/lexima.vim' " 括弧の自動補完
 Plugin 'tpope/vim-surround' " htmlタグや括弧のショートカット
+" language support
 Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript' " syntax highlighting tsx and typescript
 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -80,13 +82,19 @@ set noswapfile " swapfileをつくらない
 set nobackup " ファイルを上書きする前にバックアップを作ることを無効化
 set wildmenu " vimバーからファイルを選択できる
 set laststatus=2 " ステータスラインを常に表示
-syntax enable " シンタックスハイライトの有効化
 set list " 不可視文字の可視化
 set listchars=tab:»-,nbsp:␣ " 可視文字を可視化(タブが*-と表示される)
 hi Comment ctermfg=3
+
 " text editing
+" vim-move
 let g:move_map_keys = 1
 let g:move_key_modifier = 'C' " vim-moveのprefixを設定
+
+" syntax highlinghting
+syntax enable " シンタックスハイライトの有効化
+" vim-jsx-typescript
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx " set filetypes as typescript.tsx
 
 " scroll
 set scrolloff=2 " スクロール開始位置を画面端から２行目にする
@@ -160,6 +168,9 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+" open new split panes to right and bottom
+set splitbelow 
+set splitright
 
 " auto reload .vimrc
 augroup source-vimrc
