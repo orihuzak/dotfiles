@@ -174,6 +174,7 @@ sudo apt-get install -y \
   wget \
   zip \
   software-properties-common \
+  tree \
   tmux \
   vim-nox \
   ffmpeg \
