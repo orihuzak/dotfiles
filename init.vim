@@ -7,19 +7,31 @@
 " using vim-plugin https://github.com/junegunn/vim-plug
 " 
 call plug#begin() " 引数はplugin directoryだけど、デフォルトでは書かなくてもいいみたい
-" file manager
-if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/defx.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 " autosave
-Plug '907th/vim-auto-save'
+Plug '907th/vim-auto-save' " 自動セーブ
+" file manager
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+" nerdtree icons
+Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
+" text editing
+Plug 'matze/vim-move' " (選択した)行を移動させる
+Plug 'tpope/vim-commentary' " commentout/inできる
+Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
+" html editing
+Plug 'mattn/emmet-vim' " htmlを素早く書ける  
+" window resizer
+Plug 'simeji/winresizer'
+" status and tab line
+Plug 'itchyny/lightline.vim'
+" git
+Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
+Plug 'Xuyuanp/nerdtree-git-plugin' " NERDTreeにgit statusを表示する
+
 call plug#end()
 " Plugins end
 
@@ -29,6 +41,47 @@ call plug#end()
 " vim-auto-save
 let g:auto_save = 1
 
+" NERDTree
+" ctrl-nでnerdtreeを開く
+map <C-n> :NERDTreeToggle<CR> 
+let NERDTreeShowHidden = 1 " show hidden files 
+" remove directory allow
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+" vim-devicons
+let g:webdevicons_enable=1
+let g:webdevicons_enable_nerdtree=1
+
+" lightline settings
+let g:lightline = {
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ }
+      \ }
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+" gitgutter
+set updatetime=100 " git statusの更新間隔を短く
+set signcolumn=yes " sign columnを常に表示する
+" let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
+" let g:gitgutter_highlight_linenrs = 1 " line number highlight
+let g:gitgutter_override_sign_column_highlight = 0
+" highlight sign
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
+highlight GitGutterChangeDelete ctermfg=4
+
+" font
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+
 " editor
 set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=dos,unix,mac " 改行コードの自動認識
@@ -37,19 +90,9 @@ set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
 set list " 不可視文字の可視化 
 set listchars=tab:»-,nbsp:␣ " 不可視文字の表示を定義
-" 編集箇所のカーソル位置を記憶する
-if has("autocmd")
-  augroup redhat
-    " In text files, always limit the width of text to 78 characters
-    autocmd BufRead *.txt set tw=78
-    " When editing a file, always jump to the last cursor position
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
-  augroup END
-endif
 
+" terminal
+map <C-s> :terminal<CR>
 
 " status bar
 set showcmd " 入力中のコマンドをステータスに表示
@@ -83,6 +126,18 @@ set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 " 折り返し行の移動について表示上の行も移動できるようにする
 nnoremap k gk
 nnoremap j gj
+" 編集箇所のカーソル位置を記憶する
+if has("autocmd")
+  augroup redhat
+    " In text files, always limit the width of text to 78 characters
+    autocmd BufRead *.txt set tw=78
+    " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+  augroup END
+endif
 
 " copy and paste
 set guioptions+=a " ヤンクした内容をクリップボードに入れる
