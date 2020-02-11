@@ -31,6 +31,7 @@ Plug 'itchyny/lightline.vim'
 " git
 Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
 Plug 'Xuyuanp/nerdtree-git-plugin' " NERDTreeにgit statusを表示する
+" terminal
 
 call plug#end()
 " Plugins end
@@ -79,6 +80,10 @@ highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
 
+" terminal
+map <C-s> :terminal<CR>
+tnoremap <Esc> <C-\><C-n> " Escでterminal modeを終了
+
 " font
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 
@@ -91,8 +96,6 @@ set nobackup " ファイルを上書きするときにバックアップを作�
 set list " 不可視文字の可視化 
 set listchars=tab:»-,nbsp:␣ " 不可視文字の表示を定義
 
-" terminal
-map <C-s> :terminal<CR>
 
 " status bar
 set showcmd " 入力中のコマンドをステータスに表示
