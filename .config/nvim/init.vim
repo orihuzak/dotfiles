@@ -30,6 +30,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
 " terminal
 
+" colorschemes
+
 call plug#end()
 " Plugins end
 
@@ -85,8 +87,14 @@ set fileformats=dos,unix,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
+
+" 不可視文字の可視化
 set list " 不可視文字の可視化 
-set listchars=tab:»-,nbsp:␣ " 不可視文字の表示を定義
+set listchars=tab:»-,space:· " 不可視文字の表示を定義
+" spaceの候補 ["·", "␣"]
+" 不可視文字への色付け
+hi NonText ctermbg=None ctermfg=59 guibg=NONE
+hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 
 " status bar
 set showcmd " 入力中のコマンドをステータスに表示
@@ -96,7 +104,7 @@ set wildmenu " vimバーからファイルを選択可能
 set laststatus=2 " ステータスラインを常に表示
 
 " syntax highlighting
-syntax on
+syntax enable 
 
 " indent
 set smartindent " 自動indentの設定
@@ -113,6 +121,9 @@ set number " 行番号の表示
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
+" cursorline background color
+hi CursorLine cterm=None ctermfg=NONE ctermbg=236
+
 
 " cursor
 set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
