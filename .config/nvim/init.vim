@@ -7,11 +7,12 @@
 " using vim-plugin https://github.com/junegunn/vim-plug
 " 
 call plug#begin() " 引数はplugin directoryだけど、デフォルトでは書かなくてもいいみたい
+" ここから下にインストールするプラグインを書く
+
 " autosave
 Plug '907th/vim-auto-save' " 自動セーブ
 " file manager
-" nerdtree icons
-Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
+Plug 'ryanoasis/vim-devicons' " nerdtree icons
 " cursor move
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 " text editing
@@ -20,6 +21,7 @@ Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
+Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
@@ -30,21 +32,19 @@ Plug 'simeji/winresizer'
 Plug 'itchyny/lightline.vim'
 " git
 Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
-" terminal
 
-" colorschemes
-
+" プラグインを書くのはここまで！
 call plug#end()
-" Plugins end
 
 "
 " Plugin Settings
 "
+
 " vim-auto-save
 let g:auto_save = 1
 
 " file manager
-" coc-explorer 
+" coc-explorer
 nmap <space>e :CocCommand explorer<CR>
 
 " vim-devicons
@@ -76,9 +76,15 @@ highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
 
+" vim-expand-region
+" KとJで選択範囲の拡大縮小
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+
 " terminal
 map <C-s> :terminal<CR>
-tnoremap <Esc> <C-\><C-n> " Escでterminal modeを終了
+" Escでterminal modeを終了
+tnoremap <Esc> <C-\><C-n>
 
 " font
 set guifont=DroidSansMono\ Nerd\ Font\ 11
