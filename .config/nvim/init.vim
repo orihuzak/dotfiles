@@ -12,6 +12,8 @@ Plug '907th/vim-auto-save' " 自動セーブ
 " file manager
 " nerdtree icons
 Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
+" cursor move
+Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 " text editing
 Plug 'matze/vim-move' " (選択した)行を移動させる
 Plug 'tpope/vim-commentary' " commentout/inできる
@@ -81,6 +83,12 @@ tnoremap <Esc> <C-\><C-n> " Escでterminal modeを終了
 " font
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 
+"
+" keymap
+"
+" leader
+let mapleader = "\<Space>"
+
 " editor
 set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=dos,unix,mac " 改行コードの自動認識
@@ -107,7 +115,7 @@ set laststatus=2 " ステータスラインを常に表示
 syntax enable 
 
 " indent
-set smartindent " 自動indentの設定
+" set smartindent " 自動indentの設定
 set expandtab " tabを半角スペースにする
 set tabstop=2 " tab幅の設定
 set shiftwidth=2 " 自動インデント幅
@@ -123,7 +131,6 @@ set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
 " cursorline background color
 hi CursorLine cterm=None ctermfg=NONE ctermbg=236
-
 
 " cursor
 set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
