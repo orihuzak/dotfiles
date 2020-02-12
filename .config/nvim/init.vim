@@ -76,10 +76,6 @@ highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
 
-" vim-expand-region
-" KとJで選択範囲の拡大縮小
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
 
 " terminal
 map <C-s> :terminal<CR>
@@ -94,6 +90,15 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 "
 " leader
 let mapleader = "\<Space>"
+" insert modeでのcursor移動
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+inoremap <C-l> <right>
+" vim-expand-region
+" KとJで選択範囲の拡大縮小
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
 
 " editor
 set encoding=UTF-8 " 文字コードをutf8に設定
