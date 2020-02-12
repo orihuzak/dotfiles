@@ -21,7 +21,7 @@ Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操�
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp']
 " window resizer
 Plug 'simeji/winresizer'
 " status and tab line
@@ -64,13 +64,13 @@ endfunction
 set updatetime=100 " git statusの更新間隔を短く
 set signcolumn=yes " sign columnを常に表示する
 " let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
-" let g:gitgutter_highlight_linenrs = 1 " line number highlight
-" let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_highlight_linenrs = 1 " line number highlight
+let g:gitgutter_override_sign_column_highlight = 0
 " highlight sign
-" highlight GitGutterAdd ctermfg=2
-" highlight GitGutterChange ctermfg=3
-" highlight GitGutterDelete ctermfg=1
-" highlight GitGutterChangeDelete ctermfg=4
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
+highlight GitGutterChangeDelete ctermfg=4
 
 " terminal
 map <C-s> :terminal<CR>
