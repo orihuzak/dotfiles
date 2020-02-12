@@ -16,7 +16,7 @@ Plug 'ryanoasis/vim-devicons' " nerdtree icons
 " cursor move
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 " text editing
-Plug 'matze/vim-move' " (選択した)行を移動させる
+" Plug 'matze/vim-move' " (選択した)行を移動させる
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
@@ -95,6 +95,16 @@ inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
+" indent
+" set smartindent " 自動indentの設定
+set expandtab " tabを半角スペースにする
+set tabstop=2 " tab幅の設定
+set shiftwidth=2 " 自動インデント幅
+" alt-hlでindent/outdent
+noremap <A-l> >>
+noremap <A-h> <<
+vnoremap <A-l> >gv
+vnoremap <A-h> <gv
 " vim-expand-region
 " KとJで選択範囲の拡大縮小
 map K <Plug>(expand_region_expand)
@@ -125,11 +135,6 @@ set laststatus=2 " ステータスラインを常に表示
 " syntax highlighting
 syntax enable 
 
-" indent
-" set smartindent " 自動indentの設定
-set expandtab " tabを半角スペースにする
-set tabstop=2 " tab幅の設定
-set shiftwidth=2 " 自動インデント幅
 
 " scroll
 set scrolloff=2 " スクロール開始位置を画面端から2行目にする
