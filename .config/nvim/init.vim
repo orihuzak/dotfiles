@@ -105,6 +105,8 @@ noremap <A-l> >>
 noremap <A-h> <<
 vnoremap <A-l> >gv
 vnoremap <A-h> <gv
+inoremap <A-l> <C-t>
+inoremap <A-h> <C-d>
 " vim-expand-region
 " KとJで選択範囲の拡大縮小
 map K <Plug>(expand_region_expand)
