@@ -1,3 +1,5 @@
 .emacs.d/elpa/
-.config/nvim/plugged # nvim plugin directory 
-.config/nvim/.netrwhist # デフォルトのexplorerのhistory file
+# nvim plugin directory 
+.config/nvim/plugged
+# デフォルトのexplorerのhistory file
+.config/nvim/.netrwhist
