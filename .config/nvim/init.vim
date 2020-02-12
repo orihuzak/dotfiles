@@ -16,14 +16,12 @@ Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 Plug 'matze/vim-move' " (選択した)行を移動させる
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
+Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-explorer', 'coc-git']
-Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
-Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
-" html editing
-Plug 'mattn/emmet-vim' " htmlを素早く書ける  
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight']
 " window resizer
 Plug 'simeji/winresizer'
 " status and tab line
