@@ -11,6 +11,9 @@ call plug#begin() " 引数はplugin directoryだけど、デフォルトでは�
 
 " autosave
 Plug '907th/vim-auto-save' " 自動セーブ
+" file finder
+Plug 'ctrlpvim/ctrlp.vim' " file finder by <C-p>
+
 " file manager
 Plug 'ryanoasis/vim-devicons' " nerdtree icons
 " cursor move
@@ -25,7 +28,7 @@ Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp']
 " window resizer
 Plug 'simeji/winresizer'
 " status and tab line
@@ -46,6 +49,7 @@ let g:auto_save = 1
 " file manager
 " coc-explorer
 nmap <space>e :CocCommand explorer<CR>
+let g:ctrlp_show_hidden = 1
 
 " vim-devicons
 let g:webdevicons_enable=1
@@ -75,7 +79,6 @@ highlight GitGutterAdd ctermfg=2
 highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
-
 
 " terminal
 map <C-s> :terminal<CR>
