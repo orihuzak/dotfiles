@@ -32,11 +32,33 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+################################################################################
+## ps1 setting
+################################################################################
+export PS1="\[\033[38;5;40m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;33m\]>\[$(tput sgr0)\]\[\033[38;5;45m\]>\[$(tput sgr0)\]\[\033[38;5;87m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+################################################################################
+## add paths
+################################################################################
+
+# PATHの追加と削除を容易にする関数
+# path_func("path/to/any")
+path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
+path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
+path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# linuxbrew(homebrew) path
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# yarn global package path
+export PATH="$(yarn global bin):$PATH"
+
+# add path for crostini いらないと思うのでコメントアウト
+# export PATH=$PATH:/home/arxsolid/.local/bin
 
 ### Complete Messages
 echo "Loding .profile completed!!"
