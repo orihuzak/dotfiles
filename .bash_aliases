@@ -1,5 +1,6 @@
-# short primary prompt string
-export PS1="\[\033[38;5;40m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;33m\]>\[$(tput sgr0)\]\[\033[38;5;45m\]>\[$(tput sgr0)\]\[\033[38;5;87m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+################################################################################
+## aliases setting file
+################################################################################
 
 alias ll='ls -lha'
 
@@ -42,13 +43,3 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
   . ~/.ssh-agent
 fi
 ssh-add -l >& /dev/null || ssh-add
-
-# PATHの追加と削除を容易にする関数
-path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
-path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
-path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
-
-# add path for crostini
-export PATH=$PATH:/home/arxsolid/.local/bin
-# add path for yarn global packages
-export PATH="$(yarn global bin):$PATH"
