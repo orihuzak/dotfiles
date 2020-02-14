@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@vue/cli": "^4.2.2",
-    "gatsby-cli": "^2.8.29"
+    "@vue/cli": "4.x",
+    "gatsby-cli": "2.x"
   }
 }
