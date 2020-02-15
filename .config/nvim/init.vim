@@ -11,6 +11,7 @@ call plug#begin() " 引数はplugin directoryだけど、デフォルトでは�
 
 " autosave
 Plug '907th/vim-auto-save' " 自動セーブ
+Plug 'djoshea/vim-autoread' " ファイルの再読込
 " file finder
 Plug 'ctrlpvim/ctrlp.vim' " file finder by <C-p>
 
