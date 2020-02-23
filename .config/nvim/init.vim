@@ -9,31 +9,34 @@
 call plug#begin() " 引数はplugin directoryだけど、デフォルトでは書かなくてもいいみたい
 " ここから下にインストールするプラグインを書く
 
+" coc lsp
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" coc extensions
+" file manager
+" autocomplete
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp']
+
 " autosave
 Plug '907th/vim-auto-save' " 自動セーブ
 Plug 'djoshea/vim-autoread' " ファイルの再読込
 " file finder
-Plug 'ctrlpvim/ctrlp.vim' " file finder by <C-p>
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 
-" file manager
-Plug 'ryanoasis/vim-devicons' " nerdtree icons
 " cursor move
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 " text editing
-" Plug 'matze/vim-move' " (選択した)行を移動させる
+" Ptug 'matze/vim-move' " (選択した)行を移動させる
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
-" autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp']
 " window resizer
 Plug 'simeji/winresizer'
 " status and tab line
 Plug 'itchyny/lightline.vim'
+" icons
+Plug 'ryanoasis/vim-devicons' " coc explorerやlightlineむけのアイコン表示用
 " git
 Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
 
@@ -51,7 +54,6 @@ let g:auto_save = 1
 " coc-explorer
 nmap <space>e :CocCommand explorer<CR>
 let g:ctrlp_show_hidden = 1
-
 " vim-devicons
 let g:webdevicons_enable=1
 
@@ -139,7 +141,7 @@ set wildmenu " vimバーからファイルを選択可能
 set laststatus=2 " ステータスラインを常に表示
 
 " syntax highlighting
-syntax enable 
+syntax enable
 
 
 " scroll
