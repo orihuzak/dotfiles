@@ -14,7 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
 " file manager
 " autocomplete
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp', 'coc-rls']
 
 " autosave
 Plug '907th/vim-auto-save' " 自動セーブ
