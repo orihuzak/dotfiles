@@ -56,9 +56,12 @@ fi
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 # yarn global package path
 export PATH="$(yarn global bin):$PATH"
+# Cargo's bin directory for Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # add path for crostini いらないと思うのでコメントアウト
 # export PATH=$PATH:/home/arxsolid/.local/bin
 
 ### Complete Messages
 echo "Loding .profile completed!!"
+
