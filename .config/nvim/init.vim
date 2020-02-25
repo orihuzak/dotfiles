@@ -16,8 +16,23 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp', 'coc-rls']
-"#############################################################################
+" cocのDiagnosticsの、左横のアイコンの色設定
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
+nmap <space>l :<C-u>CocList<cr>
+"スペースhでHover
+nmap <space>h :<C-u>call CocAction('doHover')<cr>
+"スペースdfでDefinition
+nmap <space>df <Plug>(coc-definition)
+"スペースrfでReferences
+nmap <space>rf <Plug>(coc-references)
+"スペースrnでRename
+nmap <space>rn <Plug>(coc-rename)
+"スペースfmtでFormat
+nmap <space>fmt <Plug>(coc-format)
+
 " file manager
+"-----------------------------------------------------------------------------
 " coc-explorer space-eでcoc-explorerを開く
 nmap <space>e :CocCommand explorer<CR>
 " デフォルトのファイルエクスプローラnetrwの設定
@@ -44,7 +59,7 @@ Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
 command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
 " space f でskimを起動
-nnoremap <Space>f :SK<CR>
+nnoremap <Space>s :SK<CR>
 
 "#############################################################################
 " cursor move
@@ -81,11 +96,17 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'itchyny/lightline.vim'
 " lightline settings
 let g:lightline = {
-      \ 'component_function': {
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
-      \ }
-      \ }
+  \'active': {
+    \'right': [
+      \['coc']
+    \]
+  \},
+  \'component_function': {
+    \'filetype': 'MyFiletype',
+    \'fileformat': 'MyFileformat',
+    \'coc': 'coc#status'
+  \}
+\}
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
@@ -132,6 +153,11 @@ set fileformats=dos,unix,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
+
+" language settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " color scheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
