@@ -25,6 +25,9 @@ nmap <space>e :CocCommand explorer<CR>
 " let g:netrw_liststyle = 3 " 表示形式をtree viewに変更
 " let g:netrw_altv = 1 " 左右分割を右側に開く
 " let g:netrw_winsize = 85 " 分割で開いたときに85%のサイズで開く
+" netrwの無効化
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 "#############################################################################
 " autosave
@@ -38,8 +41,10 @@ Plug 'djoshea/vim-autoread' " ファイルの再読込
 " file finder
 "#############################################################################
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-Plug 'lotabout/skim.vim'
-" let g:ctrlp_show_hidden = 1
+command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+" space f でskimを起動
+nnoremap <Space>f :SK<CR>
 
 "#############################################################################
 " cursor move
@@ -63,6 +68,12 @@ map J <Plug>(expand_region_shrink)
 " window resizer
 "#############################################################################
 Plug 'simeji/winresizer'
+
+
+" color scheme
+"-----------------------------------------------------------------------------
+Plug 'morhetz/gruvbox'
+Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 "#############################################################################
 " status and tab line
@@ -122,6 +133,23 @@ set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
 
+" color scheme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gruvbox
+""""""""""""""""""""""
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
+
+" gruvbox-material
+""""""""""""""""""""""
+" set termguicolors
+" set background=dark    " Setting dark mode
+" " this configuration option should be placed before `colorscheme gruvbox-material`
+" let g:gruvbox_material_background = 'hard'
+" colorscheme gruvbox-material
+" let g:gruvbox_material_disable_italic_comment = 1 " disable italic comment
+
 "#############################################################################
 " font
 "#############################################################################
@@ -158,7 +186,7 @@ inoremap <A-h> <C-d>
 "#############################################################################
 " 不可視文字の可視化
 "#############################################################################
-set list " 不可視文字の可視化 
+set list " 不可視文字の可視化
 set listchars=tab:»-,space:· " 不可視文字の表示を定義
 " spaceの候補 ["·", "␣"]
 " 不可視文字への色付け
