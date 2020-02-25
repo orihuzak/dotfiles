@@ -63,12 +63,12 @@ Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 " KとJで選択範囲の拡大縮小
 map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
+Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 
 "#############################################################################
 " window resizer
 "#############################################################################
 Plug 'simeji/winresizer'
-
 
 " color scheme
 "-----------------------------------------------------------------------------
@@ -290,4 +290,13 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
