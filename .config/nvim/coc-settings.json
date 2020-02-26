@@ -16,6 +16,7 @@
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
   },
+  "eslint.packageManager": "yarn",
   "eslint.autoFixOnSave": true,
   "eslint.options": {
     "configFile": "~/.eslintrc.js"
