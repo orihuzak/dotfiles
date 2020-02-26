@@ -14,5 +14,15 @@
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
-  }
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+
+  },
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }
