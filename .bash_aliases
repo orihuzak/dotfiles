@@ -21,6 +21,8 @@ alias vim='nvim'
 ################################################################################
 alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive' # cd to google drive
 alias tokoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe' # cd to GoogleDrive/koe
+alias dotfiles='cd ~/dotfiles'
+alias work='cd ~/work'
 
 ################################################################################
 # download video and audio
