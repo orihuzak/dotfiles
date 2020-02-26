@@ -141,23 +141,11 @@ let g:gruvbox_contrast_dark = 'hard'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " lightline settings
 let g:lightline = {
-  \'active': {
-    \'right': [
-      \['coc']
-    \]
-  \},
-  \'component_function': {
-    \'filetype': 'MyFiletype',
-    \'fileformat': 'MyFileformat',
-    \'coc': 'coc#status'
+  \ 'colorscheme': 'wombat',
+  \ 'component_function': {
+    \ 'coc': 'coc#status'
   \}
 \}
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
 
 "#############################################################################
 " font
