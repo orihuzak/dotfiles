@@ -30,9 +30,8 @@ alias gethls='youtube-dl -f best -g'
 # youtubeから音声をカレントディレクトリにDLする
 alias getaudio='youtube-dl --extract-audio'
 # youtubeから音声をDLするためのalias
-alias reina="youtube-dl -o '~/koe/reina-yuzuki/柚木玲奈-%(upload_date)s-%(title)s.%(ext)s' --extract-audio"
-alias rin="youtube-dl -o '~/koe/rin-yuzuki/柚木凛-%(upload_date)s-%(title)s.%(ext)s' --extract-audio"
-alias moa="youtube-dl -o '~/koe/moa-madoromi/まどろみもあ-%(upload_date)s-%(title)s.%(ext)s' --extract-audio"
+alias reina="youtube-dl -o '~/koe/reina-yuzuki/柚木玲奈-%(release_date)s-%(title)s.%(ext)s' --extract-audio"
+alias rin="youtube-dl -o '~/koe/rin-yuzuki/柚木凛-%(release_date)s-%(title)s.%(ext)s' --extract-audio"
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
 
