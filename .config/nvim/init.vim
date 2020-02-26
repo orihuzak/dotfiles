@@ -69,7 +69,7 @@ Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 "#############################################################################
 " text editing
 "#############################################################################
-" Ptug 'matze/vim-move' " (選択した)行を移動させる
+Plug 'matze/vim-move' " (選択した)行を移動させる
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
@@ -239,15 +239,20 @@ syntax enable
 set scrolloff=2 " スクロール開始位置を画面端から2行目にする
 set mouse=a " マウススクロールを有効化
 
-"#############################################################################
 " line
-"#############################################################################
+"=============================================================================
 set number " 行番号の表示
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
 " cursorline background color
 hi CursorLine cterm=None ctermfg=NONE ctermbg=236
+" vim-move move line
+let g:move_map_keys = 0
+nmap <A-k> <Plug>MoveLineUp
+nmap <A-j> <Plug>MoveLineDown
+vmap <A-k> <Plug>MoveBlockUp
+vmap <A-j> <Plug>MoveBlockDown
 
 "#############################################################################
 " cursor
