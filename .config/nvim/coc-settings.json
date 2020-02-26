@@ -1,4 +1,5 @@
 {
+  "languageserver": {},
   "suggest.numberSelect": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.icon.enableVimDevicons": true,
@@ -17,7 +18,7 @@
   },
   "eslint.autoFixOnSave": true,
   "eslint.options": {
-
+    "configFile": "~/.eslintrc.js"
   },
   "eslint.filetypes": [
     "javascript",
