@@ -248,7 +248,7 @@ set cursorline " 現在の行を強調表示
 " cursorline background color
 hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 " vim-move move line
-let g:move_map_keys = 0
+let g:move_map_keys = 0 " disable vim-move default keymap
 nmap <A-k> <Plug>MoveLineUp
 nmap <A-j> <Plug>MoveLineDown
 vmap <A-k> <Plug>MoveBlockUp
