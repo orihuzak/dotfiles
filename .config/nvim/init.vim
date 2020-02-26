@@ -10,10 +10,34 @@
 call plug#begin()
 " ここから下にインストールするプラグインを書く
 
-"#############################################################################
-" coc lsp
-"#############################################################################
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug '907th/vim-auto-save' " auto save
+Plug 'djoshea/vim-autoread' " ファイルの再読込
+" file finder
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
+Plug 'matze/vim-move' " (選択した)行を移動させる
+Plug 'tpope/vim-commentary' " commentout/inできる
+Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
+Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
+Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
+Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
+Plug 'simeji/winresizer' " window resizer
+" color scheme
+Plug 'morhetz/gruvbox'
+Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+" status and tab line
+Plug 'itchyny/lightline.vim'
+" icons
+Plug 'ryanoasis/vim-devicons' " coc explorerやlightlineむけのアイコン表示用
+" git
+Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
+
+call plug#end()
+
+" coc.nvim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc extensions
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp', 'coc-rls']
 " cocのDiagnosticsの、左横のアイコンの色設定
@@ -31,8 +55,22 @@ nmap <space>rn <Plug>(coc-rename)
 "スペースfmtでFormat
 nmap <space>fmt <Plug>(coc-format)
 
+" git
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set updatetime=100 " git statusの更新間隔を短く
+set signcolumn=yes " sign columnを常に表示する
+" gitgutter
+" let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
+let g:gitgutter_highlight_linenrs = 1 " line number highlight
+let g:gitgutter_override_sign_column_highlight = 0
+" highlight sign
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
+highlight GitGutterChangeDelete ctermfg=4
+
 " file manager
-"-----------------------------------------------------------------------------
+"=============================================================================
 " coc-explorer space-eでcoc-explorerを開く
 nmap <space>e :CocCommand explorer<CR>
 " デフォルトのファイルエクスプローラnetrwの設定
@@ -44,106 +82,23 @@ nmap <space>e :CocCommand explorer<CR>
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
-"#############################################################################
-" autosave
-"#############################################################################
-Plug '907th/vim-auto-save' " 自動セーブ
-let g:auto_save = 1 " enable auto save
-
-Plug 'djoshea/vim-autoread' " ファイルの再読込
-
-"#############################################################################
 " file finder
-"#############################################################################
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+"=============================================================================
+" skim
 command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
 command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
 " space f でskimを起動
 nnoremap <Space>s :SK<CR>
 
-"#############################################################################
-" cursor move
-"#############################################################################
-Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
-
-"#############################################################################
-" text editing
-"#############################################################################
-Plug 'matze/vim-move' " (選択した)行を移動させる
-Plug 'tpope/vim-commentary' " commentout/inできる
-Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
-Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
-Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
-Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
-" KとJで選択範囲の拡大縮小
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
-Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
-
-"#############################################################################
-" window resizer
-"#############################################################################
-Plug 'simeji/winresizer'
-
-" color scheme
-"-----------------------------------------------------------------------------
-Plug 'morhetz/gruvbox'
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-
-"#############################################################################
-" status and tab line
-"#############################################################################
-Plug 'itchyny/lightline.vim'
-" lightline settings
-let g:lightline = {
-  \'active': {
-    \'right': [
-      \['coc']
-    \]
-  \},
-  \'component_function': {
-    \'filetype': 'MyFiletype',
-    \'fileformat': 'MyFileformat',
-    \'coc': 'coc#status'
-  \}
-\}
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
-
-"#############################################################################
-" icons
-"#############################################################################
-Plug 'ryanoasis/vim-devicons' " coc explorerやlightlineむけのアイコン表示用
-let g:webdevicons_enable=1
-
-"#############################################################################
-" git
-"#############################################################################
-Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
-set updatetime=100 " git statusの更新間隔を短く
-set signcolumn=yes " sign columnを常に表示する
-" let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
-let g:gitgutter_highlight_linenrs = 1 " line number highlight
-let g:gitgutter_override_sign_column_highlight = 0
-" highlight sign
-highlight GitGutterAdd ctermfg=2
-highlight GitGutterChange ctermfg=3
-highlight GitGutterDelete ctermfg=1
-highlight GitGutterChangeDelete ctermfg=4
-
-" プラグインを書くのはここまで！
-call plug#end()
-
-"#############################################################################
 " terminal
-"#############################################################################
+"=============================================================================
 map <C-s> :terminal<CR>
 " Escでterminal modeを終了
 tnoremap <Esc> <C-\><C-n>
+
+" vim-autosave
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:auto_save = 1 " enable auto save
 
 "#############################################################################
 " editor
@@ -153,6 +108,12 @@ set fileformats=dos,unix,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
+
+" vim-expand_region
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KとJで選択範囲の拡大縮小
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
 
 " language settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,11 +137,36 @@ let g:gruvbox_contrast_dark = 'hard'
 " colorscheme gruvbox-material
 " let g:gruvbox_material_disable_italic_comment = 1 " disable italic comment
 
+" status line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" lightline settings
+let g:lightline = {
+  \'active': {
+    \'right': [
+      \['coc']
+    \]
+  \},
+  \'component_function': {
+    \'filetype': 'MyFiletype',
+    \'fileformat': 'MyFileformat',
+    \'coc': 'coc#status'
+  \}
+\}
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
 "#############################################################################
 " font
 "#############################################################################
 set guifont=DroidSansMono\ Nerd\ Font\ 11
-
+" icons
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" devicons
+let g:webdevicons_enable=1
 "#############################################################################
 " leader
 "#############################################################################
