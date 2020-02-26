@@ -1,7 +1,7 @@
 {
   "suggest.numberSelect": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.enableVimDevions": true,
+  "explorer.icon.enableVimDevicons": true,
   "explorer.buffer.showHiddenBuffers": true,
   "explorer.position": "left",
   "explorer.width": 40,
@@ -9,5 +9,10 @@
   "explorer.file.column.git.showIgnored": true,
   "json.format.enable": true,
   "javascript.format.enabled": true,
-  "typescript.format.enabled": true
+  "typescript.format.enabled": true,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  }
 }
