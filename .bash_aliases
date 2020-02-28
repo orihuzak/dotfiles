@@ -34,6 +34,7 @@ alias getaudio='youtube-dl --extract-audio'
 # youtubeから音声をDLするためのalias
 alias reina="youtube-dl -o '~/koe/reina-yuzuki/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 alias rin="youtube-dl -o '~/koe/rin-yuzuki/柚木凛-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
+alias moa="youtube-dl -o '~/koe/moa-madoromi/まどろみもあ-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
 
