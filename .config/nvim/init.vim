@@ -107,6 +107,7 @@ set fileformats=dos,unix,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
+set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 
 " vim-expand_region
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
