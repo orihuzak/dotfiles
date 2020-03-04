@@ -58,8 +58,8 @@ getVSCode() {
   sudo apt-get update
   sudo apt-get install code
   # install extension
-  # たぶんこれだけインストールすればあとはこの拡張機能がやってくれるはず
   code --install-extension Shan.code-settings-sync
+  # この拡張だけインストールすればあとはこの拡張機能がやってくれるはず
 }
 
 getYoutubeDL() {
@@ -147,13 +147,6 @@ getHyper() {
   sudo apt-get install -f
 }
 
-getVundle() {
-  # install Vundle
-  # see https://github.com/VundleVim/Vundle.vim
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
-}
-
 getNerdFonts() {
   # install Nerd Fonts
   # see https://github.com/ryanoasis/nerd-fonts#option-1-download-and-install-manually
@@ -161,6 +154,13 @@ getNerdFonts() {
   cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otfi
   fc-cache -fv
   cd ~
+}
+
+getVim-plug() {
+  # install vim-plug for neovim
+  # see https://github.com/junegunn/vim-plug
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 sudo apt-get update
@@ -175,21 +175,25 @@ sudo apt-get install -y \
   zip \
   software-properties-common \
   tree \
-  tmux \
-  vim-nox \
-  ffmpeg \
   vlc
 
-getHyper
-getHomebrew
-getTrashCLI
+# fonts
 getSourceHanCodeJP
-getFiraCode
+getNerdFonts
+# getFiraCode
+
+# CUI tools
 getFcitx
-getYoutubeDL
+getTrashCLI
+getVim-plug
 getNodejs
-getVSCode
+getHomebrew
 getDocker
+# getYoutubeDL
+
+# GUI tools
+getHyper
+getVSCode
 
 # dotfilesをgithubからcloneする
 git clone "$GITHUB_URL" "$DOTPATH"
@@ -205,13 +209,8 @@ do
   # 除外したいファイル
   [ "$f" = ".git" ] && continue
   [ "$f" = ".gitignore"] && continue
-  if [ "$f" = ".hyper.js" ]; then
-    # hyperの設定ファイルを指定の場所に設置 https://hyper.is/#cfg
-    ln -snfv "$DOTPATH/$f" "$HOME"/.config/hyper/"$f"
-  fi
 
   ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
 
-getVundle
 source ~/.bashrc
