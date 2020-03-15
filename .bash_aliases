@@ -22,6 +22,7 @@ alias vim='nvim'
 alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive' # cd to google drive
 alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe' # cd to GoogleDrive/koe
 alias koe='cd ~/koe'
+alias game='cd ~/game'
 alias dotfiles='cd ~/dotfiles'
 alias work='cd ~/work'
 
