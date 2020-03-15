@@ -40,6 +40,8 @@ let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css'
 " cocのDiagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
+" coc-highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <space>l :<C-u>CocList<cr>
 "スペースhでHover
 nmap <space>h :<C-u>call CocAction('doHover')<cr>
@@ -105,6 +107,7 @@ set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
+set termguicolors
 
 " vim-expand_region
 "-----------------------------------------------------------------------------
@@ -127,7 +130,6 @@ let g:gruvbox_contrast_dark = 'hard'
 
 " gruvbox-material
 "---------------------
-" set termguicolors
 " set background=dark    " Setting dark mode
 " " this configuration option should be placed before `colorscheme gruvbox-material`
 " let g:gruvbox_material_background = 'hard'
