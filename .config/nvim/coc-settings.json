@@ -9,6 +9,7 @@
   "explorer.width": 40,
   "explorer.file.showHiddenFiles": true,
   "explorer.file.column.git.showIgnored": true,
+  "json.enable": true,
   "json.format.enable": true,
   "javascript.format.enabled": true,
   "typescript.format.enabled": true,
