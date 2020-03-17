@@ -51,8 +51,12 @@ nmap <space>df <Plug>(coc-definition)
 nmap <space>rf <Plug>(coc-references)
 "スペースrnでRename
 nmap <space>rn <Plug>(coc-rename)
+" Formatting
 "スペースfmtでFormat
 nmap <space>fmt <Plug>(coc-format)
+" Formatting selected code.
+xmap <space>f <Plug>(coc-format-selected)
+nmap <space>f <Plug>(coc-format-selected)
 
 " git
 "-----------------------------------------------------------------------------
