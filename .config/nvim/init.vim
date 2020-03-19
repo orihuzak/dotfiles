@@ -115,7 +115,7 @@ set termguicolors
 
 " select
 "-----------------------------------------------------------------------------
-nnoremap <C-A> ggVG " select all
+nnoremap <A-a> ggVG " Alt-a to select all
 
 " vim-expand_region
 "-----------------------------------------------------------------------------
