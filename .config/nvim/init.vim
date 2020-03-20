@@ -291,6 +291,8 @@ nnoremap st :<C-u>tabnew<CR> " 新しいタブを追加
 nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR> " 横に分割
 nnoremap sv :<C-u>vs<CR> " 縦に分割
+nnoremap sc :close<CR> " close window
+" nnoremap so :only<CR> " close all not current windows
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
