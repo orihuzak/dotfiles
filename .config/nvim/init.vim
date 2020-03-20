@@ -22,6 +22,7 @@ Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操�
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 Plug 'simeji/winresizer' " window resizer
+Plug 'thaerkh/vim-workspace' " vim session manager
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
