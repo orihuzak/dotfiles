@@ -5,12 +5,12 @@
 .emacs.d/elpa/
 
 # nvim plugin directory
-.config/nvim/plugged
+.config/nvim/plugged/
 # nvimデフォルトのexplorerのhistory file
 .config/nvim/.netrwhist
 
 # yarn globalのnode_modulesを除外
-.config/yarn/global/node_modules
+.config/yarn/global/node_modules/
 
 # vim session file and dir
 .undodir/
