@@ -50,7 +50,7 @@ alias work='cd ~/work'
 alias gethls='youtube-dl -f best -g'
 # youtubeから音声をカレントディレクトリにDLする
 alias getaudio='youtube-dl --extract-audio'
-alias getlive='youtube-dl --hls-uset-mpegts --extract-audio'
+alias getlive='youtube-dl --hls-use-mpegts --extract-audio'
 
 # youtubeから音声をDLするためのalias
 alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
