@@ -6,6 +6,9 @@
 # command aliases
 
 alias ll='ls -lha'
+
+# search
+alias gg='git grep'
 # docker
 alias dcr='docker-compose run --rm'
 # nvim
