@@ -14,19 +14,32 @@ alias dcr='docker-compose run --rm'
 # nvim
 alias vi='nvim'
 alias vim='nvim'
+
 # apt
-# alias api='sudo apt install'
-# alias apr='sudo apt remove'
-# alias apu='sudo apt update'
+alias ap='sudo apt'
+alias api='sudo apt install'
+alias apr='sudo apt remove'
+alias apu='sudo apt update'
+
+# apt-get 
+alias ag='sudo apt-get'
+alias agi='sudo apt-get install'
+alias agr='sudo apt-get remove'
+alias agu='sudo apt-get update'
 
 
 # change directory
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
 alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive' # cd to google drive
 alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe' # cd to GoogleDrive/koe
 alias koe='cd ~/koe'
 alias game='cd ~/game'
-alias dotfiles='cd ~/dotfiles'
+alias dot='cd ~/dotfiles'
 alias work='cd ~/work'
 
 
