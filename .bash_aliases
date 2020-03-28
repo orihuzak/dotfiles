@@ -38,6 +38,7 @@ alias ..3='cd ../../..'
 alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive' # cd to google drive
 alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe' # cd to GoogleDrive/koe
 alias koe='cd ~/koe'
+alias koedl='cd ~/koe-dl'
 alias game='cd ~/game'
 alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
