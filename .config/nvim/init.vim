@@ -26,6 +26,7 @@ Plug 'thaerkh/vim-workspace' " vim session manager
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+Plug 'ayu-theme/ayu-vim'
 " status and tab line
 Plug 'itchyny/lightline.vim'
 " icons
@@ -112,7 +113,6 @@ set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
-set termguicolors
 
 " select
 "-----------------------------------------------------------------------------
@@ -131,11 +131,13 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " color scheme
 "-----------------------------------------------------------------------------
+set termguicolors
+
 " gruvbox
 "---------------------
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_contrast_dark = 'hard'
 
 " gruvbox-material
 "---------------------
@@ -144,6 +146,12 @@ let g:gruvbox_contrast_dark = 'hard'
 " let g:gruvbox_material_background = 'hard'
 " colorscheme gruvbox-material
 " let g:gruvbox_material_disable_italic_comment = 1 " disable italic comment
+
+" ayu-vim
+"---------------------
+" line numberが暗くなって見にくい
+let ayucolor="mirage" " light, mirage, dark
+colorscheme ayu
 
 " status line
 "-----------------------------------------------------------------------------
