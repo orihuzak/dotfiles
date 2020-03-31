@@ -9,10 +9,14 @@
 call plug#begin()
 " ここから下にインストールするプラグインを書く
 
+" auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" manage file
 Plug '907th/vim-auto-save' " auto save
 Plug 'djoshea/vim-autoread' " ファイルの再読込
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' } " file finder
+Plug 'thaerkh/vim-workspace' " vim session manager
+" edit
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 Plug 'matze/vim-move' " (選択した)行を移動させる
 Plug 'tpope/vim-commentary' " commentout/inできる
@@ -21,12 +25,13 @@ Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
+" manage window
 Plug 'simeji/winresizer' " window resizer
-Plug 'thaerkh/vim-workspace' " vim session manager
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'ayu-theme/ayu-vim'
+Plug 'Yggdroot/indentLine' " show indent
 " status and tab line
 Plug 'itchyny/lightline.vim'
 " icons
@@ -135,9 +140,9 @@ set termguicolors
 
 " gruvbox
 "---------------------
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
 
 " gruvbox-material
 "---------------------
@@ -150,8 +155,8 @@ set termguicolors
 " ayu-vim
 "---------------------
 " line numberが暗くなって見にくい
-let ayucolor="mirage" " light, mirage, dark
-colorscheme ayu
+" let ayucolor="mirage" " light, mirage, dark
+" colorscheme ayu
 
 " status line
 "-----------------------------------------------------------------------------
@@ -200,6 +205,8 @@ vnoremap <A-l> >gv
 vnoremap <A-h> <gv
 inoremap <A-l> <C-t>
 inoremap <A-h> <C-d>
+" indentLine
+let g:indentLine_char = '▏'
 
 " 不可視文字の可視化
 "-----------------------------------------------------------------------------
