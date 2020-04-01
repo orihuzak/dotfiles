@@ -31,7 +31,8 @@ Plug 'simeji/winresizer' " window resizer
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'ayu-theme/ayu-vim'
-Plug 'Yggdroot/indentLine' " show indent
+" indent line
+Plug 'nathanaelkane/vim-indent-guides'
 " status and tab line
 Plug 'itchyny/lightline.vim'
 " icons
@@ -206,7 +207,9 @@ vnoremap <A-h> <gv
 inoremap <A-l> <C-t>
 inoremap <A-h> <C-d>
 " indentLine
-let g:indentLine_char = '▏'
+let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
 
 " 不可視文字の可視化
 "-----------------------------------------------------------------------------
