@@ -136,6 +136,9 @@ set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
+" vim-workspace
+" let g:workspace_autosave_always = 1
+" let g:workspace_autosave = 1
 
 " select
 "-----------------------------------------------------------------------------
