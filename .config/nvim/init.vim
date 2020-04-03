@@ -34,6 +34,7 @@ Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'ayu-theme/ayu-vim'
 " indent line
+" Plug 'thaerkh/vim-indentguides'
 " Plug 'nathanaelkane/vim-indent-guides'
 " status and tab line
 Plug 'itchyny/lightline.vim'
