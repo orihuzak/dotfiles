@@ -59,6 +59,7 @@ alias getlivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio 
 alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 alias rin="youtube-dl -o '~/koe/rin/柚木凛-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 alias moa="youtube-dl -o '~/koe/moa/まどろみもあ-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
+alias yukari="youtube-dl -o '~/koe/yukari/藤宮ゆかり-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
 
