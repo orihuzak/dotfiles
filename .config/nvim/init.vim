@@ -11,6 +11,8 @@ call plug#begin()
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Languages
+Plug 'elzr/vim-json' " to show json double quote
 " snippets
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 " manage file
@@ -34,8 +36,9 @@ Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'ayu-theme/ayu-vim'
 " indent line
+Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 " status and tab line
 Plug 'itchyny/lightline.vim'
 " icons
@@ -83,6 +86,9 @@ let g:coc_snippet_next = '<tab>'
 
 " jsdoc
 
+" Language support
+"-----------------------------------------------------------------------------
+let g:vim_json_syntax_conceal = 0 " to show json double quote "
 
 " git
 "-----------------------------------------------------------------------------
@@ -227,8 +233,10 @@ vnoremap <A-l> >gv
 vnoremap <A-h> <gv
 inoremap <A-l> <C-t>
 inoremap <A-h> <C-d>
+" indentLine
+let g:indentLine_char = '▏'
 " vim indent guides
-let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_guide_size = 1
 
