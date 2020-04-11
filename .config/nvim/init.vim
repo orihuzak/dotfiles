@@ -14,7 +14,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Languages
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'leafgarland/typescript-vim'
-Plug 'isRuslan/vim-es6'
 " snippets
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 " manage file
