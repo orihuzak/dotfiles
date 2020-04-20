@@ -27,6 +27,11 @@ alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
 alias agu='sudo apt-get update'
 
+# homebrew
+alias br='brew'
+alias bru='brew update'
+alias brug='brew upgrade'
+alias brl='brew list'
 
 # change directory
 
