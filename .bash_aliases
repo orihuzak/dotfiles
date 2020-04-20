@@ -29,6 +29,7 @@ alias agu='sudo apt-get update'
 
 # homebrew
 alias br='brew'
+alias bri='brew install'
 alias bru='brew update'
 alias brug='brew upgrade'
 alias brl='brew list'
@@ -55,8 +56,7 @@ alias work='cd ~/work'
 alias dlaudio="youtube-dl --extract-audio"
 # youtube liveの最高品質のhls urlを取得する
 alias gethls='youtube-dl -f best -g'
-# youtubeから音声をカレントディレクトリにDLする
-# youtube liveの開始時に使う
+# ライブ配信の音声をホームディレクトリにDLする
 alias dllive="youtube-dl --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
 alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-ffmpeg-%(title)s.%(ext)s'"
 
@@ -64,7 +64,6 @@ alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio -
 alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 alias rin="youtube-dl -o '~/koe/rin/柚木凛-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 alias moa="youtube-dl -o '~/koe/moa/まどろみもあ-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
-alias yukari="youtube-dl -o '~/koe/yukari/藤宮ゆかり-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
 
