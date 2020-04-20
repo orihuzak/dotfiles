@@ -52,8 +52,8 @@ alias dlaudio="youtube-dl --extract-audio"
 alias gethls='youtube-dl -f best -g'
 # youtubeから音声をカレントディレクトリにDLする
 # youtube liveの開始時に使う
-alias getlive="youtube-dl --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
-alias getlivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-ffmpeg-%(title)s.%(ext)s'"
+alias dllive="youtube-dl --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
+alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-ffmpeg-%(title)s.%(ext)s'"
 
 # 特定のチャンネル向けのDL alias, ライブ終了直後に実行する
 alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
