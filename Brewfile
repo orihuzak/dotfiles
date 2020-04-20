@@ -8,4 +8,5 @@ brew "p7zip"
 brew "neovim"
 brew "ffmpeg"
 brew "youtube-dl"
+brew "node"
 
