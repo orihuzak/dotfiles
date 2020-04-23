@@ -20,12 +20,14 @@ alias ap='sudo apt'
 alias api='sudo apt install'
 alias apr='sudo apt remove'
 alias apu='sudo apt update'
+alias apug='sudo apt upgrade'
 
 # apt-get 
 alias ag='sudo apt-get'
 alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
 alias agu='sudo apt-get update'
+alias agug='sudo apt-get upgrade'
 
 # homebrew
 alias br='brew'
