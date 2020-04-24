@@ -52,6 +52,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# add paths
 export PATH="$HOME/.local/bin:$PATH"
 # linuxbrew(homebrew) path
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -59,6 +60,8 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 export PATH="$(yarn global bin):$PATH"
 # Cargo's bin directory for Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+# deno
+export PATH="$HOME/.deno/bin:$PATH"
 
 ### Complete Messages
 echo "Loding .profile completed!!"
