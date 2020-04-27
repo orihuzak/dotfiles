@@ -78,6 +78,8 @@ alias avconcat='~/dotfiles/avconcat.sh' # concat audio or video files
 # avconcatで連結したいファイルを書く~/mylist.txtをすぐに編集するためのalias
 alias mylist='vim ~/mylist.txt'
 
+# generate ssh key
+alias genssh='ssh-keygen -t rsa -b 4096 -C "arx.solid@gmail.com"'
 
 # setup ssh-agent
 
