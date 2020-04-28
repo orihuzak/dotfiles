@@ -2,7 +2,7 @@
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnType": true,
   "languageserver": {},
-  "suggest.numberSelect": true,
+  "suggest.numberSelect": false,
   "explorer.icon.enableNerdfont": true,
   "explorer.icon.enableVimDevicons": true,
   "explorer.buffer.showHiddenBuffers": true,
