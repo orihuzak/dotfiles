@@ -10,4 +10,5 @@ brew "ffmpeg"
 brew "youtube-dl"
 brew "node"
 brew "yarn"
+brew "fish"
 
