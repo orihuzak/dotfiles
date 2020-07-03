@@ -2,7 +2,11 @@
 ## ignore files and dirs from git
 ################################################################################
 
+# emacs
 .emacs.d/elpa/
+
+# brew
+Brewfile.lock.json
 
 # nvim plugin directory
 .config/nvim/plugged/
