@@ -37,6 +37,9 @@ alias bru='brew update'
 alias brug='brew upgrade'
 alias brl='brew list'
 
+# python
+alias python='python3'
+
 # change directory
 
 alias ..='cd ..'
