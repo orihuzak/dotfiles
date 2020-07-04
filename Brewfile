@@ -11,3 +11,5 @@ brew "youtube-dl"
 brew "node"
 brew "yarn"
 brew "hub"
+brew "python"
+
