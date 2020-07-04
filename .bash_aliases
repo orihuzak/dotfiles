@@ -5,6 +5,7 @@
 
 # command aliases
 
+alias shells='cat /etc/shells'
 alias ll='ls -lha'
 
 # search
