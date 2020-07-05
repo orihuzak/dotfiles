@@ -3,5 +3,5 @@
   name = Kazuhiro Haraguchi
   email = arx.solid@gmail.com
 [core]
-  autocrlf = true
+  autocrlf = false
 
