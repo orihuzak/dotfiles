@@ -1,12 +1,10 @@
 #******************************************************************************
 #
-# .profile
+# .bash_profile
 #
 # 環境変数などの設定
 # 
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
+# ~/.bash_profile: executed by the command interpreter for login shells.
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 #
@@ -64,5 +62,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 
 ### Complete Messages
-echo "Loding .profile completed!!"
+echo "Loding .bash_profile completed!!"
 
