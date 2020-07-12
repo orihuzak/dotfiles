@@ -89,6 +89,7 @@ let g:coc_snippet_next = '<tab>'
 
 " Language support
 "-----------------------------------------------------------------------------
+let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
 let g:vim_json_syntax_conceal = 0 " to show json double quote "
 
 " git
