@@ -8,8 +8,12 @@
 alias shells='cat /etc/shells'
 alias ll='ls -lha'
 
+# git
+alias git='hub'
+
 # search
 alias gg='git grep'
+
 # docker
 alias dcr='docker-compose run --rm'
 # nvim
