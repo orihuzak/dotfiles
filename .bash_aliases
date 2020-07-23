@@ -93,15 +93,3 @@ alias mylist='vim ~/mylist.txt'
 # generate ssh key
 alias genssh='ssh-keygen -t rsa -b 4096 -C "arx.solid@gmail.com"'
 
-# setup ssh-agent
-
-if [ -f ~/.ssh-agent ]; then
-  . ~/.ssh-agent
-fi
-if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
-  ssh-agent > ~/.ssh-agent
-  . ~/.ssh-agent
-fi
-ssh-add -l >& /dev/null || ssh-add
-
-
