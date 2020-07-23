@@ -45,6 +45,9 @@ alias brl='brew list'
 alias python='python3'
 alias pip='pip3'
 
+# youtube-dl
+alias ydl='youtube-dl'
+
 # change directory
 
 alias ..='cd ..'
