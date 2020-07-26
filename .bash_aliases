@@ -48,6 +48,31 @@ alias pip='pip3'
 # youtube-dl
 alias ydl='youtube-dl'
 
+# download video and audio
+
+# youtube liveの最高品質のhls urlを取得する
+alias yhls='youtube-dl -f best -g'
+
+alias yaudio="youtube-dl --extract-audio"
+# ライブ配信の音声をホームディレクトリにDLする
+alias ylive="youtube-dl --hls-use-mpegts --extract-audio"
+alias ylivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio"
+
+# 特定のチャンネル向けのDL alias, ライブ終了直後に実行する
+alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
+alias rin="youtube-dl -o '~/koe/rin/柚木凛-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
+alias moa="youtube-dl -o '~/koe/moa/まどろみもあ-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
+# open youtube live with vlc without video
+alias vlcaudio='vlc --no-video'
+
+# video and audio file management
+
+alias tomp3='~/dotfiles/tomp3.sh'
+alias tom4a='~/dotfiles/tom4a.sh'
+alias avconcat='~/dotfiles/avconcat.sh' # concat audio or video files
+# avconcatで連結したいファイルを書く~/mylist.txtをすぐに編集するためのalias
+alias mylist='vim ~/mylist.txt'
+
 # change directory
 
 alias ..='cd ..'
@@ -63,33 +88,6 @@ alias game='cd ~/game'
 alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
 alias work='cd ~/work'
-
-
-# download video and audio
-
-# youtube liveの最高品質のhls urlを取得する
-alias gethls='youtube-dl -f best -g'
-
-alias dlaudio="youtube-dl --extract-audio"
-# ライブ配信の音声をホームディレクトリにDLする
-alias dllive="youtube-dl --hls-use-mpegts --extract-audio"
-alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio"
-
-# 特定のチャンネル向けのDL alias, ライブ終了直後に実行する
-alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
-alias rin="youtube-dl -o '~/koe/rin/柚木凛-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
-alias moa="youtube-dl -o '~/koe/moa/まどろみもあ-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
-# open youtube live with vlc without video
-alias vlcaudio='vlc --no-video'
-
-
-# video and audio file management
-
-alias tomp3='~/dotfiles/tomp3.sh'
-alias tom4a='~/dotfiles/tom4a.sh'
-alias avconcat='~/dotfiles/avconcat.sh' # concat audio or video files
-# avconcatで連結したいファイルを書く~/mylist.txtをすぐに編集するためのalias
-alias mylist='vim ~/mylist.txt'
 
 # generate ssh key
 alias genssh='ssh-keygen -t rsa -b 4096 -C "arx.solid@gmail.com"'
