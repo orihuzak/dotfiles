@@ -70,10 +70,10 @@ alias work='cd ~/work'
 # youtube liveの最高品質のhls urlを取得する
 alias gethls='youtube-dl -f best -g'
 
-alias dlaudio="youtube-dl --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
+alias dlaudio="youtube-dl --extract-audio"
 # ライブ配信の音声をホームディレクトリにDLする
-alias dllive="youtube-dl --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
-alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-ffmpeg-%(title)s.%(ext)s'"
+alias dllive="youtube-dl --hls-use-mpegts --extract-audio"
+alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio"
 
 # 特定のチャンネル向けのDL alias, ライブ終了直後に実行する
 alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
