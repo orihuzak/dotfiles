@@ -1,4 +1,5 @@
 # youtube-dl config
 
 # save all files under Audio directory in your home directory
--o ~/Audio/$(date +'%Y%m%d')-%(title)s.%(ext)s
+-o ~/Audio/%(upload_date)s-%(title)s.%(ext)s
+
