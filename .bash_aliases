@@ -67,9 +67,10 @@ alias work='cd ~/work'
 
 # download video and audio
 
-alias dlaudio="youtube-dl --extract-audio"
 # youtube liveの最高品質のhls urlを取得する
 alias gethls='youtube-dl -f best -g'
+
+alias dlaudio="youtube-dl --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
 # ライブ配信の音声をホームディレクトリにDLする
 alias dllive="youtube-dl --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-%(title)s.%(ext)s'"
 alias dllivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio -o '~/$(date +'%Y%m%d')-ffmpeg-%(title)s.%(ext)s'"
