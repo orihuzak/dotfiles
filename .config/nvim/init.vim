@@ -1,11 +1,7 @@
-"#############################################################################
-" neovim config file
-"#############################################################################
+" nvim config file
 
-"#############################################################################
 " Plugins
 " using vim-plugin https://github.com/junegunn/vim-plug
-"#############################################################################
 call plug#begin()
 " ここから下にインストールするプラグインを書く
 
@@ -53,7 +49,23 @@ call plug#end()
 " coc.nvim
 "-----------------------------------------------------------------------------
 " coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-snippets', 'coc-emmet', 'coc-markdownlint', 'coc-vetur', 'coc-explorer', 'coc-git', 'coc-eslint', 'coc-highlight', 'coc-vimlsp', 'coc-rls']
+let g:coc_global_extensions = [
+\ 'coc-css',
+\ 'coc-html',
+\ 'coc-json',
+\ 'coc-tsserver',
+\ 'coc-explorer',
+\ 'coc-snippets',
+\ 'coc-emmet',
+\ 'coc-markdownlint',
+\ 'coc-vetur',
+\ 'coc-git',
+\ 'coc-eslint',
+\ 'coc-highlight',
+\ 'coc-vimlsp',
+\ 'coc-rls'
+\ ]
+
 " cocのDiagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
@@ -151,9 +163,14 @@ set nobackup " ファイルを上書きするときにバックアップを作�
 " let g:workspace_autosave_always = 1
 " let g:workspace_autosave = 1
 
+" Keymap
+" return to new line in normal mode
+nmap <CR> i<CR><ESC>
 " select
 "-----------------------------------------------------------------------------
-nnoremap <A-a> ggVG " Alt-a to select all
+" select all by alt-a
+nnoremap <A-a> ggVG
+
 
 " vim-expand_region
 "-----------------------------------------------------------------------------
