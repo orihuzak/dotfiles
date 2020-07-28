@@ -62,7 +62,6 @@ let g:coc_global_extensions = [
 \ 'coc-html',
 \ 'coc-json',
 \ 'coc-tsserver',
-\ 'coc-explorer',
 \ 'coc-snippets',
 \ 'coc-emmet',
 \ 'coc-markdownlint',
@@ -195,19 +194,10 @@ call defx#custom#option('_', {
   \ 'toggle': 1,
   \ 'direction': 'botright',
   \ 'resume': 1,
-  \ 'columns': 'git:mark:indent:icons:filename:type'
+  \ 'columns': 'mark:indent:git:icons:filename:type'
 \ })
 
-
-"coc-explorer
-" space-eでcoc-explorerを開く
-" nmap <space>e :CocCommand explorer<CR>
-
 " netrw
-" let g:netrw_banner = 0 " 上部の表示を非表示
-" let g:netrw_liststyle = 3 " 表示形式をtree viewに変更
-" let g:netrw_altv = 1 " 左右分割を右側に開く
-" let g:netrw_winsize = 85 " 分割で開いたときに85%のサイズで開く
 " netrwの無効化
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
@@ -355,7 +345,8 @@ set scrolloff=2 " スクロール開始位置を画面端から2行目にする
 set mouse=a " マウススクロールを有効化
 
 " line
-set number " 行番号の表示
+" set number " 行番号の表示
+set relativenumber
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
