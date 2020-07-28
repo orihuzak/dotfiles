@@ -1,9 +1,8 @@
-" nvim config file
+""" nvim config file
 
-" Plugins
-" using vim-plugin https://github.com/junegunn/vim-plug
+""" Vim-Plug https://github.com/junegunn/vim-plug
 call plug#begin()
-" ここから下にインストールするプラグインを書く
+
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -44,11 +43,12 @@ Plug 'itchyny/lightline.vim'
 " icons
 Plug 'ryanoasis/vim-devicons' " coc explorerやlightlineむけのアイコン表示用
 
+
 call plug#end()
 
+""" Plugin Configurations
+
 " coc.nvim
-"-----------------------------------------------------------------------------
-" coc extensions
 let g:coc_global_extensions = [
 \ 'coc-css',
 \ 'coc-html',
@@ -99,17 +99,6 @@ function! s:check_back_space() abort
 endfunction
 let g:coc_snippet_next = '<tab>'
 
-" jsdoc
-
-" Language support
-"-----------------------------------------------------------------------------
-let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
-let g:vim_json_syntax_conceal = 0 " to show json double quote "
-
-" git
-"-----------------------------------------------------------------------------
-set updatetime=100 " git statusの更新間隔を短く
-set signcolumn=yes " sign columnを常に表示する
 " gitgutter
 " let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
 let g:gitgutter_highlight_linenrs = 1 " line number highlight
@@ -120,11 +109,11 @@ highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
 
-" file manager
-"-----------------------------------------------------------------------------
-" coc-explorer space-eでcoc-explorerを開く
+" coc-explorer
+" space-eでcoc-explorerを開く
 nmap <space>e :CocCommand explorer<CR>
-" デフォルトのファイルエクスプローラnetrwの設定
+
+" netrw
 " let g:netrw_banner = 0 " 上部の表示を非表示
 " let g:netrw_liststyle = 3 " 表示形式をtree viewに変更
 " let g:netrw_altv = 1 " 左右分割を右側に開く
@@ -133,26 +122,43 @@ nmap <space>e :CocCommand explorer<CR>
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
-" file finder
-"-----------------------------------------------------------------------------
 " skim
 command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
 command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
 " space f でskimを起動
 nnoremap <Space>s :SK<CR>
 
-" terminal
-"-----------------------------------------------------------------------------
+" vim-autosave
+let g:auto_save = 1 " enable auto save
+
+" vim-expand_region
+" KとJで選択範囲の拡大縮小
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+
+" status line
+" lightline settings
+let g:lightline = {
+\ 'colorscheme': 'wombat',
+\ 'component_function': {
+  \ 'coc': 'coc#status'
+  \ }
+\ }
+
+" Neovim :terminal
 map <C-s> :terminal<CR>
 " Escでterminal modeを終了
 tnoremap <Esc> <C-\><C-n>
 
-" vim-autosave
-"-----------------------------------------------------------------------------
-let g:auto_save = 1 " enable auto save
+" Language support
+let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
+let g:vim_json_syntax_conceal = 0 " to show json double quote "
+
+" git
+set updatetime=100 " git statusの更新間隔を短く
+set signcolumn=yes " sign columnを常に表示する
 
 " editor
-"-----------------------------------------------------------------------------
 set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=dos,unix,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
@@ -163,32 +169,24 @@ set nobackup " ファイルを上書きするときにバックアップを作�
 " let g:workspace_autosave_always = 1
 " let g:workspace_autosave = 1
 
-" Keymap
+" Keymapping
+
 " return to new line in normal mode
 nmap <CR> i<CR><ESC>
 " select
-"-----------------------------------------------------------------------------
+
 " select all by alt-a
 nnoremap <A-a> ggVG
 
 
-" vim-expand_region
-"-----------------------------------------------------------------------------
-" KとJで選択範囲の拡大縮小
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
-
 " language settings
-"-----------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " color scheme
-"-----------------------------------------------------------------------------
 set termguicolors
 
 " gruvbox
-"---------------------
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
@@ -207,42 +205,27 @@ let g:gruvbox_contrast_dark = 'hard'
 " let ayucolor="mirage" " light, mirage, dark
 " colorscheme ayu
 
-" status line
-"-----------------------------------------------------------------------------
-" lightline settings
-let g:lightline = {
-  \ 'colorscheme': 'wombat',
-  \ 'component_function': {
-    \ 'coc': 'coc#status'
-  \}
-\}
 
 
 " font
-"-----------------------------------------------------------------------------
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 
-
 " icons
-"-----------------------------------------------------------------------------
 " devicons
 let g:webdevicons_enable=1
 
 
 " leader
-"-----------------------------------------------------------------------------
 let mapleader=","
 noremap \ ,
 
 " insert modeでのcursor移動
-"-----------------------------------------------------------------------------
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
 
 " indent
-"-----------------------------------------------------------------------------
 set smartindent " 自動indentの設定
 set expandtab " tabを半角スペースにする
 set tabstop=2 " tab幅の設定
@@ -262,7 +245,6 @@ let g:indentLine_char = '▏'
 " let g:indent_guides_guide_size = 1
 
 " 不可視文字の可視化
-"-----------------------------------------------------------------------------
 set list " 不可視文字の可視化
 set listchars=tab:»-,space:· " 不可視文字の表示を定義
 " spaceの候補 ["·", "␣"]
@@ -271,7 +253,6 @@ hi NonText ctermbg=None ctermfg=59 guibg=NONE
 hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 
 " status bar
-"-----------------------------------------------------------------------------
 set showcmd " 入力中のコマンドをステータスに表示
 set title " タイトルを表示
 set hidden " バッファ編集中でも他のファイルを開けるように
@@ -279,16 +260,13 @@ set wildmenu " vimバーからファイルを選択可能
 set laststatus=2 " ステータスラインを常に表示
 
 " syntax highlighting
-"-----------------------------------------------------------------------------
 syntax enable
 
 " scroll
-"-----------------------------------------------------------------------------
 set scrolloff=2 " スクロール開始位置を画面端から2行目にする
 set mouse=a " マウススクロールを有効化
 
 " line
-"-----------------------------------------------------------------------------
 set number " 行番号の表示
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
@@ -303,7 +281,6 @@ vmap <A-k> <Plug>MoveBlockUp
 vmap <A-j> <Plug>MoveBlockDown
 
 " cursor
-"-----------------------------------------------------------------------------
 set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
 set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 " 折り返し行の移動について表示上の行も移動できるようにする
@@ -323,12 +300,10 @@ if has("autocmd")
 endif
 
 " copy and paste
-"-----------------------------------------------------------------------------
 set guioptions+=a " ヤンクした内容をクリップボードに入れる
 set clipboard=unnamedplus
 
 " 検索
-"-----------------------------------------------------------------------------
 set ignorecase " 検索文字列が小文字の場合は大小文字を区別なく検索
 set smartcase " 検索文字列に大文字が含まれている場合は区別して検索
 set incsearch " 検索文字列入力中に順次対象文字列にヒットさせる
@@ -338,7 +313,6 @@ set hlsearch " 検索語をハイライト
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Tabと画面分割の設定
-"-----------------------------------------------------------------------------
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
