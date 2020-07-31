@@ -2,9 +2,9 @@
 
 ## setup Debian and Ubuntu
 run command
-'''bash
+```bash
 curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/install.sh | bash
-'''
+```
 
 ## setup crostini
 run command
