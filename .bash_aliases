@@ -29,6 +29,7 @@ alias api='sudo apt install'
 alias apr='sudo apt remove'
 alias apu='sudo apt update'
 alias apug='sudo apt upgrade'
+alias aps='sudo apt search'
 
 # apt-get 
 alias ag='sudo apt-get'
@@ -36,6 +37,7 @@ alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
 alias agu='sudo apt-get update'
 alias agug='sudo apt-get upgrade'
+alias ags='sudo apt-get search'
 
 # homebrew
 alias br='brew'
@@ -43,6 +45,7 @@ alias bri='brew install'
 alias bru='brew update'
 alias brug='brew upgrade'
 alias brl='brew list'
+alias brs='brew search'
 
 # python
 alias python='python3'
