@@ -37,7 +37,6 @@ Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 " git
 Plug 'tpope/vim-fugitive' " enable git command in vim
-" Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
 " manage window
 Plug 'simeji/winresizer' " window resizer
 " color scheme
@@ -109,20 +108,6 @@ let g:coc_snippet_next = '<tab>'
 
 " coc-git
 autocmd CursorHold * CocCommand git.refresh
-
-" gitgutter
-" let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
-let g:gitgutter_highlight_linenrs = 1 " line number highlight
-let g:gitgutter_override_sign_column_highlight = 0
-" highlight sign
-highlight GitGutterAdd ctermfg=2
-highlight GitGutterChange ctermfg=3
-highlight GitGutterDelete ctermfg=1
-highlight GitGutterChangeDelete ctermfg=4
-nmap <space>g :GitGutterSignsToggle<CR>
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-
 
 " defx
 nmap <space>e :Defx<CR>
