@@ -115,6 +115,10 @@ highlight GitGutterAdd ctermfg=2
 highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
+nmap <space>g :GitGutterSignsToggle<CR>
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
 
 " defx
 nmap <space>e :Defx<CR>
