@@ -37,7 +37,7 @@ Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 " git
 Plug 'tpope/vim-fugitive' " enable git command in vim
-Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
+" Plug 'airblade/vim-gitgutter' " gitの差分をeditor左に表示
 " manage window
 Plug 'simeji/winresizer' " window resizer
 " color scheme
@@ -53,6 +53,7 @@ Plug 'itchyny/lightline.vim'
 
 
 call plug#end()
+
 
 """ Plugin Configurations
 
@@ -105,6 +106,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 let g:coc_snippet_next = '<tab>'
+
+" coc-git
+autocmd CursorHold * CocCommand git.refresh
 
 " gitgutter
 " let g:gitgutter_highlight_lines = 2 " git statusに合わせて行の背景色を変更する
