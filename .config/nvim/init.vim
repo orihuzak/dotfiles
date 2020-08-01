@@ -118,6 +118,10 @@ highlight GitGutterChangeDelete ctermfg=4
 
 " defx
 nmap <space>e :Defx<CR>
+" vim外でfileに変更を加えたときに自動で反映する
+autocmd BufWritePost * call defx#redraw()
+autocmd BufEnter * call defx#redraw()
+
 autocmd FileType defx call s:defx_my_settings()
   function! s:defx_my_settings() abort
     " Define mappings
@@ -188,11 +192,22 @@ autocmd FileType defx call s:defx_my_settings()
     \ defx#do_action('change_vim_cwd')
   endfunction
 
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+
 call defx#custom#option('_', {
   \ 'split': 'horizontal',
-  \ 'show_ignored_files': 1,
   \ 'toggle': 1,
   \ 'direction': 'botright',
+  \ 'ignored_files': '.git,Session.vim,.undodir',
   \ 'resume': 1,
   \ 'columns': 'mark:indent:git:icons:filename:type'
 \ })
@@ -317,8 +332,10 @@ vnoremap <A-l> >gv
 vnoremap <A-h> <gv
 inoremap <A-l> <C-t>
 inoremap <A-h> <C-d>
+
 " indentLine
 let g:indentLine_char = '▏'
+let g:indentLine_fileTypeExclude = ['defx']
 " vim indent guides
 " let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_start_level = 2
@@ -347,8 +364,9 @@ set scrolloff=2 " スクロール開始位置を画面端から2行目にする
 set mouse=a " マウススクロールを有効化
 
 " line
-" set number " 行番号の表示
-set relativenumber
+" 絶対/相対行番号をトグル表示する
+set number relativenumber
+noremap <space>l :set relativenumber!<CR>
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
