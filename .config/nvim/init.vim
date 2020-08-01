@@ -35,8 +35,6 @@ Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
-" git
-Plug 'tpope/vim-fugitive' " enable git command in vim
 " manage window
 Plug 'simeji/winresizer' " window resizer
 " color scheme
