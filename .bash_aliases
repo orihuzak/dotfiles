@@ -1,16 +1,19 @@
-
 # aliases setting file
 
-#===============================================================================
 
-# command aliases
+## command aliases
+
 
 alias shells='cat /etc/shells'
 alias ll='ls -lha'
 
 # git
+alias g='hub'
 alias git='hub'
-
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gl='git log'
 # search
 alias gg='git grep'
 
