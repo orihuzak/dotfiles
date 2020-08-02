@@ -9,6 +9,7 @@ alias ll='ls -lha'
 
 # git
 alias git='hub'
+alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
