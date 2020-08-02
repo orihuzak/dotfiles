@@ -12,4 +12,6 @@ brew "node"
 brew "yarn"
 brew "hub"
 brew "python"
+brew "trash-cli"
+
 
