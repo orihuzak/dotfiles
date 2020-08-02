@@ -16,6 +16,7 @@ endif
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 " Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
+Plug 'tpope/vim-fugitive'
 " Languages
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'leafgarland/typescript-vim'
