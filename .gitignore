@@ -6,6 +6,9 @@
 # brew
 Brewfile.lock.json
 
+# vim session file and dir
+.undodir/
+Session.vim
 # nvim plugin directory
 .config/nvim/plugged/
 # nvimデフォルトのexplorerのhistory file
@@ -14,12 +17,15 @@ Brewfile.lock.json
 # yarn globalのnode_modulesを除外
 .config/yarn/global/node_modules/
 
+# coc
+.config/coc/
+
+.config/configstore/
+.config/pulse/
+
 # fish
 .config/fish/completions/
 .config/fish/fish_variables
 .config/fish/functions/
 
-# vim session file and dir
-.undodir/
-Session.vim
 
