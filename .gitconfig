@@ -4,4 +4,5 @@
   email = arx.solid@gmail.com
 [core]
   autocrlf = false
+  editor = vim
 
