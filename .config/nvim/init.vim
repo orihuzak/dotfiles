@@ -268,9 +268,9 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 set termguicolors
 
 " gruvbox
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
 
 " gruvbox-material
 "---------------------
