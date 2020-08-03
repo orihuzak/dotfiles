@@ -184,16 +184,18 @@ autocmd FileType defx call s:defx_my_settings()
     \ defx#do_action('change_vim_cwd')
   endfunction
 
-call defx#custom#column('git', 'show_ignored', 1)
 call defx#custom#option('_', {
   \ 'split': 'horizontal',
   \ 'toggle': 1,
-  \ 'direction': 'botright',
   \ 'show_ignored_files': 1,
+  \ 'direction': 'botright',
   \ 'resume': 1,
   \ 'columns': 'mark:indent:git:icons:filename:type'
 \ })
-" \ 'ignored_files': '.git,Session.vim,.undodir',
+
+" ignored fileにiconをつける
+" これを定義するとなぜかdefxがファイルを表示する速度が遅くなる
+" call defx#custom#column('git', 'show_ignored', 1)
 
 " netrw
 " netrwの無効化
