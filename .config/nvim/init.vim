@@ -264,7 +264,7 @@ nnoremap <A-a> ggVG
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-" color scheme
+" colorscheme
 set termguicolors
 
 " gruvbox
@@ -285,6 +285,15 @@ let g:gruvbox_contrast_dark = 'hard'
 " line numberが暗くなって見にくい
 " let ayucolor="mirage" " light, mirage, dark
 " colorscheme ayu
+
+" 不可視文字の可視化
+set list " 不可視文字の可視化
+set listchars=tab:»-,space:· " 不可視文字の表示を定義
+" spaceの候補 ["·", "␣"]
+" 不可視文字への色付け
+hi NonText ctermbg=None ctermfg=59 guibg=NONE
+hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
+" hi Pmenu ctermfg=0 ctermbg=13 guibg=DarkGray
 
 " font
 " set guifont=DroidSansMono\ Nerd\ Font\ 11
@@ -324,14 +333,6 @@ let g:indentLine_fileTypeExclude = ['defx']
 " let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_guide_size = 1
-
-" 不可視文字の可視化
-set list " 不可視文字の可視化
-set listchars=tab:»-,space:· " 不可視文字の表示を定義
-" spaceの候補 ["·", "␣"]
-" 不可視文字への色付け
-hi NonText ctermbg=None ctermfg=59 guibg=NONE
-hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 
 " status bar
 set showcmd " 入力中のコマンドをステータスに表示
