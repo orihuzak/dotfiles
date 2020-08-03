@@ -185,10 +185,9 @@ autocmd FileType defx call s:defx_my_settings()
   endfunction
 
 call defx#custom#option('_', {
-  \ 'split': 'horizontal',
+  \ 'split': 'floating',
   \ 'toggle': 1,
   \ 'show_ignored_files': 1,
-  \ 'direction': 'botright',
   \ 'resume': 1,
   \ 'columns': 'mark:indent:git:icons:filename:type'
 \ })
