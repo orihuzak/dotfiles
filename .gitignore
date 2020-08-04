@@ -3,23 +3,22 @@
 # emacs
 .emacs.d/elpa/
 
-# brew
 Brewfile.lock.json
 
 # vim session file and dir
 .undodir/
 Session.vim
-# nvim plugin directory
+
+### .config/
 .config/nvim/plugged/
-# nvimデフォルトのexplorerのhistory file
+ # nvim default explorer history file
 .config/nvim/.netrwhist
-
-# yarn globalのnode_modulesを除外
 .config/yarn/global/node_modules/
-
-# coc
 .config/coc/
-
+.config/calibre/
+.config/dconf/
+.config/hyper/.hyper_plugins/
+.config/Hyper/
 .config/configstore/
 .config/pulse/
 
