@@ -21,6 +21,8 @@ Session.vim
 .config/Hyper/
 .config/configstore/
 .config/pulse/
+.config/google-chrome/
+.config/vivaldi/
 
 # fish
 .config/fish/completions/
