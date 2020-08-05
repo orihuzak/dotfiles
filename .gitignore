@@ -25,6 +25,7 @@
 !/tomp3.sh
 
 # etc
+!/etc/
 !/etc/**
 
 # emacs
@@ -46,38 +47,6 @@
 !/.config/nvim/init.vim
 !/.config/nvim/coc-settings.json
 # hyper
+!/.config/hyper/
 !/.config/hyper/.hyper.js
-
-
-# black list
-
-# # emacs
-# .emacs.d/elpa/
-
-# Brewfile.lock.json
-
-# # vim session file and dir
-# .undodir/
-# Session.vim
-
-# ### .config/
-# .config/nvim/plugged/
-#  # nvim default explorer history file
-# .config/nvim/.netrwhist
-# .config/yarn/global/node_modules/
-# .config/coc/
-# .config/calibre/
-# .config/dconf/
-# .config/hyper/.hyper_plugins/
-# .config/Hyper/
-# .config/configstore/
-# .config/pulse/
-# .config/google-chrome/
-# .config/vivaldi/
-
-# # fish
-# .config/fish/completions/
-# .config/fish/fish_variables
-# .config/fish/functions/
-
 
