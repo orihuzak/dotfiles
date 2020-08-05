@@ -1,32 +1,83 @@
-## git ignore these files and dirs
+### git ignore these files and dirs
+
+## ignore all
+/*
+/.**
+
+# white list
+
+!/.bash_aliases
+!/.bash_profile
+!/.bashrc
+!/.eslintrc.js
+!/.gitconfig
+!/.gitignore
+!/.vimrc
+!/Brewfile
+!/Makefile
+!/README.md
+# my shell scripts
+!/setup-crostini.sh
+!/setup-crostini-deb-buster.sh
+!/avconcat.sh
+!/mylist.txt
+!/tom4a.sh
+!/tomp3.sh
+
+# etc
+!/etc/**
 
 # emacs
-.emacs.d/elpa/
+!/.emacs.d/
+!/.emacs.d/init.el
+!/.emacs.d/kkcrc
 
-Brewfile.lock.json
+## config
+!/.config/
+# youtube-dl
+!/.config/youtube-dl/
+!/.config/youtube-dl/config
+# yarn
+!/.config/yarn/
+!/.config/yarn/global/
+!/.config/yarn/global/package.json
+# nvim
+!/.config/nvim/
+!/.config/nvim/init.vim
+!/.config/nvim/coc-settings.json
+# hyper
+!/.config/hyper/.hyper.js
 
-# vim session file and dir
-.undodir/
-Session.vim
 
-### .config/
-.config/nvim/plugged/
- # nvim default explorer history file
-.config/nvim/.netrwhist
-.config/yarn/global/node_modules/
-.config/coc/
-.config/calibre/
-.config/dconf/
-.config/hyper/.hyper_plugins/
-.config/Hyper/
-.config/configstore/
-.config/pulse/
-.config/google-chrome/
-.config/vivaldi/
+# black list
 
-# fish
-.config/fish/completions/
-.config/fish/fish_variables
-.config/fish/functions/
+# # emacs
+# .emacs.d/elpa/
+
+# Brewfile.lock.json
+
+# # vim session file and dir
+# .undodir/
+# Session.vim
+
+# ### .config/
+# .config/nvim/plugged/
+#  # nvim default explorer history file
+# .config/nvim/.netrwhist
+# .config/yarn/global/node_modules/
+# .config/coc/
+# .config/calibre/
+# .config/dconf/
+# .config/hyper/.hyper_plugins/
+# .config/Hyper/
+# .config/configstore/
+# .config/pulse/
+# .config/google-chrome/
+# .config/vivaldi/
+
+# # fish
+# .config/fish/completions/
+# .config/fish/fish_variables
+# .config/fish/functions/
 
 
