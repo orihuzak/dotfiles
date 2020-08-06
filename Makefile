@@ -19,6 +19,9 @@ clean: ## Unlink dotfiles in your home directory and remove dotfiles directory
 	@-$(foreach val, $(DOTFILES), unlink $(HOME)/$(val);)
 	-rm -rf $(DOTPATH)
 
+init:
+	@bash $(DOTPATH)/etc/init.sh
+
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| sort \
