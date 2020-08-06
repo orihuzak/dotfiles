@@ -2,45 +2,60 @@
 
 # install.sh for Debian and Ubuntu
 
-DOTPATH=~/dotfiles
-# dotfile以外のsymlinkしたいファイル
-files=(Brewfile)
-GITHUB_URL=https://github.com/orihuzak/dotfiles.git
+is_exists() {
+  which "$1" >/dev/null 2>&1
+  return $?
+}
 
-sudo apt-get update
+## Dotfiles
 
-# install tools
-sudo apt-get install -y \
-  git \
-  curl
-
-# clone dotfiles
-git clone --recursive "$GITHUB_URL" "$DOTPATH"
-
-# dotfilesが正しくcloneされたことを確認する
-cd ~/dotfiles
-if [ $? -ne 0 ]; then
-  die "not found: $DOTPATH"
+# set DOTPATH as default variable
+if [ -z "${DOTPATH:-}" ]; then
+  DOTPATH=~/dotfiles; export DOTPATH
 fi
 
-# create symlinks
-for f in .??*
-do
-  # 無視するファイル
-  if [ "$f" = ".git" ] || ["$f" = ".gitignore"] || [ "$f" = ".vimrc" ]; then
-    continue
+DOTFILES_GITHUB="https://github.com/orihuzak/dotfiles.git" ; export DOTFILES_GITHUB
+
+dotfiles_download() {
+  if [ -d "$DOTPATH" ]; then
+    echo "$DOTPATH: already exists"
+    exit 1
   fi
-  ln -snfv "$DOTPATH/$f" "$HOME/$f"
-done
-for f in $(files[@])
-do
-  ln -snfv "$DOTPATH/$f" "$HOME/$f"
-done
 
-# install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew bundle
+  if is_exists "git"; then
+    git clone --recursive "$DOTFILES_GITHUB" "$DOTPATH"
+  else
+    echo "we don't have git."
+    exit 1
+  fi
+}
 
+dotfiles_deploy() {
+  echo "Deploying dotfiles"
 
-source ~/.bashrc
+  if [ ! -d $DOTPATH ]; then
+    echo "$DOTPATH: not found."
+    exit 1
+  fi
+
+  cd "$DOTPATH"
+  make deploy
+}
+
+dotfiles_initialize() {
+  if [ -f Makefile ]; then
+    make init
+  else
+    echo "Makefile: not found."
+    exit 1
+  fi
+}
+
+dotfiles_install() {
+  dotfiles_download &&
+  dotfiles_deploy &&
+  dotfiles_initialize
+}
+
+dotfiles_install
 
