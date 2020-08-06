@@ -22,6 +22,9 @@ clean: ## Unlink dotfiles in your home directory and remove dotfiles directory
 init:
 	@bash $(DOTPATH)/etc/init.sh
 
+test: ## Test install dotfiles
+
+
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 		| sort \
