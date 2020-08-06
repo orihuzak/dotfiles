@@ -1,5 +1,5 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-EXCLUSIONS := .DS_Store .git .gitignore .undodir
+EXCLUSIONS := .DS_Store .git .gitignore .undodir .travis.yml
 CANDIDATES := $(wildcard .??*) Brewfile
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
