@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install packages to build environment
+## install packages to build environment
 
 sudo apt-get update
 
@@ -12,8 +12,11 @@ else
   brew bundle
 fi
 
-# for nvim
+## for nvim
 pip3 install pynvim
+# install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # install deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
