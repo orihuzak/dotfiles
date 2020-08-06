@@ -12,6 +12,7 @@
 !/.eslintrc.js
 !/.gitconfig
 !/.gitignore
+!/.travis.yml
 !/.vimrc
 !/Brewfile
 !/Makefile
