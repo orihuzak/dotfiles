@@ -7,7 +7,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 all:
 
-list: ## Show dotfiles in this repo
+list: ## List dotfiles in this repo
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
 deploy: ## Create symlink to home directory
