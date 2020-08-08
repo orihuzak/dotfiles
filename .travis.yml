@@ -1,7 +1,7 @@
 language: c
 os:
-    - linux
-    - osx
+  - linux
+  - osx
 
 env:
   global:
@@ -10,8 +10,11 @@ env:
 
 install:
   - curl -L https://raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install | bash
-  - cd $DOTPATH
-  - make init
 
-script:
-  make --silent test
+# before_script:
+#   - cd $(DOTPATH)
+
+# script:
+#   - make init
+  # - make --silent test
+
