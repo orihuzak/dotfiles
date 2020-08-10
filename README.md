@@ -1,15 +1,11 @@
 # dotfiles
 
-## setup Debian and Ubuntu
-run command
-```bash
-curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/install.sh | bash
-```
+[![Build Status](https://travis-ci.com/orihuzak/dotfiles.svg?branch=master)](https://travis-ci.com/orihuzak/dotfiles)
 
-## setup crostini
-run command
+## install dotfiles
+
 ```bash
-curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/setup-crostini.sh | bash
+  curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
 ```
 
 必要なファイルまたはディレクトリをホームディレクトリにシンボリックリンクする
