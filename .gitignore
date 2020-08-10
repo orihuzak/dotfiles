@@ -15,6 +15,7 @@
 !/.travis.yml
 !/.vimrc
 !/Brewfile
+!/Gemfile
 !/Makefile
 !/README.md
 # my shell scripts
