@@ -11,11 +11,11 @@ env:
 install:
   - curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
 
-before_script:
-  - cd $DOTPATH
+# before_script:
+#   - cd $DOTPATH
 
-script:
-  - make deploy
-  - make init
+# script:
+#   - make deploy
+#   - make init
   # - make --silent test
 
