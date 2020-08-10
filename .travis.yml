@@ -6,13 +6,13 @@ os:
 env:
   global:
     - GOPATH=~
-    - DOTPATH=~/.dotfiles
+    - DOTPATH=~/dotfiles
 
 # install:
 #   - curl -L https://raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
 
 before_script:
-  - cd $(DOTPATH)
+  - cd $DOTPATH
 
 script:
   - make deploy
