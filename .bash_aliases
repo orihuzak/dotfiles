@@ -48,9 +48,14 @@ alias brug='brew upgrade'
 alias brl='brew list'
 alias brs='brew search'
 
+alias allug='sudo apt-get update;sudo apt-get upgrade -y;brew update;brew upgrade;deno upgrade'
+
 # python
 alias python='python3'
 alias pip='pip3'
+
+# deno
+alias de='deno'
 
 # youtube-dl
 alias ydl='youtube-dl'
