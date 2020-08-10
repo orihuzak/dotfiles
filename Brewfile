@@ -2,16 +2,16 @@
 #------------------------
 
 # brew
+brew "hub"
+brew "neovim"
 brew "xclip"
 brew "unrar"
 brew "p7zip"
-brew "neovim"
 brew "ffmpeg"
 brew "youtube-dl"
 brew "node"
 brew "yarn"
-brew "hub"
 brew "python"
+brew "ruby"
 brew "trash-cli"
-
 
