@@ -48,7 +48,21 @@ alias brug='brew upgrade'
 alias brl='brew list'
 alias brs='brew search'
 
-alias allug='sudo apt-get update;sudo apt-get upgrade -y;brew update;brew upgrade;deno upgrade'
+function upgradeAllPackages() {
+  echo -e "\nsudo apt-get update"
+  sudo apt-get update
+  echo -e "\nsudo apt-get upgrade -y"
+  sudo apt-get upgrade -y
+  echo -e "\nbrew update"
+  brew update
+  echo -e "\nbrew upgrade"
+  brew upgrade
+  echo -e "\ndeno upgrade"
+  deno upgrade
+  echo -e "\nall upgrade process done."
+}
+
+alias allug=upgradeAllPackages
 
 # python
 alias python='python3'
@@ -56,6 +70,7 @@ alias pip='pip3'
 
 # deno
 alias de='deno'
+alias deug='deno upgrade'
 
 # youtube-dl
 alias ydl='youtube-dl'
