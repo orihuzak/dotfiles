@@ -60,6 +60,8 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 # deno
 export PATH="$HOME/.deno/bin:$PATH"
+# rubygem
+export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin:$PATH"
 
 ### Complete Messages
 echo "Loding .bash_profile completed!!"
