@@ -1,20 +1,20 @@
 language: c
 os:
   - linux
-  - osx
+  # - osx
 
 env:
   global:
-    - DOTPATH=~/.dotfiles
     - GOPATH=~
+    - DOTPATH=~/.dotfiles
 
 install:
   - curl -L https://raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
 
-# before_script:
-#   - cd $(DOTPATH)
+before_script:
+  - cd $(DOTPATH)
 
-# script:
-#   - make init
+script:
+  - make init
   # - make --silent test
 
