@@ -8,13 +8,14 @@ env:
     - GOPATH=~
     - DOTPATH=~/.dotfiles
 
-install:
-  - curl -L https://raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
+# install:
+#   - curl -L https://raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
 
 before_script:
   - cd $(DOTPATH)
 
 script:
+  - make deploy
   - make init
   # - make --silent test
 
