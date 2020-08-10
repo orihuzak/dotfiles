@@ -244,11 +244,18 @@ set signcolumn=yes " sign columnを常に表示する
 
 " editor
 set encoding=UTF-8 " 文字コードをutf8に設定
-set fileformats=dos,unix,mac " 改行コードの自動認識
+set fileformats=unix,dos,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
+set list " 不可視文字の可視化
+set listchars=tab:»-,space:·,eol:↲,extends:»,precedes:« " 不可視文字の表示を定義
+" spaceの候補 ["·", "␣"]
+" 不可視文字への色付け
+hi NonText ctermbg=None ctermfg=59 guibg=NONE
+hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
+" hi Pmenu ctermfg=0 ctermbg=13 guibg=DarkGray
 
 " Keymapping
 
@@ -286,14 +293,6 @@ let g:gruvbox_contrast_dark = 'hard'
 " let ayucolor="mirage" " light, mirage, dark
 " colorscheme ayu
 
-" 不可視文字の可視化
-set list " 不可視文字の可視化
-set listchars=tab:»-,space:· " 不可視文字の表示を定義
-" spaceの候補 ["·", "␣"]
-" 不可視文字への色付け
-hi NonText ctermbg=None ctermfg=59 guibg=NONE
-hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
-" hi Pmenu ctermfg=0 ctermbg=13 guibg=DarkGray
 
 " font
 " set guifont=DroidSansMono\ Nerd\ Font\ 11
