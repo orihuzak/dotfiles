@@ -12,7 +12,7 @@ if ! type brew >/dev/null 2>&1; then
 fi
 
 echo -e "\nRestart shell"
-exec $SHELL -1
+exec $(SHELL) -l
 
 echo -e "\nInstall Homebrew formulae"
 brew bundle
