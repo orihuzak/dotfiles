@@ -11,8 +11,8 @@ if ! type brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-echo -e "\nRestart shell"
-exec $SHELL -l
+echo -e "\nreload .bash_profile"
+. ~/.bash_profile
 
 echo -e "\nInstall Homebrew formulae"
 brew bundle
