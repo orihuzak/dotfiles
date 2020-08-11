@@ -5,7 +5,6 @@
 ## install dotfiles
 
 ```bash
-  curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
+  /bin/bash -c "$(curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh)"
 ```
 
-必要なファイルまたはディレクトリをホームディレクトリにシンボリックリンクする
