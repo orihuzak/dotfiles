@@ -42,6 +42,7 @@ Plug 'simeji/winresizer' " window resizer
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'ayu-theme/ayu-vim'
+Plug 'jacoborus/tender.vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
@@ -222,8 +223,10 @@ map J <Plug>(expand_region_shrink)
 
 " status line
 " lightline settings
+" colorscheme candidates
+  " wombat, tender
 let g:lightline = {
-\ 'colorscheme': 'wombat',
+\ 'colorscheme': 'tender',
 \ 'component_function': {
   \ 'coc': 'coc#status'
   \ }
@@ -271,27 +274,30 @@ nnoremap <A-a> ggVG
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-" colorscheme
+""" colorscheme
 set termguicolors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+syntax enable " syntax highlighting
 
-" gruvbox
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
+"" gruvbox
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_contrast_dark = 'hard'
 
-" gruvbox-material
-"---------------------
+"" gruvbox-material
 " set background=dark    " Setting dark mode
 " " this configuration option should be placed before `colorscheme gruvbox-material`
 " let g:gruvbox_material_background = 'hard'
 " colorscheme gruvbox-material
 " let g:gruvbox_material_disable_italic_comment = 1 " disable italic comment
 
-" ayu-vim
-"---------------------
+"" ayu-vim
 " line numberが暗くなって見にくい
 " let ayucolor="mirage" " light, mirage, dark
 " colorscheme ayu
+
+"" tender
+colorscheme tender
 
 
 " font
@@ -340,8 +346,6 @@ set hidden " バッファ編集中でも他のファイルを開けるように
 set wildmenu " vimバーからファイルを選択可能
 set laststatus=2 " ステータスラインを常に表示
 
-" syntax highlighting
-syntax enable
 
 " scroll
 set scrolloff=2 " スクロール開始位置を画面端から2行目にする
