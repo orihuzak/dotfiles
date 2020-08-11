@@ -40,6 +40,7 @@ dotfiles_deploy() {
 
   cd "$DOTPATH"
   make deploy
+  . $HOME/.bash_profile
 }
 
 dotfiles_initialize() {
