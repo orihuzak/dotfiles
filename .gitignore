@@ -26,9 +26,10 @@
 !/tom4a.sh
 !/tomp3.sh
 
-# etc
 !/etc/
 !/etc/**
+!/bin/
+!/bin/**
 
 # emacs
 !/.emacs.d/
