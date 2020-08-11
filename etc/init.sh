@@ -11,6 +11,9 @@ if ! type brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+echo -e "\nRestart shell"
+exec $SHELL -1
+
 echo -e "\nInstall Homebrew formulae"
 brew bundle
 
@@ -21,6 +24,8 @@ pip3 install pynvim
 echo -e "\nInstall vim-plug"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo -e "\nInstall n/vim plugins"
+nvim +PlugInstall +qall
 
 ## for ruby
 echo -e "\nInstall bundler, a ruby gem"
