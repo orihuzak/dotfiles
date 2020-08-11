@@ -10,7 +10,7 @@ env:
 
 install:
   # - curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
-  - /bin/bash "$(curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh)"
+  - '/bin/bash "$(curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh)"'
 
 before_script:
   - cd $DOTPATH
