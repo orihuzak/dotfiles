@@ -1,3 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org" do
+  gem "travis"
+end
 
-gem 'travis'
