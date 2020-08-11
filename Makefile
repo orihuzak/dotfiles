@@ -19,7 +19,7 @@ clean: ## Unlink dotfiles in your home directory and remove dotfiles directory
 	@-$(foreach val, $(DOTFILES), unlink $(HOME)/$(val);)
 	-rm -rf $(DOTPATH)
 
-init:
+init: ## Install packages and tools
 	@bash $(DOTPATH)/etc/init.sh
 
 test: ## Test install dotfiles
