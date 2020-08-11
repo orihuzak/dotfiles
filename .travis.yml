@@ -9,7 +9,8 @@ env:
     - DOTPATH=~/dotfiles
 
 install:
-  - curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
+  # - curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh | bash
+  - bash "$(curl -L raw.githubusercontent.com/orihuzak/dotfiles/master/etc/install.sh)"
 
 before_script:
   - cd $DOTPATH
