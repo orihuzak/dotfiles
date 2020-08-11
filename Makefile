@@ -1,6 +1,6 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 EXCLUSIONS := .DS_Store .git .gitignore .undodir .travis.yml
-CANDIDATES := $(wildcard .??*) Brewfile
+CANDIDATES := $(wildcard .??*) Brewfile Gemfile
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 .DEFAULT_GOAL := help
