@@ -61,16 +61,17 @@ let g:coc_global_extensions = [
 \ 'coc-css',
 \ 'coc-html',
 \ 'coc-json',
+\ 'coc-yaml',
+\ 'coc-vimlsp',
 \ 'coc-tsserver',
+\ 'coc-rls',
+\ 'coc-markdownlint',
+\ 'coc-eslint',
 \ 'coc-snippets',
 \ 'coc-emmet',
-\ 'coc-markdownlint',
 \ 'coc-vetur',
 \ 'coc-git',
-\ 'coc-eslint',
-\ 'coc-highlight',
-\ 'coc-vimlsp',
-\ 'coc-rls'
+\ 'coc-highlight'
 \ ]
 
 " cocのDiagnosticsの、左横のアイコンの色設定
