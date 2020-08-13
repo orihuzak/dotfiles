@@ -89,6 +89,7 @@ fi
 
 ### functions
 
+# Check if the command is exists
 is_exists() {
   type "$1" >/dev/null 2>&1
   return $?
