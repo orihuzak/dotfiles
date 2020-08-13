@@ -6,6 +6,8 @@ call plug#begin()
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" file manager and finder
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -25,8 +27,8 @@ Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 " manage file
 Plug '907th/vim-auto-save' " auto save
 Plug 'djoshea/vim-autoread' " ファイルの再読込
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' } " file finder
-Plug 'thaerkh/vim-workspace' " vim session manager
+" session
+Plug 'thaerkh/vim-workspace'
 " edit
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 Plug 'matze/vim-move' " (選択した)行を移動させる
@@ -202,6 +204,8 @@ call defx#custom#option('_', {
 " netrwの無効化
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
+
+"" search file
 
 " skim
 command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
