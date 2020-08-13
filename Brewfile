@@ -2,9 +2,10 @@
 
 brew "hub"
 brew "xclip"
-brew "fzy"
 brew "ripgrep"
 brew "the_silver_searcher"
+brew "fzy"
+brew "sk"
 brew "trash-cli"
 brew "neovim"
 brew "unrar"
