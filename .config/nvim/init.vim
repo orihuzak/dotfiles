@@ -43,14 +43,13 @@ Plug 'simeji/winresizer' " window resizer
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'ayu-theme/ayu-vim'
-Plug 'jacoborus/tender.vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
 " Plug 'nathanaelkane/vim-indent-guides'
-" status and tab line
-Plug 'itchyny/lightline.vim'
+" status line and tab line
+Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 
 call plug#end()
@@ -227,15 +226,18 @@ map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
 "" status line
-" lightline settings
-" colorscheme candidates
-  " wombat, tender
-let g:lightline = {
-\ 'colorscheme': 'tender',
-\ 'component_function': {
-  \ 'coc': 'coc#status'
-  \ }
-\ }
+" airline
+let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+" let g:airline_symbols.crypt = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.dirty='⚡'
 
 " Neovim :terminal
 map <C-s> :terminal<CR>
@@ -268,7 +270,7 @@ hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 " Keymapping
 
 " return to new line in normal mode
-nmap <CR> i<CR><ESC>
+" nmap <CR> i<CR><ESC>
 " select
 
 " select all by alt-a
@@ -295,14 +297,6 @@ let g:gruvbox_contrast_dark = 'hard'
 " let g:gruvbox_material_background = 'hard'
 " colorscheme gruvbox-material
 " let g:gruvbox_material_disable_italic_comment = 1 " disable italic comment
-
-"" ayu-vim
-" line numberが暗くなって見にくい
-" let ayucolor="mirage" " light, mirage, dark
-" colorscheme ayu
-
-"" tender
-" colorscheme tender
 
 
 " font
@@ -344,7 +338,7 @@ let g:indentLine_fileTypeExclude = ['defx']
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_guide_size = 1
 
-" status bar
+" status line
 set showcmd " 入力中のコマンドをステータスに表示
 set title " タイトルを表示
 set hidden " バッファ編集中でも他のファイルを開けるように
