@@ -226,7 +226,7 @@ nnoremap <space>w :ToggleWorkspace<CR>
 map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
-" status line
+"" status line
 " lightline settings
 " colorscheme candidates
   " wombat, tender
@@ -285,9 +285,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
 
 "" gruvbox
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
 
 "" gruvbox-material
 " set background=dark    " Setting dark mode
@@ -302,7 +302,7 @@ syntax enable " syntax highlighting
 " colorscheme ayu
 
 "" tender
-colorscheme tender
+" colorscheme tender
 
 
 " font
