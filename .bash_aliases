@@ -32,7 +32,7 @@ alias apu='sudo apt update'
 alias apug='sudo apt upgrade'
 alias aps='sudo apt search'
 
-# apt-get 
+# apt-get
 alias ag='sudo apt-get'
 alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
@@ -100,17 +100,24 @@ alias avconcat='~/dotfiles/avconcat.sh' # concat audio or video files
 # avconcatで連結したいファイルを書く~/mylist.txtをすぐに編集するためのalias
 alias mylist='vim ~/mylist.txt'
 
-# change directory
+## change directory
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
-alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive' # cd to google drive
-alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe' # cd to GoogleDrive/koe
-alias koe='cd ~/koe'
-alias koedl='cd ~/koe-dl'
+# google drive
+# - 環境に合わせてgdriveのpathを変える
+if is_exists cmd.exe; then
+  alias gdrive='cd /mnt/d/GoogleDrive'
+elif [ -d /mnt/chromeos ]; then
+  alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive'
+  alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe'
+  alias koe='cd ~/koe'
+  alias koedl='cd ~/koe-dl'
+fi
+
 alias game='cd ~/game'
 alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
