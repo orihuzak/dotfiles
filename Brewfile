@@ -1,7 +1,5 @@
 # Homebrew bundle file
-#------------------------
 
-# brew
 brew "hub"
 brew "xclip"
 brew "fzy"
