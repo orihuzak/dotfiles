@@ -33,12 +33,12 @@ alias apug='sudo apt upgrade'
 alias aps='sudo apt search'
 
 # apt-get
-alias ag='sudo apt-get'
-alias agi='sudo apt-get install'
-alias agr='sudo apt-get remove'
-alias agu='sudo apt-get update'
-alias agug='sudo apt-get upgrade'
-alias ags='sudo apt-get search'
+alias apg='sudo apt-get'
+alias apgi='sudo apt-get install'
+alias apgr='sudo apt-get remove'
+alias apgu='sudo apt-get update'
+alias apgug='sudo apt-get upgrade'
+alias apgs='sudo apt-get search'
 
 # homebrew
 alias br='brew'
