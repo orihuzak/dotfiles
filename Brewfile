@@ -3,8 +3,10 @@
 
 # brew
 brew "hub"
-brew "neovim"
 brew "xclip"
+brew "fzy"
+brew "trash-cli"
+brew "neovim"
 brew "unrar"
 brew "p7zip"
 brew "ffmpeg"
@@ -13,5 +15,4 @@ brew "node"
 brew "yarn"
 brew "python"
 brew "ruby"
-brew "trash-cli"
 
