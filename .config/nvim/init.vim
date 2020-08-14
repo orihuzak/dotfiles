@@ -7,7 +7,8 @@ call plug#begin()
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file manager and finder
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -205,12 +206,8 @@ call defx#custom#option('_', {
 " let g:loaded_netrwPlugin = 1
 
 "" search file
-
-" skim
-command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
-command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
-" space f でskimを起動
-nnoremap <Space>s :SK<CR>
+" fzf
+nnoremap <space>s :GFiles<CR>
 
 " vim-autosave
 let g:auto_save = 1 " enable auto save
@@ -281,23 +278,15 @@ nnoremap <A-a> ggVG
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-""" colorscheme
+"" colorscheme
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
 
-"" gruvbox
+" gruvbox
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
-
-"" gruvbox-material
-" set background=dark    " Setting dark mode
-" " this configuration option should be placed before `colorscheme gruvbox-material`
-" let g:gruvbox_material_background = 'hard'
-" colorscheme gruvbox-material
-" let g:gruvbox_material_disable_italic_comment = 1 " disable italic comment
-
 
 " font
 " set guifont=DroidSansMono\ Nerd\ Font\ 11
@@ -332,7 +321,7 @@ inoremap <A-h> <C-d>
 
 " indentLine
 let g:indentLine_char = '▏'
-let g:indentLine_fileTypeExclude = ['defx']
+let g:indentLine_fileTypeExclude = ['defx', 'fzf']
 " vim indent guides
 " let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_start_level = 2
