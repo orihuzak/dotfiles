@@ -5,6 +5,9 @@
 
 
 alias shells='cat /etc/shells'
+alias reload='. ~/.bash_profile'
+
+# list
 alias ll='ls -lha'
 
 # git
@@ -71,6 +74,11 @@ alias pip='pip3'
 # deno
 alias de='deno'
 alias deug='deno upgrade'
+
+# t
+if is_exists t; then
+  alias tw='t'
+fi
 
 # youtube-dl
 alias ydl='youtube-dl'
