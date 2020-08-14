@@ -255,6 +255,7 @@ set fileformats=unix,dos,mac " 改行コードの自動認識
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
+set nofixeol " ファイル末尾への自動改行文字入力を無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 set list " 不可視文字の可視化
 set listchars=tab:»-,space:·,eol:↲,extends:»,precedes:« " 不可視文字の表示を定義
