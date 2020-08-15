@@ -75,7 +75,8 @@ let g:coc_global_extensions = [
 \ 'coc-vetur',
 \ 'coc-git',
 \ 'coc-highlight',
-\ 'coc-explorer'
+\ 'coc-explorer',
+\ 'coc-lists'
 \ ]
 
 " cocのDiagnosticsの、左横のアイコンの色設定
@@ -220,8 +221,10 @@ call defx#custom#option('_', {
 " let g:loaded_netrwPlugin = 1
 
 "" search file
+" coc-lists
+nnoremap <space>s :CocList gfiles<cr>
 " fzf
-nnoremap <space>s :GFiles<CR>
+" nnoremap <space>s :GFiles<CR>
 
 " vim-autosave
 let g:auto_save = 1 " enable auto save
