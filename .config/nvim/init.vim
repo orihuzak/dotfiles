@@ -32,13 +32,14 @@ Plug 'djoshea/vim-autoread' " ファイルの再読込
 Plug 'thaerkh/vim-workspace'
 " edit
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
-Plug 'matze/vim-move' " (選択した)行を移動させる
+Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
+Plug 'AndrewRadev/switch.vim'
 " manage window
 Plug 'simeji/winresizer' " window resizer
 " color scheme
@@ -234,6 +235,9 @@ nnoremap <space>w :ToggleWorkspace<CR>
 " KとJで選択範囲の拡大縮小
 map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
+
+"" switch.vim
+let g:switch_mapping = '-' " '-' key to toggle true and false
 
 "" status line
 " airline
