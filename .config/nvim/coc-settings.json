@@ -14,6 +14,9 @@
   "explorer.buffer.showHiddenBuffers": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.file.column.git.showIgnored": true,
+  "list.source.files.args": ["--hidden", "--files"],
+  "list.source.gfiles.defaultOptions": [],
+  "list.source.grep.command": "ag",
   "json.enable": true,
   "json.format.enable": true,
   "javascript.format.enabled": true,
@@ -34,3 +37,4 @@
     "typescriptreact"
   ]
 }
+
