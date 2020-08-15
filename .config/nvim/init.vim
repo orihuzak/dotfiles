@@ -6,9 +6,10 @@ call plug#begin()
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" file manager and finder
+" file manager or finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vim-clap'
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -221,8 +222,10 @@ call defx#custom#option('_', {
 " let g:loaded_netrwPlugin = 1
 
 "" search file
+" Clap
+nnoremap <space>s :Clap gfiles<cr>
 " coc-lists
-nnoremap <space>s :CocList gfiles<cr>
+" nnoremap <space>s :CocList gfiles<cr>
 " fzf
 " nnoremap <space>s :GFiles<CR>
 
