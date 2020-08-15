@@ -6,6 +6,9 @@
   "explorer.position": "floating",
   "explorer.floating.position": "center",
   "explorer.floating.border.enable": true,
+  "explorer.quitOnOpen": true,
+  "explorer.openAction.strategy": "sourceWindow",
+  "explorer.icon.hidden": "‥",
   "explorer.icon.enableNerdfont": true,
   "explorer.icon.enableVimDevicons": false,
   "explorer.buffer.showHiddenBuffers": true,
@@ -22,7 +25,7 @@
   },
   "highlight.document.enable": true,
   "highlight.colors.enable": true,
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "npm",
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
