@@ -225,6 +225,11 @@ call defx#custom#option('_', {
 "" search file
 " Clap
 nnoremap <space>s :Clap gfiles<cr>
+let g:clap_layout = {
+\ 'relative': 'editor',
+\ 'width': '80%',
+\ 'col': '10%'
+\}
 " coc-lists
 " nnoremap <space>s :CocList gfiles<cr>
 " fzf
