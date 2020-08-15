@@ -73,7 +73,8 @@ let g:coc_global_extensions = [
 \ 'coc-emmet',
 \ 'coc-vetur',
 \ 'coc-git',
-\ 'coc-highlight'
+\ 'coc-highlight',
+\ 'coc-explorer'
 \ ]
 
 " cocのDiagnosticsの、左横のアイコンの色設定
@@ -122,8 +123,10 @@ nnoremap <silent> [fugitive]m :Gmerge<CR>
 " coc-git
 autocmd CursorHold * CocCommand git.refresh
 
+"" file manager
+nmap <space>e :CocCommand explorer<cr>
 " defx
-nmap <space>e :Defx<CR>
+" nmap <space>e :Defx<CR>
 " vim外でfileに変更を加えたときに自動で反映する
 autocmd BufWritePost * call defx#redraw()
 autocmd BufEnter * call defx#redraw()
