@@ -38,6 +38,14 @@ nvim +PlugInstall +qall
 echo -e "\nInstall bundler, a ruby gem"
 gem install bundler
 
+# insatll rust
+echo -e "\nInstall rust"
+if is_exists emd.exe; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+  curl https://sh.rustup.rs -sSf | sh
+fi
+
 # install deno
 echo -e "\nInstall deno"
 curl -fsSL https://deno.land/x/install/install.sh | sh
