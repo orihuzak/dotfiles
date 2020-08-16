@@ -62,6 +62,8 @@ function upgradeAllPackages() {
   brew upgrade
   echo -e "\ndeno upgrade"
   deno upgrade
+  echo -e "\nrust upate"
+  rustup update
   echo -e "\nall upgrade process done."
 }
 
