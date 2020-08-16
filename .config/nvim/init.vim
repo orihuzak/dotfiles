@@ -230,6 +230,7 @@ let g:clap_layout = {
 \ 'width': '80%',
 \ 'col': '10%'
 \}
+let g:clap_theme = 'material_design_dark'
 " coc-lists
 " nnoremap <space>s :CocList gfiles<cr>
 " fzf
