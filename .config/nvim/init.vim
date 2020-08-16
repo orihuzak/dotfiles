@@ -34,8 +34,6 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'simeji/winresizer' " window resizer
 " color scheme
 Plug 'morhetz/gruvbox'
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'yorickpeterse/happy_hacking.vim'
 Plug 'srcery-colors/srcery-vim'
 " indent line
 Plug 'Yggdroot/indentLine'
@@ -229,15 +227,12 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
 
 " gruvbox
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
-
-" Happy Hacking
-" colorscheme happy_hacking
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_contrast_dark = 'hard'
 
 " srcery-vim
-" colorscheme srcery
+colorscheme srcery
 
 " font
 " set guifont=DroidSansMono\ Nerd\ Font\ 11
@@ -298,7 +293,7 @@ set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
 " cursorline background color
-hi CursorLine cterm=None ctermfg=NONE ctermbg=236
+" hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 " vim-move move line
 let g:move_map_keys = 0 " disable vim-move default keymap
 nmap <A-k> <Plug>MoveLineUp
