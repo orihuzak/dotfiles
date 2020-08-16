@@ -223,7 +223,7 @@ call defx#custom#option('_', {
 " let g:loaded_netrwPlugin = 1
 
 "" search file
-" Clap
+" vim-clap
 nnoremap <space>s :Clap gfiles<cr>
 let g:clap_layout = {
 \ 'relative': 'editor',
@@ -288,8 +288,9 @@ set nobackup " ファイルを上書きするときにバックアップを作�
 set nofixeol " ファイル末尾への自動改行文字入力を無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 set list " 不可視文字の可視化
-set listchars=tab:»-,space:·,eol:↲,extends:»,precedes:« " 不可視文字の表示を定義
+set listchars=tab:»-,space:·,extends:»,precedes:« " 不可視文字の表示を定義
 " spaceの候補 ["·", "␣"]
+" 改行文字の候補 eol:↲,
 " 不可視文字への色付け
 hi NonText ctermbg=None ctermfg=59 guibg=NONE
 hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
