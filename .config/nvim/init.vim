@@ -225,12 +225,25 @@ call defx#custom#option('_', {
 "" search file
 " vim-clap
 nnoremap <space>s :Clap gfiles<cr>
+nnoremap [vim-clap]  <Nop>
+nmap <space>c [vim-clap]
+nnoremap <silent> [vim-clap]e :Clap filer<CR>
+nnoremap <silent> [vim-clap]f :Clap files<CR>
+nnoremap <silent> [vim-clap]d :Clap git_diff_files<CR>
+nnoremap <silent> [vim-clap]p :Clap providers<CR>
+nnoremap <silent> [vim-clap]g :Clap grep<CR>
+
 let g:clap_layout = {
 \ 'relative': 'editor',
 \ 'width': '80%',
-\ 'col': '10%'
+\ 'col': '10%',
+\ 'height': '50%',
+\ 'row': '25%'
 \}
 let g:clap_theme = 'material_design_dark'
+" これenableすると検索のマッチングがおかしくなる
+" let g:clap_enable_icon = 1
+
 " coc-lists
 " nnoremap <space>s :CocList gfiles<cr>
 " fzf
