@@ -56,21 +56,25 @@ call plug#end()
 
 " coc.nvim
 let g:coc_global_extensions = [
+\ 'coc-sh',
+\ 'coc-git',
 \ 'coc-css',
 \ 'coc-html',
 \ 'coc-json',
-\ 'coc-yaml',
 \ 'coc-vimlsp',
 \ 'coc-python',
 \ 'coc-tsserver',
+\ 'coc-vetur',
 \ 'coc-rls',
-\ 'coc-markdownlint',
+\ 'coc-yaml',
 \ 'coc-eslint',
+\ 'coc-stylelintplus',
+\ 'coc-markdownlint',
 \ 'coc-snippets',
 \ 'coc-emmet',
-\ 'coc-vetur',
-\ 'coc-git',
+\ 'coc-tabnine',
 \ 'coc-highlight',
+\ 'coc-actions',
 \ 'coc-explorer',
 \ ]
 
