@@ -35,6 +35,7 @@ Plug 'simeji/winresizer' " window resizer
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+Plug 'yorickpeterse/happy_hacking.vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
@@ -230,6 +231,9 @@ syntax enable " syntax highlighting
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
+
+" Happy Hacking
+" colorscheme happy_hacking
 
 " font
 " set guifont=DroidSansMono\ Nerd\ Font\ 11
