@@ -76,7 +76,6 @@ let g:coc_global_extensions = [
 \ 'coc-git',
 \ 'coc-highlight',
 \ 'coc-explorer',
-\ 'coc-lists'
 \ ]
 
 " cocのDiagnosticsの、左横のアイコンの色設定
@@ -243,8 +242,6 @@ let g:clap_theme = 'material_design_dark'
 " これenableすると検索のマッチングがおかしくなる
 " let g:clap_enable_icon = 1
 
-" coc-lists
-" nnoremap <space>s :CocList gfiles<cr>
 
 " vim-autosave
 let g:auto_save = 1 " enable auto save
