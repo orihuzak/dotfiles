@@ -35,13 +35,18 @@ Plug 'simeji/winresizer' " window resizer
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
+Plug 'yorickpeterse/happy_hacking.vim'
+Plug 'wadackel/vim-dogrun'
+Plug 'dikiaap/minimalist'
+Plug 'AlessandroYorba/Sierra'
+Plug 'arcticicestudio/nord-vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
 " Plug 'nathanaelkane/vim-indent-guides'
 " status line and tab line
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 
 call plug#end()
@@ -231,8 +236,10 @@ syntax enable " syntax highlighting
 " set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
 
+" happy_hacking
+colorscheme happy_hacking
 " srcery-vim
-colorscheme srcery
+" colorscheme srcery
 
 " font
 " set guifont=DroidSansMono\ Nerd\ Font\ 11
