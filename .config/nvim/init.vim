@@ -215,6 +215,11 @@ hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 
 " Keymapping
 
+" show default keymap
+nnoremap [help] <Nop>
+nmap <space>q [help]
+nnoremap <silent> [help]m :help index.txt<cr>
+
 " return to new line in normal mode
 " nmap <CR> i<CR><ESC>
 " select
