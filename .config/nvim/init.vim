@@ -7,8 +7,6 @@ call plug#begin()
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file manager or finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-clap'
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -223,6 +221,7 @@ call defx#custom#option('_', {
 " let g:loaded_netrwPlugin = 1
 
 "" search file
+
 " vim-clap
 nnoremap <space>s :Clap gfiles<cr>
 nnoremap [vim-clap]  <Nop>
@@ -246,8 +245,6 @@ let g:clap_theme = 'material_design_dark'
 
 " coc-lists
 " nnoremap <space>s :CocList gfiles<cr>
-" fzf
-" nnoremap <space>s :GFiles<CR>
 
 " vim-autosave
 let g:auto_save = 1 " enable auto save
