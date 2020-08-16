@@ -135,10 +135,11 @@ nnoremap <space>s :Clap gfiles<cr>
 nnoremap [vim-clap]  <Nop>
 nmap <space>c [vim-clap]
 nnoremap <silent> [vim-clap]e :Clap filer<CR>
-nnoremap <silent> [vim-clap]f :Clap files<CR>
+nnoremap <silent> [vim-clap]s :Clap files<CR>
 nnoremap <silent> [vim-clap]d :Clap git_diff_files<CR>
 nnoremap <silent> [vim-clap]p :Clap providers<CR>
 nnoremap <silent> [vim-clap]g :Clap grep<CR>
+nnoremap <silent> [vim-clap]f :Clap blines<CR>
 
 let g:clap_layout = {
 \ 'relative': 'editor',
