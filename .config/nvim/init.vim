@@ -76,12 +76,14 @@ let g:coc_global_extensions = [
 \ 'coc-highlight',
 \ 'coc-actions',
 \ 'coc-explorer',
-\ 'coc-lists'
 \ ]
 
+"" coc
+nnoremap [coc] <Nop>
+nmap <space>c [coc]
+
 " coc-actions
-nnoremap <space>a :CocCommand actions.open<cr>
-xmap <space>a :CocCommand actions.open<cr>
+nnoremap <silent> [coc]a :CocCommand actions.open<cr>
 
 " cocのDiagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
@@ -140,15 +142,15 @@ nmap <space>e :CocCommand explorer<cr>
 "" search file
 
 " vim-clap
-nnoremap <space>s :Clap gfiles<cr>
-nnoremap [vim-clap]  <Nop>
-nmap <space>c [vim-clap]
+nnoremap [vim-clap] <Nop>
+nmap <space>/ [vim-clap]
+nnoremap <silent> [vim-clap]f :Clap gfiles<cr>
 nnoremap <silent> [vim-clap]e :Clap filer<CR>
 nnoremap <silent> [vim-clap]s :Clap files<CR>
 nnoremap <silent> [vim-clap]d :Clap git_diff_files<CR>
 nnoremap <silent> [vim-clap]p :Clap providers<CR>
 nnoremap <silent> [vim-clap]g :Clap grep<CR>
-nnoremap <silent> [vim-clap]f :Clap blines<CR>
+nnoremap <silent> [vim-clap]/ :Clap blines<CR>
 
 let g:clap_layout = {
 \ 'relative': 'editor',
@@ -168,7 +170,9 @@ let g:auto_save = 1 " enable auto save
 " vim-workspace
 let g:workspace_autosave_always = 1
 " let g:workspace_autosave = 1
-nnoremap <space>w :ToggleWorkspace<CR>
+nnoremap [vim] <Nop>
+nmap <space>v [vim]
+nnoremap <silent> [vim]s :ToggleWorkspace<cr>
 
 " vim-expand_region
 " KとJで選択範囲の拡大縮小
