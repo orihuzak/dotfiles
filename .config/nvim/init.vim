@@ -76,7 +76,12 @@ let g:coc_global_extensions = [
 \ 'coc-highlight',
 \ 'coc-actions',
 \ 'coc-explorer',
+\ 'coc-lists'
 \ ]
+
+" coc-actions
+nnoremap <space>a :CocCommand actions.open<cr>
+xmap <space>a :CocCommand actions.open<cr>
 
 " cocのDiagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
@@ -262,6 +267,9 @@ let g:webdevicons_enable=1
 " leader
 let mapleader=","
 noremap \ ,
+
+" reload vimrc or init.nvim
+noremap <space>i :source $MYVIMRC<cr>
 
 " insert modeでのcursor移動
 inoremap <C-h> <left>
