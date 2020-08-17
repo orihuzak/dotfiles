@@ -56,14 +56,20 @@ function upgradeAllPackages() {
   sudo apt-get update
   echo -e "\nsudo apt-get upgrade -y"
   sudo apt-get upgrade -y
+  echo -e "\nsudo apt-get autoclean"
+  sudo apt-get autoremove
   echo -e "\nbrew update"
   brew update
   echo -e "\nbrew upgrade"
   brew upgrade
+  echo -e "\nbrew cleanup"
+  brew cleanup
   echo -e "\ndeno upgrade"
   deno upgrade
-  echo -e "\nrust update"
-  rustup update
+  if is_exists rustup; then
+    echo -e "\nrust update"
+    rustup update
+  fi
   echo -e "\nall upgrade process done."
 }
 
