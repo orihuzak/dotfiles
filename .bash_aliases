@@ -137,7 +137,7 @@ fi
 alias game='cd ~/game'
 alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
-alias work='cd ~/work'
+alias dev='cd ~/dev'
 
 # generate ssh key
 alias genssh='ssh-keygen -t rsa -b 4096 -C "arx.solid@gmail.com"'
