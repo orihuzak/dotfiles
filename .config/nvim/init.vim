@@ -8,7 +8,7 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file manager or finder
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-" Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
+Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
 " Languages
 Plug 'elzr/vim-json' " to show json double quote
@@ -84,7 +84,14 @@ nmap <space>c [coc]
 
 " coc-actions
 nnoremap <silent> [coc]a :CocCommand actions.open<cr>
+nnoremap <silent> [coc]f :<C-u>call CocAction('format')<cr>
 
+" Format
+" nmap <space>fmt <Plug>(coc-format)
+" nnoremap <silent> [coc]f <Plug>(coc-format)
+" Formatting selected code.
+xmap <space>f <Plug>(coc-format-selected)
+nmap <space>f <Plug>(coc-format-selected)
 " cocのDiagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
@@ -99,12 +106,6 @@ nmap <space>df <Plug>(coc-definition)
 nmap <space>rf <Plug>(coc-references)
 "スペースrnでRename
 nmap <space>rn <Plug>(coc-rename)
-" Formatting
-"スペースfmtでFormat
-nmap <space>fmt <Plug>(coc-format)
-" Formatting selected code.
-xmap <space>f <Plug>(coc-format-selected)
-nmap <space>f <Plug>(coc-format-selected)
 " coc-snippets
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -265,7 +266,7 @@ colorscheme happy_hacking
 
 " icons
 " devicons
-let g:webdevicons_enable=1
+" let g:webdevicons_enable=1
 
 
 " leader
@@ -273,7 +274,7 @@ let mapleader=","
 noremap \ ,
 
 " reload vimrc or init.nvim
-noremap <space>i :source $MYVIMRC<cr>
+nnoremap <silent> [vim]r :source $MYVIMRC<cr>
 
 " insert modeでのcursor移動
 inoremap <C-h> <left>
