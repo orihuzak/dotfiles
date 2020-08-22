@@ -54,6 +54,12 @@ export PATH="$HOME/.deno/bin:$PATH"
 # rubygem
 export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin:$PATH"
 
+# for wsl
+if [ -d "/mnt/c" ]; then
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+  export LIBGL_ALWAYS_INDIRECT=true
+fi
+
 ### Complete Messages
 echo "Loding .bash_profile completed!!"
 
