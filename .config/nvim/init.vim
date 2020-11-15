@@ -1,129 +1,5 @@
 """ nvim config file
 
-""" Vim-Plug https://github.com/junegunn/vim-plug
-call plug#begin()
-
-
-" auto complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" file manager or finder
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
-Plug 'tpope/vim-fugitive'
-" Languages
-Plug 'elzr/vim-json' " to show json double quote
-Plug 'leafgarland/typescript-vim'
-" snippets
-Plug 'heavenshell/vim-jsdoc' " generate jsdoc
-" manage file
-Plug '907th/vim-auto-save' " auto save
-Plug 'djoshea/vim-autoread' " ファイルの再読込
-" session
-Plug 'thaerkh/vim-workspace'
-" edit
-Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
-Plug 'matze/vim-move' " easy to move lines
-Plug 'tpope/vim-commentary' " commentout/inできる
-Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
-Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
-Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
-Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
-Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
-Plug 'AndrewRadev/switch.vim'
-" manage window
-Plug 'simeji/winresizer'
-" color scheme
-Plug 'morhetz/gruvbox'
-Plug 'srcery-colors/srcery-vim'
-Plug 'yorickpeterse/happy_hacking.vim'
-Plug 'wadackel/vim-dogrun'
-Plug 'dikiaap/minimalist'
-Plug 'AlessandroYorba/Sierra'
-Plug 'arcticicestudio/nord-vim'
-Plug 'Yggdroot/indentLine'
-" Plug 'thaerkh/vim-indentguides'
-" Plug 'nathanaelkane/vim-indent-guides'
-" status line and tab line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-
-call plug#end()
-
-
-""" Plugin Configurations
-
-" coc.nvim
-let g:coc_global_extensions = [
-\ 'coc-sh',
-\ 'coc-git',
-\ 'coc-css',
-\ 'coc-html',
-\ 'coc-json',
-\ 'coc-vimlsp',
-\ 'coc-python',
-\ 'coc-tsserver',
-\ 'coc-vetur',
-\ 'coc-rls',
-\ 'coc-yaml',
-\ 'coc-eslint',
-\ 'coc-stylelintplus',
-\ 'coc-markdownlint',
-\ 'coc-snippets',
-\ 'coc-emmet',
-\ 'coc-tabnine',
-\ 'coc-highlight',
-\ 'coc-actions',
-\ 'coc-explorer',
-\ ]
-
-"" coc
-nnoremap [coc] <Nop>
-nmap <space>c [coc]
-
-" coc-actions
-nnoremap <silent> [coc]a :CocCommand actions.open<cr>
-nnoremap <silent> [coc]f :<C-u>call CocAction('format')<cr>
-
-" Format
-" nmap <space>fmt <Plug>(coc-format)
-" nnoremap <silent> [coc]f <Plug>(coc-format)
-" Formatting selected code.
-xmap <space>f <Plug>(coc-format-selected)
-nmap <space>f <Plug>(coc-format-selected)
-" cocのDiagnosticsの、左横のアイコンの色設定
-highlight CocErrorSign ctermfg=15 ctermbg=196
-highlight CocWarningSign ctermfg=0 ctermbg=172
-" coc-highlight
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" nmap <space>l :<C-u>CocList<cr>
-"スペースhでHover
-nmap <space>h :<C-u>call CocAction('doHover')<cr>
-"スペースdfでDefinition
-nmap <space>df <Plug>(coc-definition)
-"スペースrfでReferences
-nmap <space>rf <Plug>(coc-references)
-"スペースrnでRename
-nmap <space>rn <Plug>(coc-rename)
-" coc-snippets
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-let g:coc_snippet_next = '<tab>'
-
-" coc-git
-autocmd CursorHold * CocCommand git.refresh
-
-"" file manager
-nmap <space>e :CocCommand explorer<cr>
-
 " netrw
 " netrwの無効化
 " let g:loaded_netrw       = 1
@@ -182,7 +58,7 @@ nnoremap <A-a> ggVG
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-"" colorscheme
+" color
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
@@ -192,8 +68,6 @@ syntax enable " syntax highlighting
 " set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
 
-" happy_hacking
-colorscheme happy_hacking
 " srcery-vim
 " colorscheme srcery
 
@@ -264,6 +138,7 @@ set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 " 折り返し行の移動について表示上の行も移動できるようにする
 nnoremap k gk
 nnoremap j gj
+
 " 編集箇所のカーソル位置を記憶する
 if has("autocmd")
   augroup redhat
@@ -310,24 +185,60 @@ nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
 nnoremap st :<C-u>tabnew<CR> " 新しいタブを追加
-nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR> " 横に分割
 nnoremap sv :<C-u>vs<CR> " 縦に分割
 nnoremap sc :close<CR> " close window
 " nnoremap so :only<CR> " close all not current windows
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+" load plugins with junegunn/vim-plug
+call plug#begin()
+
+" auto complete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" file manager or finder
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
+Plug 'tpope/vim-fugitive'
+" Languages
+Plug 'elzr/vim-json' " to show json double quote
+Plug 'leafgarland/typescript-vim'
+" snippets
+Plug 'heavenshell/vim-jsdoc' " generate jsdoc
+" manage file
+Plug '907th/vim-auto-save' " auto save
+Plug 'djoshea/vim-autoread' " ファイルの再読込
+" session
+Plug 'thaerkh/vim-workspace'
+" edit
+Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
+Plug 'matze/vim-move' " easy to move lines
+Plug 'tpope/vim-commentary' " commentout/inできる
+Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
+Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
+Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
+Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
+Plug 'AndrewRadev/switch.vim'
+" manage window
+Plug 'simeji/winresizer'
+" color scheme
+Plug 'morhetz/gruvbox'
+Plug 'srcery-colors/srcery-vim'
+Plug 'yorickpeterse/happy_hacking.vim'
+Plug 'wadackel/vim-dogrun'
+Plug 'dikiaap/minimalist'
+Plug 'AlessandroYorba/Sierra'
+Plug 'arcticicestudio/nord-vim'
+Plug 'Yggdroot/indentLine'
+" Plug 'thaerkh/vim-indentguides'
+" Plug 'nathanaelkane/vim-indent-guides'
+" status line and tab line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
 
 
 " load plugin config files in _config/
