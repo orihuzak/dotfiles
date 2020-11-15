@@ -50,6 +50,8 @@
 !/.config/nvim/
 !/.config/nvim/init.vim
 !/.config/nvim/coc-settings.json
+!/.config/nvim/_config/
+!/.config/nvim/_config/**
 # hyper
 !/.config/hyper/
 !/.config/hyper/.hyper.js
