@@ -31,7 +31,7 @@ Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 Plug 'AndrewRadev/switch.vim'
 " manage window
-Plug 'simeji/winresizer' " window resizer
+Plug 'simeji/winresizer'
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
@@ -40,7 +40,6 @@ Plug 'wadackel/vim-dogrun'
 Plug 'dikiaap/minimalist'
 Plug 'AlessandroYorba/Sierra'
 Plug 'arcticicestudio/nord-vim'
-" indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -119,16 +118,6 @@ function! s:check_back_space() abort
 endfunction
 let g:coc_snippet_next = '<tab>'
 
-" vim-fugitive
-nnoremap [fugitive]  <Nop>
-nmap <space>g [fugitive]
-nnoremap <silent> [fugitive]s :Gstatus<CR>
-nnoremap <silent> [fugitive]a :Gwrite<CR>
-nnoremap <silent> [fugitive]c :Gcommit-v<CR>
-nnoremap <silent> [fugitive]b :Gblame<CR>
-nnoremap <silent> [fugitive]d :Gdiff<CR>
-nnoremap <silent> [fugitive]m :Gmerge<CR>
-
 " coc-git
 autocmd CursorHold * CocCommand git.refresh
 
@@ -140,62 +129,9 @@ nmap <space>e :CocCommand explorer<cr>
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
 
-"" search file
-
-" vim-clap
-nnoremap [vim-clap] <Nop>
-nmap <space>/ [vim-clap]
-nnoremap <silent> [vim-clap]f :Clap gfiles<cr>
-nnoremap <silent> [vim-clap]e :Clap filer<CR>
-nnoremap <silent> [vim-clap]s :Clap files<CR>
-nnoremap <silent> [vim-clap]d :Clap git_diff_files<CR>
-nnoremap <silent> [vim-clap]p :Clap providers<CR>
-nnoremap <silent> [vim-clap]g :Clap grep<CR>
-nnoremap <silent> [vim-clap]/ :Clap blines<CR>
-
-let g:clap_layout = {
-\ 'relative': 'editor',
-\ 'width': '80%',
-\ 'col': '10%',
-\ 'height': '50%',
-\ 'row': '25%'
-\}
-let g:clap_theme = 'material_design_dark'
-" これenableすると検索のマッチングがおかしくなる
-" let g:clap_enable_icon = 1
-
-
-" vim-autosave
-let g:auto_save = 1 " enable auto save
-
-" vim-workspace
-let g:workspace_autosave_always = 1
-" let g:workspace_autosave = 1
+" vimの機能にアクセスするための接頭辞を定義
 nnoremap [vim] <Nop>
 nmap <space>v [vim]
-nnoremap <silent> [vim]s :ToggleWorkspace<cr>
-
-" vim-expand_region
-" KとJで選択範囲の拡大縮小
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
-
-"" switch.vim
-let g:switch_mapping = '-' " '-' key to toggle true and false
-
-"" status line
-" airline
-let g:airline#extensions#tabline#enabled = 0
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" powerline symbols
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.dirty='⚡'
 
 " Neovim :terminal
 map <C-s> :terminal<CR>
@@ -295,9 +231,6 @@ vnoremap <A-h> <gv
 inoremap <A-l> <C-t>
 inoremap <A-h> <C-d>
 
-" indentLine
-let g:indentLine_char = '▏'
-let g:indentLine_fileTypeExclude = ['defx', 'fzf']
 " vim indent guides
 " let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_start_level = 2
@@ -324,12 +257,6 @@ set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
 " cursorline background color
 " hi CursorLine cterm=None ctermfg=NONE ctermbg=236
-" vim-move move line
-let g:move_map_keys = 0 " disable vim-move default keymap
-nmap <A-k> <Plug>MoveLineUp
-nmap <A-j> <Plug>MoveLineDown
-vmap <A-k> <Plug>MoveBlockUp
-vmap <A-j> <Plug>MoveBlockDown
 
 " cursor
 set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
@@ -401,4 +328,14 @@ call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+
+" load plugin config files in _config/
+let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
+function! FindPlugin(name) abort
+  return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+endfunction
+command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
+
+runtime! _config/*.vim
 
