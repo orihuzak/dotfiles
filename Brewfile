@@ -1,7 +1,6 @@
 # Homebrew bundle file
 
 brew "hub"
-brew "xclip"
 brew "ripgrep"
 brew "the_silver_searcher"
 brew "fzy"
