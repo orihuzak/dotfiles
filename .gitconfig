@@ -5,4 +5,6 @@
 [core]
   autocrlf = false
   editor = vim
+[alias]
+  unstage = reset HEAD
 
