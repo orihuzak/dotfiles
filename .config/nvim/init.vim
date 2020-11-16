@@ -7,32 +7,74 @@
 
 " Language support
 let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
-let g:vim_json_syntax_conceal = 0 " to show json double quote "
+" language settings
+autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-" git
-set updatetime=100 " git statusの更新間隔を短く
-set signcolumn=yes " sign columnを常に表示する
-
-" editor
 set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=unix " 改行コードの設定
+" set nofixeol " ファイル末尾への自動改行文字入力を無効化
 set autoread " 編集中のファイルが変更されたら読み直す
+set updatetime=750 " git statusの更新間隔を短く
+" set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
-" set nofixeol " ファイル末尾への自動改行文字入力を無効化
-" set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
-set list " 不可視文字の可視化
+" copy and paste
+set guioptions+=a " ヤンクした内容をクリップボードに入れる
+set clipboard=unnamedplus
+
+"" status line
+set showcmd " 入力中のコマンドをステータスに表示
+set title " タイトルを表示
+set hidden " バッファ編集中でも他のファイルを開けるように
+set wildmenu " vimバーからファイルを選択可能
+set laststatus=2 " ステータスラインを常に表示
+
+
+"" editor
+set signcolumn=yes " sign columnを常に表示する
+
+" cursor
+set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
+set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
+
+" line
+" 絶対/相対行番号をトグル表示する
+set number relativenumber
+set formatoptions+=mM " 自動折り返しを日本語対応
+set wrap " 行を折り返して表示
+set cursorline " 現在の行を強調表示
+" cursorline background color
+" hi CursorLine cterm=None ctermfg=NONE ctermbg=236
+
+" indent
+set smartindent " 自動indentの設定
+set expandtab " tabを半角スペースにする
+set tabstop=2 " tab幅の設定
+set shiftwidth=2 " 自動インデント幅
+
+" scroll
+set scrolloff=999 " number of lines to see above and below the corsor
+set mouse=a " enable mouse scroll
+
+" show invisible chars
+set list
 set listchars=tab:»-,space:·,extends:»,precedes:« " 不可視文字の表示を定義
 " spaceの候補 ["·", "␣"]
 " 改行文字の候補 eol:↲,
-" 不可視文字への色付け
+" color invisible chars
 hi NonText ctermbg=None ctermfg=59 guibg=NONE
 hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 " hi Pmenu ctermfg=0 ctermbg=13 guibg=DarkGray
 
-" language settings
-autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+
+"" search
+set ignorecase " 検索文字列が小文字の場合は大小文字を区別なく検索
+set smartcase " 検索文字列に大文字が含まれている場合は区別して検索
+set incsearch " 検索文字列入力中に順次対象文字列にヒットさせる
+set wrapscan " 検索時に最後まで行ったら最初に戻る
+set hlsearch " 検索語をハイライト
+
 
 " color
 set termguicolors
@@ -61,43 +103,7 @@ let g:maplocalleader = ','
 " let mapleader=","
 " noremap \ ,
 
-" indent
-set smartindent " 自動indentの設定
-set expandtab " tabを半角スペースにする
-set tabstop=2 " tab幅の設定
-set shiftwidth=2 " 自動インデント幅
-
-" vim indent guides
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_guide_size = 1
-
-" status line
-set showcmd " 入力中のコマンドをステータスに表示
-set title " タイトルを表示
-set hidden " バッファ編集中でも他のファイルを開けるように
-set wildmenu " vimバーからファイルを選択可能
-set laststatus=2 " ステータスラインを常に表示
-
-
-" scroll
-set scrolloff=2 " スクロール開始位置を画面端から2行目にする
-set mouse=a " マウススクロールを有効化
-
-" line
-" 絶対/相対行番号をトグル表示する
-set number relativenumber
-set formatoptions+=mM " 自動折り返しを日本語対応
-set wrap " 行を折り返して表示
-set cursorline " 現在の行を強調表示
-" cursorline background color
-" hi CursorLine cterm=None ctermfg=NONE ctermbg=236
-
-" cursor
-set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
-set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
-
-" 編集箇所のカーソル位置を記憶する
+" remember last cursor position
 if has("autocmd")
   augroup redhat
     " In text files, always limit the width of text to 78 characters
@@ -109,17 +115,6 @@ if has("autocmd")
     \ endif
   augroup END
 endif
-
-" copy and paste
-set guioptions+=a " ヤンクした内容をクリップボードに入れる
-set clipboard=unnamedplus
-
-" 検索
-set ignorecase " 検索文字列が小文字の場合は大小文字を区別なく検索
-set smartcase " 検索文字列に大文字が含まれている場合は区別して検索
-set incsearch " 検索文字列入力中に順次対象文字列にヒットさせる
-set wrapscan " 検索時に最後まで行ったら最初に戻る
-set hlsearch " 検索語をハイライト
 
 
 " load plugins with junegunn/vim-plug
