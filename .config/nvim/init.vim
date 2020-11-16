@@ -5,15 +5,6 @@
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
 
-" vimの機能にアクセスするための接頭辞を定義
-nnoremap [vim] <Nop>
-nmap <space>v [vim]
-
-" Neovim :terminal
-map <C-s> :terminal<CR>
-" Escでterminal modeを終了
-tnoremap <Esc> <C-\><C-n>
-
 " Language support
 let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
 let g:vim_json_syntax_conceal = 0 " to show json double quote "
@@ -24,11 +15,11 @@ set signcolumn=yes " sign columnを常に表示する
 
 " editor
 set encoding=UTF-8 " 文字コードをutf8に設定
-set fileformats=unix,dos,mac " 改行コードの自動認識
+set fileformats=unix " 改行コードの設定
 set autoread " 編集中のファイルが変更されたら読み直す
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
-set nofixeol " ファイル末尾への自動改行文字入力を無効化
+" set nofixeol " ファイル末尾への自動改行文字入力を無効化
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 set list " 不可視文字の可視化
 set listchars=tab:»-,space:·,extends:»,precedes:« " 不可視文字の表示を定義
@@ -38,21 +29,6 @@ set listchars=tab:»-,space:·,extends:»,precedes:« " 不可視文字の表示
 hi NonText ctermbg=None ctermfg=59 guibg=NONE
 hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE
 " hi Pmenu ctermfg=0 ctermbg=13 guibg=DarkGray
-
-" Keymapping
-
-" show default keymap
-nnoremap [help] <Nop>
-nmap <space>q [help]
-nnoremap <silent> [help]m :help index.txt<cr>
-
-" return to new line in normal mode
-" nmap <CR> i<CR><ESC>
-" select
-
-" select all by alt-a
-nnoremap <A-a> ggVG
-
 
 " language settings
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
@@ -80,30 +56,16 @@ syntax enable " syntax highlighting
 
 
 " leader
-let mapleader=","
-noremap \ ,
-
-" reload vimrc or init.nvim
-nnoremap <silent> [vim]r :source $MYVIMRC<cr>
-
-" insert modeでのcursor移動
-inoremap <C-h> <left>
-inoremap <C-j> <down>
-inoremap <C-k> <up>
-inoremap <C-l> <right>
+let g:mapleader = '\'
+let g:maplocalleader = ','
+" let mapleader=","
+" noremap \ ,
 
 " indent
 set smartindent " 自動indentの設定
 set expandtab " tabを半角スペースにする
 set tabstop=2 " tab幅の設定
 set shiftwidth=2 " 自動インデント幅
-" alt-hlでindent/outdent
-noremap <A-l> >>
-noremap <A-h> <<
-vnoremap <A-l> >gv
-vnoremap <A-h> <gv
-inoremap <A-l> <C-t>
-inoremap <A-h> <C-d>
 
 " vim indent guides
 " let g:indent_guides_enable_on_vim_startup = 1
@@ -125,7 +87,6 @@ set mouse=a " マウススクロールを有効化
 " line
 " 絶対/相対行番号をトグル表示する
 set number relativenumber
-noremap <space>l :set relativenumber!<CR>
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 set cursorline " 現在の行を強調表示
@@ -135,9 +96,6 @@ set cursorline " 現在の行を強調表示
 " cursor
 set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
 set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
-" 折り返し行の移動について表示上の行も移動できるようにする
-nnoremap k gk
-nnoremap j gj
 
 " 編集箇所のカーソル位置を記憶する
 if has("autocmd")
@@ -162,35 +120,7 @@ set smartcase " 検索文字列に大文字が含まれている場合は区別�
 set incsearch " 検索文字列入力中に順次対象文字列にヒットさせる
 set wrapscan " 検索時に最後まで行ったら最初に戻る
 set hlsearch " 検索語をハイライト
-" ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" Tabと画面分割の設定
-nnoremap s <Nop>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-nnoremap sn gt " 次のタブに移動
-nnoremap sp gT
-nnoremap sr <C-w>r
-nnoremap s= <C-w>=
-nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>|
-nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-nnoremap st :<C-u>tabnew<CR> " 新しいタブを追加
-nnoremap ss :<C-u>sp<CR> " 横に分割
-nnoremap sv :<C-u>vs<CR> " 縦に分割
-nnoremap sc :close<CR> " close window
-" nnoremap so :only<CR> " close all not current windows
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
 
 " load plugins with junegunn/vim-plug
 call plug#begin()
@@ -201,7 +131,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-clap'
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
-" Languages
+" Language support
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'leafgarland/typescript-vim'
 " snippets
@@ -211,7 +141,7 @@ Plug '907th/vim-auto-save' " auto save
 Plug 'djoshea/vim-autoread' " ファイルの再読込
 " session
 Plug 'thaerkh/vim-workspace'
-" edit
+" editor
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-commentary' " commentout/inできる
@@ -221,7 +151,7 @@ Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操�
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 Plug 'AndrewRadev/switch.vim'
-" manage window
+" resize window
 Plug 'simeji/winresizer'
 " color scheme
 Plug 'morhetz/gruvbox'
@@ -231,6 +161,7 @@ Plug 'wadackel/vim-dogrun'
 Plug 'dikiaap/minimalist'
 Plug 'AlessandroYorba/Sierra'
 Plug 'arcticicestudio/nord-vim'
+" indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
 " Plug 'nathanaelkane/vim-indent-guides'
