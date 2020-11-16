@@ -81,17 +81,6 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
 
-" gruvbox
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'hard'
-
-" srcery-vim
-" colorscheme srcery
-
-" font
-" set guifont=DroidSansMono\ Nerd\ Font\ 11
-
 " icons
 " devicons
 " let g:webdevicons_enable=1
@@ -120,12 +109,14 @@ endif
 " load plugins with junegunn/vim-plug
 call plug#begin()
 
+Plug 'hecal3/vim-leader-guide'
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file manager or finder
 Plug 'liuchengxu/vim-clap'
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 " Language support
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'leafgarland/typescript-vim'
@@ -137,25 +128,28 @@ Plug 'djoshea/vim-autoread' " ファイルの再読込
 " session
 Plug 'thaerkh/vim-workspace'
 " editor
+Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 Plug 'matze/vim-move' " easy to move lines
-Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
+Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
+Plug 'junegunn/vim-easy-align'
 Plug 'AndrewRadev/switch.vim'
 " resize window
 Plug 'simeji/winresizer'
+Plug 'haya14busa/incsearch.vim'
 " color scheme
-Plug 'morhetz/gruvbox'
-Plug 'srcery-colors/srcery-vim'
+" Plug 'morhetz/gruvbox'
 Plug 'yorickpeterse/happy_hacking.vim'
-Plug 'wadackel/vim-dogrun'
-Plug 'dikiaap/minimalist'
-Plug 'AlessandroYorba/Sierra'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'srcery-colors/srcery-vim'
+" Plug 'wadackel/vim-dogrun'
+" Plug 'dikiaap/minimalist'
+" Plug 'AlessandroYorba/Sierra'
+" Plug 'arcticicestudio/nord-vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
