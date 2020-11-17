@@ -4,7 +4,7 @@ UsePlugin 'vim-clap'
 
 " vim-clap
 nnoremap [vim-clap] <Nop>
-nmap <space>/ [vim-clap]
+nmap <space>f [vim-clap]
 nnoremap <silent> [vim-clap]f :Clap gfiles<cr>
 nnoremap <silent> [vim-clap]e :Clap filer<CR>
 nnoremap <silent> [vim-clap]s :Clap files<CR>
