@@ -22,6 +22,7 @@ let g:coc_global_extensions = [
 \ 'coc-tabnine',
 \ 'coc-highlight',
 \ 'coc-actions',
+\ 'coc-lists',
 \ 'coc-explorer',
 \ ]
 
@@ -31,14 +32,19 @@ nmap <space>c [coc]
 
 " coc-actions
 nnoremap <silent> [coc]a :CocCommand actions.open<cr>
-nnoremap <silent> [coc]f :<C-u>call CocAction('format')<cr>
+
+" coc-lists
+nnoremap [coc]l :CocList<cr>
+nnoremap <space>f :CocList gfiles<cr>
 
 " Format
+nnoremap <silent> [coc]f :<C-u>call CocAction('format')<cr>
 " nmap <space>fmt <Plug>(coc-format)
 " nnoremap <silent> [coc]f <Plug>(coc-format)
 " Formatting selected code.
-xmap <space>f <Plug>(coc-format-selected)
-nmap <space>f <Plug>(coc-format-selected)
+" xmap <space>f <Plug>(coc-format-selected)
+" nmap <space>f <Plug>(coc-format-selected)
+
 
 " cocのDiagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196
@@ -46,7 +52,6 @@ highlight CocWarningSign ctermfg=0 ctermbg=172
 
 " coc-highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
-" nmap <space>l :<C-u>CocList<cr>
 "スペースhでHover
 nmap <space>h :<C-u>call CocAction('doHover')<cr>
 "スペースdfでDefinition
