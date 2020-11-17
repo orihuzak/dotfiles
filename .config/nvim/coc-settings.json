@@ -15,7 +15,7 @@
   "explorer.icon.enableVimDevicons": false,
   "explorer.buffer.showHiddenBuffers": true,
   "explorer.file.showHiddenFiles": true,
-  "explorer.file.column.git.showIgnored": true,
+  "explorer.git.showIgnored": false,
   "list.source.files.args": ["--hidden", "--files"],
   "list.source.gfiles.defaultOptions": [],
   "list.source.grep.command": "rg",
