@@ -113,7 +113,7 @@ Plug 'hecal3/vim-leader-guide'
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file manager or finder
-Plug 'liuchengxu/vim-clap'
+" Plug 'liuchengxu/vim-clap'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
