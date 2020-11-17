@@ -115,6 +115,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file manager or finder
 " Plug 'liuchengxu/vim-clap'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
