@@ -6,7 +6,8 @@ nmap <space>v [vim]
 " reload vimrc or init.nvim
 nnoremap <silent> [vim]r :source $MYVIMRC<cr>
 " toggle relative and absolute line number
-noremap <space>l :set relativenumber!<CR>
+nnoremap <silent> [vim]l :set relativenumber!<CR>
+
 " remove highlight by tapping ESC twice
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
