@@ -114,9 +114,9 @@ Plug 'hecal3/vim-leader-guide'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " fuzzy finder
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-" Plug 'liuchengxu/vim-clap'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+" " Plug 'liuchengxu/vim-clap'
 " icons
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
