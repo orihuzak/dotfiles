@@ -24,6 +24,7 @@ let g:coc_global_extensions = [
 \ 'coc-actions',
 \ 'coc-lists',
 \ 'coc-explorer',
+\ 'coc-fzf-preview',
 \ ]
 
 "" coc
