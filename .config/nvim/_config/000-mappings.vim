@@ -81,11 +81,3 @@ nnoremap sc :close<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
-" vim-plug keymapping
-nnoremap [vim-plug] <Nop>
-nmap <space>p [vim-plug]
-nnoremap <silent> [vim-plug]i :PlugInstall<cr>
-nnoremap <silent> [vim-plug]u :PlugUpdate<cr>
-nnoremap <silent> [vim-plug]c :PlugClean<cr>
-nnoremap <silent> [vim-plug]s :PlugStatus<cr>
-
