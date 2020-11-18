@@ -36,7 +36,10 @@ nnoremap <silent> [coc]a :CocCommand actions.open<cr>
 
 " coc-lists
 nnoremap [coc]l :CocList<cr>
-nnoremap <space>f :CocList gfiles<cr>
+" nnoremap <space>f :CocList gfiles<cr>
+
+" coc-fzf-preview
+nnoremap <space>f :CocCommand fzf-preview.GitFiles<cr>
 
 " Format
 nnoremap <silent> [coc]f :<C-u>call CocAction('format')<cr>
