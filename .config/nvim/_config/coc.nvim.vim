@@ -39,7 +39,7 @@ nnoremap [coc]l :CocList<cr>
 " nnoremap <space>f :CocList gfiles<cr>
 
 " coc-fzf-preview
-nnoremap <space>f :CocCommand fzf-preview.GitFiles<cr>
+" nnoremap <space>f :CocCommand fzf-preview.GitFiles<cr>
 
 " Format
 nnoremap <silent> [coc]f :<C-u>call CocAction('format')<cr>
