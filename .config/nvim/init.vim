@@ -112,9 +112,10 @@ call plug#begin()
 Plug 'hecal3/vim-leader-guide'
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" file manager or finder
+" fuzzy finder
 " Plug 'liuchengxu/vim-clap'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
