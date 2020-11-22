@@ -11,6 +11,8 @@ let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
 autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
+set nocompatible
+filetype plugin on
 set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=unix " 改行コードの設定
 " set nofixeol " ファイル末尾への自動改行文字入力を無効化
