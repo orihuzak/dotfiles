@@ -163,6 +163,7 @@ Plug 'Yggdroot/indentLine'
 " status line and tab line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
