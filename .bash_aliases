@@ -46,6 +46,7 @@ alias apgs='sudo apt-get search'
 # homebrew
 alias br='brew'
 alias bri='brew install'
+alias brui='brew uninstall'
 alias bru='brew update'
 alias brug='brew upgrade'
 alias brd='brew doctor'
