@@ -48,6 +48,8 @@ alias br='brew'
 alias bri='brew install'
 alias bru='brew update'
 alias brug='brew upgrade'
+alias brd='brew doctor'
+alias brc='brew cleanup'
 alias brl='brew list'
 alias brs='brew search'
 
