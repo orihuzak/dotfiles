@@ -35,6 +35,7 @@ set laststatus=2 " ステータスラインを常に表示
 
 "" editor
 set signcolumn=yes " sign columnを常に表示する
+set concealcursor=""
 
 " cursor
 set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
