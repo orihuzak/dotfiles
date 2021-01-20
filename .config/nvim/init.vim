@@ -118,8 +118,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " fuzzy finder
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 " " Plug 'liuchengxu/vim-clap'
+" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " icons
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
