@@ -1,10 +1,5 @@
 """ nvim config file
 
-" netrw
-" netrwの無効化
-" let g:loaded_netrw       = 1
-" let g:loaded_netrwPlugin = 1
-
 " Language support
 let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
 " language settings
@@ -113,26 +108,42 @@ endif
 call plug#begin()
 
 Plug 'hecal3/vim-leader-guide'
-" auto complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" lsp, auto complete
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" vim-lsp and vim-lsp-settings
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" file manager explorer
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'kristijanhusak/defx-icons'
+Plug 'kristijanhusak/defx-git'
 " fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
 " Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" " Plug 'liuchengxu/vim-clap'
+" Plug 'liuchengxu/vim-clap'
 " Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 " icons
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
+" git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 " Language support
+Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'leafgarland/typescript-vim'
-" snippets
-Plug 'heavenshell/vim-jsdoc' " generate jsdoc
-" manage file
 Plug '907th/vim-auto-save' " auto save
 Plug 'djoshea/vim-autoread' " ファイルの再読込
 " session
@@ -170,7 +181,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
-
 
 " load plugin config files in _config/
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
