@@ -26,6 +26,9 @@ tnoremap <Esc> <C-\><C-n>
 
 " select all by alt-a
 nnoremap <A-a> ggVG
+" delete
+nnoremap x "_x
+vnoremap x "_x
 
 "" cursor move
 
