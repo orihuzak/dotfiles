@@ -15,7 +15,8 @@
 # export LANGUAGE="ja_JP:ja"
 
 # 文字コード、ロケールを設定
-export TREE_CHARSET='UTF-8'
+export TREE_CHARSET="UTF-8"
+export LC_COLLATE="C"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
