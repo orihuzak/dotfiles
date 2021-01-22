@@ -91,6 +91,12 @@ if is_exists t; then
   alias tw='t'
 fi
 
+# nnn
+if is_exists nnn; then
+  alias nnn='nnn -H'
+  alias nn='nnn'
+fi
+
 # youtube-dl
 alias ydl='youtube-dl'
 
