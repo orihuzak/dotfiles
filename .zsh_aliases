@@ -7,7 +7,9 @@
 alias shells='cat /etc/shells'
 alias reload='. ~/.zshenv'
 
-# list
+# list command alias
+# color files, dir, aliases
+alias ls='ls --color=auto'
 alias ll='ls -lha'
 
 # git
