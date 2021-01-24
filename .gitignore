@@ -9,6 +9,9 @@
 !/.bash_aliases
 !/.bash_profile
 !/.bashrc
+!/.zshenv
+!/.zshrc
+!/.zsh_aliases
 !/.eslintrc.js
 !/.gitconfig
 !/.gitignore
