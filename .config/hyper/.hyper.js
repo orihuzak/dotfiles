@@ -26,7 +26,7 @@ module.exports = {
     letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    // cursorColor: 'rgba(248,28,229,0.8)',
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
@@ -38,7 +38,7 @@ module.exports = {
     cursorBlink: true, // default false
 
     // color of the text
-    foregroundColor: '#00FF00',
+    // foregroundColor: '#00FF00',
 
     // terminal background color
     // opacity is only supported on macOS
@@ -150,7 +150,8 @@ module.exports = {
     "hyper-search",
     "hyper-opacity",
     "hyper-pane",
-    "hyper-tab-icons-plus"
+    "hyper-tab-icons-plus",
+    "hyper-material-theme"
   ],
 
   // in development, you can create a directory under
