@@ -137,8 +137,10 @@ alias ..3='cd ../../..'
 # - 環境に合わせてgdriveのpathを変える
 if is_exists cmd.exe; then
   alias gdrive='cd /mnt/d/GoogleDrive'
+  alias vw='cd /mnt/d/GoogleDrive/vimwiki'
 elif [ -d /mnt/chromeos ]; then
   alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive'
+  alias vw='cd /mnt/chromeos/GoogleDrive/MyDrive/vimwiki'
   alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe'
   alias koe='cd ~/koe'
   alias koedl='cd ~/koe-dl'
