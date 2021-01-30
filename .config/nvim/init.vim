@@ -12,7 +12,7 @@ set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=unix " 改行コードの設定
 " set nofixeol " ファイル末尾への自動改行文字入力を無効化
 set autoread " 編集中のファイルが変更されたら読み直す
-set updatetime=750 " git statusの更新間隔を短く
+set updatetime=300 " git statusの更新間隔を短く
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
@@ -103,6 +103,13 @@ if has("autocmd")
   augroup END
 endif
 
+" auto reload $MYVIMRC
+augroup source-vimrc
+  autocmd!
+  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+  autocmd BufWritePost *init.vim source $MYVIMRC | set foldmethod=marker
+  autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+augroup END
 
 " load plugins with junegunn/vim-plug
 call plug#begin()
