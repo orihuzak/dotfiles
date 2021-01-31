@@ -1,6 +1,6 @@
 UsePlugin 'vim-lsp-settings'
 
 let g:lsp_settings = {
-  \ 'bash-language-server': { 'allowlist': ['sh'] }
+  \ 'bash-language-server': { 'allowlist': ['sh', 'zsh'] }
 \}
 
