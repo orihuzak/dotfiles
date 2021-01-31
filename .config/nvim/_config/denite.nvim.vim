@@ -1,14 +1,6 @@
 UsePlugin 'denite.nvim'
 
 
-" map
-nnoremap [denite] <Nop>
-nmap <space>f [denite]
-" reload vimrc or init.nvim
-nnoremap <silent> [denite]f :Denite file/rec<cr>
-nnoremap <silent> [denite]l :Denite line<cr>
-nnoremap <silent> [denite]c :Denite command<cr>
-nnoremap <silent> [denite]b :Denite buffer<cr>
 
 
 " map in denite window
@@ -39,6 +31,13 @@ endfunction
 call denite#custom#var('file/rec', 'command',
 \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
 
+" use .gitignore
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command',
+	\ ['git', 'ls-files', '-co', '--exclude-standard'])
+nnoremap <silent> <C-p> :<C-u>Denite
+\ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+
 " floating window
 let s:denite_win_width_percent = 0.85
 let s:denite_win_height_percent = 0.7
@@ -51,4 +50,15 @@ call denite#custom#option('default', {
 \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
 \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
 \ })
+
+
+" map
+nnoremap [denite] <Nop>
+nmap <space>f [denite]
+" reload vimrc or init.nvim
+nnoremap <silent> [denite]f :Denite file/rec<cr>
+nnoremap <silent> [denite]l :Denite line<cr>
+nnoremap <silent> [denite]c :Denite command<cr>
+nnoremap <silent> [denite]b :Denite buffer<cr>
+nnoremap <silent> [denite]s :Denite `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<cr>
 
