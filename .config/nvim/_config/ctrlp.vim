@@ -6,9 +6,10 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " map
 let g:ctrlp_map = ''
 nnoremap [ctrlp] <Nop>
-nmap <space>s [ctrlp]
+nmap <space>f [ctrlp]
 nnoremap <silent> [ctrlp]f :CtrlP<cr>
 nnoremap <silent> [ctrlp]s :CtrlPMixed<cr>
 nnoremap <silent> [ctrlp]b :CtrlPBuffer<cr>
 nnoremap <silent> [ctrlp]u :CtrlPMRU<cr>
+nnoremap <silent> [ctrlp]l :CtrlPLine<cr>
 
