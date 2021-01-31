@@ -33,12 +33,22 @@ function! s:denite_filter_my_settings() abort
   imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
 endfunction
 
-" Change file/rec command.
+" change file/rec commad
+" For ripgrep
 " Note: rg is faster than ag
 call denite#custom#var('file/rec', 'command',
 \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
 
-" Change default action.
-call denite#custom#kind('file', 'default_action', 'split')
+" floating window
+let s:denite_win_width_percent = 0.85
+let s:denite_win_height_percent = 0.7
 
+" Change denite default options
+call denite#custom#option('default', {
+\ 'split': 'floating',
+\ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+\ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+\ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+\ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+\ })
 
