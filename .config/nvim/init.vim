@@ -132,8 +132,10 @@ Plug 'leafgarland/typescript-vim'
 " file manager explorer
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/defx.nvim'
+  " Plug 'Shougo/denite.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
@@ -143,6 +145,8 @@ Plug 'kristijanhusak/defx-git'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
 " Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'mattn/ctrlp-matchfuzzy'
+" Plug 'dbeecham/ctrlp-commandpalette.vim'
 " Plug 'liuchengxu/vim-clap'
 " Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 " Plug 'nvim-lua/popup.nvim'
