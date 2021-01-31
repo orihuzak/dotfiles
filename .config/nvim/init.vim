@@ -122,6 +122,13 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" snippet
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+" Language support
+Plug 'heavenshell/vim-jsdoc' " generate jsdoc
+Plug 'elzr/vim-json' " to show json double quote
+Plug 'leafgarland/typescript-vim'
 " file manager explorer
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -147,12 +154,8 @@ Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
-" Language support
-Plug 'heavenshell/vim-jsdoc' " generate jsdoc
-Plug 'elzr/vim-json' " to show json double quote
-Plug 'leafgarland/typescript-vim'
-Plug '907th/vim-auto-save' " auto save
-Plug 'djoshea/vim-autoread' " ファイルの再読込
+Plug '907th/vim-auto-save'
+Plug 'djoshea/vim-autoread' " fileの自動再読込
 " session
 Plug 'thaerkh/vim-workspace'
 " editor
