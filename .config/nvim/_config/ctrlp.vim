@@ -1,5 +1,6 @@
 UsePlugin 'ctrlp.vim'
 UsePlugin 'ctrlp-matchfuzzy'
+UsePlugin 'ctrlp-commandpalette.vim'
 
 let g:ctrlp_extension = ['quickfix', 'line', 'mixed']
 " ignore files in .gitignore
@@ -15,4 +16,5 @@ nnoremap <silent> [ctrlp]b :CtrlPBuffer<cr>
 nnoremap <silent> [ctrlp]u :CtrlPMRU<cr>
 nnoremap <silent> [ctrlp]l :CtrlPLine<cr>
 nnoremap <silent> [ctrlp]q :CtrlPQuickfix<cr>
+nnoremap <silent> [ctrlp]c :CtrlPCommandPalette<cr>
 
