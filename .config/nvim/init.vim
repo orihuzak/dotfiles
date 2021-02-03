@@ -41,7 +41,7 @@ set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 set number relativenumber
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
-set cursorline " 現在の行を強調表示
+" set cursorline " 現在の行を強調表示
 " cursorline background color
 " hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 
