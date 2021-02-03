@@ -35,10 +35,14 @@ function! s:defx_my_settings() abort
   \ defx#is_directory() ?
     \ defx#do_action('open') :
     \ defx#do_action('multi', ['drop', 'quit'])
+  nnoremap <silent><buffer><expr> <BS>
+  \ defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> l
   \ defx#is_directory() ?
     \ defx#do_action('open_tree', 'toggle') :
     \ defx#do_action('multi', ['drop', 'quit'])
+  nnoremap <silent><buffer><expr> h
+  \ defx#do_action('close_tree', 'toggle')
   nnoremap <silent><buffer><expr> c
   \ defx#do_action('copy')
   nnoremap <silent><buffer><expr> m
@@ -76,9 +80,6 @@ function! s:defx_my_settings() abort
   \ defx#do_action('toggle_ignored_files')
   nnoremap <silent><buffer><expr> ;
   \ defx#do_action('repeat')
-  nnoremap <silent><buffer><expr> h
-  \ defx#do_action('cd', ['..'])
-  " \ defx#do_action('close_tree', 'toggle')
   nnoremap <silent><buffer><expr> ~
   \ defx#do_action('cd')
   nnoremap <silent><buffer><expr> q
