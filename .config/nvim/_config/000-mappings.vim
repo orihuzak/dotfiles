@@ -26,9 +26,10 @@ tnoremap <Esc> <C-\><C-n>
 
 " select all by alt-a
 nnoremap <A-a> ggVG
-" delete
+" delete xを切り取りではなく削除にする
 nnoremap x "_x
 vnoremap x "_x
+
 
 "" cursor move
 
@@ -41,6 +42,11 @@ inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
+
+"" command line
+
+" ctrl-xで現在のパス(バッファ名)を補完する
+cnoremap <c-x> <c-r>=expand('%:p')<CR>
 
 
 "" line move
