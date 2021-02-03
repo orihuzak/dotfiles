@@ -129,6 +129,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'leafgarland/typescript-vim'
+Plug 'plasticboy/vim-markdown'
 " file manager explorer
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -172,8 +173,11 @@ Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
-Plug 'junegunn/vim-easy-align'
 Plug 'AndrewRadev/switch.vim'
+Plug 'thinca/vim-quickrun'
+" align
+Plug 'junegunn/vim-easy-align'
+Plug 'godlygeek/tabular'
 " resize window
 Plug 'simeji/winresizer'
 Plug 'haya14busa/incsearch.vim'
