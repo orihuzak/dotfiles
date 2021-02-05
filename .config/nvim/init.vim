@@ -78,7 +78,6 @@ set hlsearch " 検索語をハイライト
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
-
 " icons
 " devicons
 " let g:webdevicons_enable=1
@@ -186,13 +185,8 @@ Plug 'godlygeek/tabular'
 Plug 'simeji/winresizer'
 Plug 'haya14busa/incsearch.vim'
 " color scheme
-" Plug 'morhetz/gruvbox'
-Plug 'yorickpeterse/happy_hacking.vim'
-" Plug 'srcery-colors/srcery-vim'
-" Plug 'wadackel/vim-dogrun'
-" Plug 'dikiaap/minimalist'
-" Plug 'AlessandroYorba/Sierra'
-" Plug 'arcticicestudio/nord-vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'rainglow/vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
