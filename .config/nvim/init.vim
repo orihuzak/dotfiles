@@ -125,6 +125,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " snippet
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'xabikos/vscode-javascript'
+Plug 'softchris/node-snippets'
+Plug 'softchris/ts-snippets'
 " Language support
 Plug 'lambdalisue/vim-backslash'
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
