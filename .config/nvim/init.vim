@@ -174,6 +174,7 @@ Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 Plug 'junegunn/vim-easy-align'
 Plug 'AndrewRadev/switch.vim'
+Plug 'machakann/vim-swap'
 " resize window
 Plug 'simeji/winresizer'
 Plug 'haya14busa/incsearch.vim'
