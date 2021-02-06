@@ -26,9 +26,10 @@ tnoremap <Esc> <C-\><C-n>
 
 " select all by alt-a
 nnoremap <A-a> ggVG
-" delete
+" delete xを切り取りではなく削除にする
 nnoremap x "_x
 vnoremap x "_x
+
 
 "" cursor move
 
@@ -41,6 +42,11 @@ inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
+
+"" command line
+
+" ctrl-xで現在のパス(バッファ名)を補完する
+cnoremap <c-x> <c-r>=expand('%:p')<CR>
 
 
 "" line move
@@ -56,31 +62,39 @@ inoremap <A-h> <C-d>
 "" tab and pane control
 
 nnoremap s <Nop>
+" move focus between windows
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+" move focus rotate window
+nnoremap sw <C-w>w
+" rotate split windows
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap sn gt " 次のタブに移動
-nnoremap sp gT
+" switch window position
 nnoremap sr <C-w>r
+" move focus between tabs
+nnoremap sn :tabnext<CR>
+nnoremap sp :tabprevious<CR>
+" command lineの高さを増やす
 nnoremap s= <C-w>=
-nnoremap sw <C-w>w
+" command lineの高さをもとに戻す
 nnoremap so <C-w>_<C-w>|
 nnoremap sO <C-w>=
+
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
-nnoremap st :<C-u>tabnew<CR> " 新しいタブを追加
+nnoremap st :tabnew<CR>
 " add a pane bottom of active pane
-nnoremap ss :<C-u>sp<CR>
-" add a pane right of active pane
-nnoremap sv :<C-u>vs<CR> " 縦に分割
+" split window 縦横
+nnoremap ss :sp<CR>
+nnoremap sv :vs<CR>
 " close a window
 nnoremap sc :close<CR>
 " nnoremap so :only<CR> " close all not current windows
-nnoremap sq :<C-u>q<CR>
+nnoremap sq :<C-u>q<CR> " close window
 nnoremap sQ :<C-u>bd<CR>
 

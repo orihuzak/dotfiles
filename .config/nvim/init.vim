@@ -41,7 +41,7 @@ set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 set number relativenumber
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
-set cursorline " 現在の行を強調表示
+" set cursorline " 現在の行を強調表示
 " cursorline background color
 " hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 
@@ -78,7 +78,6 @@ set hlsearch " 検索語をハイライト
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable " syntax highlighting
-
 " icons
 " devicons
 " let g:webdevicons_enable=1
@@ -125,10 +124,19 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " snippet
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'SirVer/ultisnips'
+" Plug 'thomasfaingnaert/vim-lsp-snippets'
+" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'xabikos/vscode-javascript'
+Plug 'softchris/node-snippets'
+Plug 'softchris/ts-snippets'
+Plug 'cartant/ts-snippet'
 " Language support
+Plug 'lambdalisue/vim-backslash'
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'plasticboy/vim-markdown'
 " file manager explorer
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -172,20 +180,19 @@ Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
-Plug 'junegunn/vim-easy-align'
 Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
+Plug 'thinca/vim-quickrun'
+" align
+Plug 'junegunn/vim-easy-align'
+Plug 'godlygeek/tabular'
 " resize window
 Plug 'simeji/winresizer'
 Plug 'haya14busa/incsearch.vim'
 " color scheme
-" Plug 'morhetz/gruvbox'
-Plug 'yorickpeterse/happy_hacking.vim'
-" Plug 'srcery-colors/srcery-vim'
-" Plug 'wadackel/vim-dogrun'
-" Plug 'dikiaap/minimalist'
-" Plug 'AlessandroYorba/Sierra'
-" Plug 'arcticicestudio/nord-vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'rainglow/vim'
+Plug 'ulwlu/elly.vim'
 " indent line
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
