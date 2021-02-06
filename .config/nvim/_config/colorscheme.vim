@@ -2,17 +2,17 @@ UsePlugin 'awesome-vim-colorschemes'
 UsePlugin 'vim'
 UsePlugin 'elly.vim'
 
-" happy_hacking
+"" happy_hacking
 " color happy_hacking
 
 
-" morhetz/gruvbox
+"" morhetz/gruvbox
 " set background=dark
 " let g:gruvbox_contrast_dark = 'soft' " soft, medium(default), hard
 " colorscheme gruvbox
 
 
-" sainnhe/sonokai
+"" sainnhe/sonokai
 " style
 " 'default', 'atlantis', 'andromeda', 'shusia', 'maia'
 " let g:sonokai_style = 'atlantis'
@@ -24,6 +24,6 @@ UsePlugin 'elly.vim'
 " color sonokai
 
 
-" ulwlu/elly.vim
+"" ulwlu/elly.vim
 colorscheme elly
 
