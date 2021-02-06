@@ -15,7 +15,7 @@ let g:Lf_PreviewResult = {
 
 " map
 nnoremap [Leaderf] <Nop>
-nmap <space>s [Leaderf]
+nmap <space>f [Leaderf]
 " search filename
 nnoremap <silent> [Leaderf]f :LeaderfFile<cr>
 " search buffers
