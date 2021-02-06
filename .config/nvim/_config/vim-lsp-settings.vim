@@ -20,6 +20,8 @@ let g:lsp_diagnostics_signs_error = {'text': '✗'}
 let g:lsp_diagnostics_signs_warning = {'text': '‼'}
 " let g:lsp_diagnostics_signs_hint = {'text': '!'}
 
+" highilight
+let g:lsp_document_highlight_enabled = 1
 " semantic highlight
 let g:lsp_semantic_enabled = 1
 " diagnostics highlight
@@ -27,6 +29,7 @@ highlight link LspErrorHighlight Error
 highlight link LspWarningHighlight Warning
 highlight link LspInformationHighlight Information
 " highlight link LspHintHighlight Hint
+" highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
 
 " let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server', 'javascript-langage-server']
 
@@ -45,3 +48,4 @@ nnoremap <silent> [vim-lsp]h :LspHover<cr>
 " 前後の診断(diagnostic)に移動する
 nnoremap <silent> [vim-lsp]j :LspNextDiagnostic<cr>
 nnoremap <silent> [vim-lsp]k :LspPreviousDiagnostic<cr>
+
