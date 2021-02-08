@@ -36,16 +36,20 @@ highlight link LspInformationHighlight Information
 " map
 nnoremap [vim-lsp] <Nop>
 nmap <space>l [vim-lsp]
-nnoremap <silent> [vim-lsp]s :LspStatus<cr>
+nnoremap [vim-lsp]s :LspStatus<cr>
 " install lang server, need vim-lsp-settings
-nnoremap <silent> [vim-lsp]i :LspInstallServer<cr>
-nnoremap <silent> [vim-lsp]d :LspDefinition<cr>
-nnoremap <silent> [vim-lsp]f :LspDocumentFormat<cr>
-nnoremap <silent> [vim-lsp]l :LspCodeLens<cr>
-nnoremap <silent> [vim-lsp]a :LspCodeAction<cr>
-nnoremap <silent> [vim-lsp]t :LspPeekTypeDefinition<cr>
-nnoremap <silent> [vim-lsp]h :LspHover<cr>
+nnoremap [vim-lsp]i :LspInstallServer<cr>
+nnoremap [vim-lsp]d :LspPeekDefinition<cr>
+nnoremap [vim-lsp]D :LspPeekDeclaration<CR>
+nnoremap [vim-lsp]f :LspDocumentFormat<cr>
+nnoremap [vim-lsp]l :LspCodeLens<cr>
+nnoremap [vim-lsp]a :LspCodeAction<cr>
+nnoremap [vim-lsp]t :LspPeekTypeDefinition<cr>
+nnoremap [vim-lsp]h :LspHover<cr>
 " 前後の診断(diagnostic)に移動する
-nnoremap <silent> [vim-lsp]j :LspNextDiagnostic<cr>
-nnoremap <silent> [vim-lsp]k :LspPreviousDiagnostic<cr>
+nnoremap [vim-lsp]j :LspNextDiagnostic<cr>
+nnoremap [vim-lsp]k :LspPreviousDiagnostic<cr>
+nnoremap [vim-lsp]r :LspRename<cr>
+nnoremap [vim-lsp]z :LspReferences<cr>
+nnoremap [vim-lsp]s :LspDocumentSymbolSearch<cr>
 
