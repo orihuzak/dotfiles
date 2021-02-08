@@ -89,13 +89,13 @@ nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
 " new tab
 nnoremap st :tabnew<CR>
+" close tab
+nnoremap sq :tabclose<CR>
 " add a pane bottom of active pane
 " split window 縦横
 nnoremap ss :sp<CR>
 nnoremap sv :vs<CR>
 " close a window
 nnoremap sc :close<CR>
-" nnoremap so :only<CR> " close all not current windows
-nnoremap sq :<C-u>q<CR> " close window
 nnoremap sQ :<C-u>bd<CR>
 
