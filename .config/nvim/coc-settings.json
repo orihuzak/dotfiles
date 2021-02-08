@@ -1,6 +1,9 @@
 {
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnType": true,
+  "list.source.files.args": ["--hidden", "--files"],
+  "list.source.gfiles.defaultOptions": [],
+  "list.source.grep.command": "rg",
   "languageserver": {},
   "suggest.numberSelect": false,
   "session.saveOnVimLeave": false,
@@ -16,9 +19,6 @@
   "explorer.buffer.showHiddenBuffers": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.git.showIgnored": false,
-  "list.source.files.args": ["--hidden", "--files"],
-  "list.source.gfiles.defaultOptions": [],
-  "list.source.grep.command": "rg",
   "json.enable": true,
   "json.format.enable": true,
   "javascript.format.enabled": true,
@@ -31,12 +31,6 @@
   "highlight.document.enable": true,
   "highlight.colors.enable": true,
   "eslint.packageManager": "npm",
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ]
+  "eslint.autoFixOnSave": true
 }
 
