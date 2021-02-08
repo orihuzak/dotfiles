@@ -70,7 +70,7 @@ nmap <space>e :CocCommand explorer<cr>
 nnoremap [coc] <Nop>
 nmap <space>c [coc]
 " coc commands
-nnoremap [coc]ls :CocList<cr>
+nnoremap [coc]l :CocList<cr>
 nnoremap [coc]s :CocSearch
 nnoremap [coc]i :CocInstall<CR>
 nnoremap [coc]q :CocFix<cr>
