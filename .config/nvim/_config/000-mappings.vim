@@ -74,7 +74,7 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-" switch window position
+" window positionを入れ替える
 nnoremap sr <C-w>r
 " move focus between tabs
 nnoremap sn :tabnext<CR>
@@ -84,9 +84,10 @@ nnoremap s= <C-w>=
 " command lineの高さをもとに戻す
 nnoremap so <C-w>_<C-w>|
 nnoremap sO <C-w>=
-
+" move focus buffer
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
+" new tab
 nnoremap st :tabnew<CR>
 " add a pane bottom of active pane
 " split window 縦横
