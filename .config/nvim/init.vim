@@ -139,6 +139,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lambdalisue/vim-backslash'
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
+Plug 'kevinoid/vim-jsonc'
 " Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
 " file manager explorer
@@ -168,7 +169,7 @@ Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 " git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug '907th/vim-auto-save'
 Plug 'djoshea/vim-autoread' " fileの自動再読込
