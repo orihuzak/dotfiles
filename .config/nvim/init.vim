@@ -13,6 +13,7 @@ set fileformats=unix " 改行コードの設定
 " set nofixeol " ファイル末尾への自動改行文字入力を無効化
 set autoread " 編集中のファイルが変更されたら読み直す
 set updatetime=300 " git statusの更新間隔を短く
+set shortmess+=c " dont pass messages to |ins-completion-menu|
 " set autochdir " 常に現在のファイルのディレクトリをカレントディレクトリにする
 set noswapfile " swapfileを作らない
 set nobackup " ファイルを上書きするときにバックアップを作るのを無効化
@@ -41,7 +42,10 @@ set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 set number relativenumber
 set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
+" cursorlineにアンダーライン
 " set cursorline " 現在の行を強調表示
+" highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" highlight CursorLine gui=underline guifg=NONE guibg=NONE
 " cursorline background color
 " hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 
@@ -113,24 +117,24 @@ augroup END
 " load plugins with junegunn/vim-plug
 call plug#begin()
 
-Plug 'hecal3/vim-leader-guide'
-" lsp, auto complete
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" language server protocol
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " vim-lsp and vim-lsp-settings
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" auto complete
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " snippet
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 " Plug 'SirVer/ultisnips'
 " Plug 'thomasfaingnaert/vim-lsp-snippets'
 " Plug 'thomasfaingnaert/vim-lsp-ultisnips'
-Plug 'xabikos/vscode-javascript'
-Plug 'softchris/node-snippets'
-Plug 'softchris/ts-snippets'
-Plug 'cartant/ts-snippet'
+" Plug 'xabikos/vscode-javascript'
+" Plug 'softchris/node-snippets'
+" Plug 'softchris/ts-snippets'
+" Plug 'cartant/ts-snippet'
 " Language support
 Plug 'lambdalisue/vim-backslash'
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
@@ -138,17 +142,17 @@ Plug 'elzr/vim-json' " to show json double quote
 " Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
 " file manager explorer
-if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/defx.nvim'
-  " Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'kristijanhusak/defx-icons'
-Plug 'kristijanhusak/defx-git'
+" if has('nvim')
+"   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+"   " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/defx.nvim'
+"   " Plug 'Shougo/denite.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" Plug 'kristijanhusak/defx-icons'
+" Plug 'kristijanhusak/defx-git'
 " fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
@@ -168,7 +172,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug '907th/vim-auto-save'
 Plug 'djoshea/vim-autoread' " fileの自動再読込
-" session
+" session / workspace
 Plug 'thaerkh/vim-workspace'
 " editor
 Plug 'mbbill/undotree'
@@ -177,12 +181,13 @@ Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
-Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む操作を簡単にする
+Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
 Plug 'thinca/vim-quickrun'
+Plug 'kana/vim-tabpagecd'
 " align
 Plug 'junegunn/vim-easy-align'
 Plug 'godlygeek/tabular'
@@ -194,6 +199,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'rainglow/vim'
 Plug 'ulwlu/elly.vim'
 " indent line
+Plug 'hecal3/vim-leader-guide'
 Plug 'Yggdroot/indentLine'
 " Plug 'thaerkh/vim-indentguides'
 " Plug 'nathanaelkane/vim-indent-guides'
