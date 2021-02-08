@@ -40,9 +40,10 @@ autocmd CursorHold * CocCommand git.refresh
 
 " highlighting
 " cocのDiagnosticsの、左横のアイコンの色設定
-" highlight CocErrorSign ctermfg=15 ctermbg=196
-" highlight CocWarningSign ctermfg=0 ctermbg=172
-" coc-highlight
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
+
+" Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " vim-airline
@@ -84,7 +85,7 @@ nmap <space>d [diag]
 nmap [diag]j <Plug>(coc-diagnostic-next)
 nmap [diag]k <Plug>(coc-diagnostic-prev)
 " nmap [diag]i <Plug>(coc-diagnostic-info)
-nmap [diag]i :call CocAction("doHover")<cr>
+nmap [diag]h :call CocAction("doHover")<cr>
 nmap [diag]d :call CocAction("diagnosticPreview")<cr>
 nmap [diag]f <Plug>(coc-definition)
 nmap [diag]c <Plug>(coc-declaration)
