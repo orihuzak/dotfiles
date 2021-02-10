@@ -44,16 +44,20 @@ set formatoptions+=mM " 自動折り返しを日本語対応
 set wrap " 行を折り返して表示
 " cursorlineにアンダーライン
 " set cursorline " 現在の行を強調表示
-" highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" colorschemeが設定されるたびにunderlineを定義しなおす
+augroup CustomCursorLine
+  au!
+  au ColorScheme * :hi! CursorLine gui=underline cterm=underline
+augroup END
+" hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 " highlight CursorLine gui=underline guifg=NONE guibg=NONE
 " cursorline background color
-" hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 
 " indent
 set smartindent " 自動indentの設定
-set expandtab " tabを半角スペースにする
-set tabstop=2 " tab幅の設定
-set shiftwidth=2 " 自動インデント幅
+" set expandtab " tab to space
+set tabstop=4 " tab幅の設定
+set shiftwidth=4 " 自動インデント幅
 
 " scroll
 set scrolloff=999 " number of lines to see above and below the corsor
@@ -61,7 +65,8 @@ set mouse=a " enable mouse scroll
 
 " show invisible chars
 set list
-set listchars=tab:»-,space:·,extends:»,precedes:« " 不可視文字の表示を定義
+" set listchars=tab:»-,space:·,extends:»,precedes:« " 不可視文字の表示を定義
+set listchars=tab:>-,space:·,extends:»,precedes:« " 不可視文字の表示を定義
 " spaceの候補 ["·", "␣"]
 " 改行文字の候補 eol:↲,
 " color invisible chars
