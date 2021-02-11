@@ -1,15 +1,15 @@
 # This is Git's per-user configuration file.
 [user]
-  name     = Kazuhiro Haraguchi
-  email    = arx.solid@gmail.com
+	name     = Kazuhiro Haraguchi
+	email    = arx.solid@gmail.com
 [color]
-	ui     = true
+	ui       = true
 [alias]
-  unstage  = reset HEAD
+	unstage  = reset HEAD
 [pull]
-	ff     = only
-	rebase = false
+	ff       = only
+	rebase   = false
 [core]
-  autocrlf = false
-  editor   = vim
+	autocrlf = false
+	editor   = vim
 
