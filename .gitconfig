@@ -2,9 +2,14 @@
 [user]
   name = Kazuhiro Haraguchi
   email = arx.solid@gmail.com
+[color]
+	ui = true
+[alias]
+  unstage = reset HEAD
+[pull]
+	ff = only
+	rebase = false
 [core]
   autocrlf = false
   editor = vim
-[alias]
-  unstage = reset HEAD
 
