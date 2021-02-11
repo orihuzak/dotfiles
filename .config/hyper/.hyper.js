@@ -162,8 +162,8 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-    "editor:cut": "ctrl+x",
-    "editor:copy": "ctrl+c",
-    "editor:paste": "ctrl+v",
+    // "editor:cut": "ctrl+x",
+    // "editor:copy": "ctrl+c",
+    // "editor:paste": "ctrl+v",
   },
 };
