@@ -196,7 +196,7 @@ Plug 'thinca/vim-quickrun'
 Plug 'kana/vim-tabpagecd'
 " align
 Plug 'junegunn/vim-easy-align'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 " resize window
 Plug 'simeji/winresizer'
 Plug 'haya14busa/incsearch.vim'
