@@ -60,7 +60,7 @@ set tabstop=4 " tab幅の設定
 set shiftwidth=4 " 自動インデント幅
 
 " scroll
-set scrolloff=999 " number of lines to see above and below the corsor
+set scrolloff=999 " number of lines to see or
 set mouse=a " enable mouse scroll
 
 " show invisible chars
@@ -92,11 +92,6 @@ syntax enable " syntax highlighting
 " let g:webdevicons_enable=1
 
 
-" leader
-let g:mapleader = '\'
-let g:maplocalleader = ','
-" let mapleader=","
-" noremap \ ,
 
 " remember last cursor position
 if has("autocmd")
@@ -170,6 +165,10 @@ Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
 " Plug 'nvim-lua/popup.nvim'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
+" search in file or buffer
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/is.vim'
 " icons
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 " git
@@ -182,7 +181,6 @@ Plug 'djoshea/vim-autoread' " fileの自動再読込
 Plug 'thaerkh/vim-workspace'
 " editor
 Plug 'mbbill/undotree'
-Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'tpope/vim-commentary' " commentout/inできる
@@ -194,12 +192,14 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
 Plug 'thinca/vim-quickrun'
 Plug 'kana/vim-tabpagecd'
+" cursor move
+Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
+" Plug 'phaazon/hop.nvim' " for nvim 0.5~
 " align
 Plug 'junegunn/vim-easy-align'
 " Plug 'godlygeek/tabular'
 " resize window
 Plug 'simeji/winresizer'
-Plug 'haya14busa/incsearch.vim'
 " color scheme
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'rainglow/vim'
