@@ -1,5 +1,10 @@
 " user custom keymapping for vim
 
+" leader
+let g:mapleader = ","
+" let g:maplocalleader = ','
+
+
 " prefix for vim features
 nnoremap [vim] <Nop>
 nmap <space>v [vim]
