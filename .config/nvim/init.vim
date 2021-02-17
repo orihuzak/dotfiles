@@ -93,7 +93,7 @@ syntax enable " syntax highlighting
 
 
 function g:IsWsl()
-    return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
+	return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
 endfunction
 
 
@@ -174,6 +174,7 @@ Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/is.vim'
+Plug 'haya14busa/vim-asterisk'
 " icons
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 " git
