@@ -46,8 +46,8 @@ set wrap " 行を折り返して表示
 " set cursorline " 現在の行を強調表示
 " colorschemeが設定されるたびにunderlineを定義しなおす
 augroup CustomCursorLine
-  au!
-  au ColorScheme * :hi! CursorLine gui=underline cterm=underline
+	au!
+	au ColorScheme * :hi! CursorLine gui=underline cterm=underline
 augroup END
 " hi CursorLine cterm=None ctermfg=NONE ctermbg=236
 " highlight CursorLine gui=underline guifg=NONE guibg=NONE
@@ -99,24 +99,24 @@ endfunction
 
 " remember last cursor position
 if has("autocmd")
-  augroup redhat
-    " In text files, always limit the width of text to 78 characters
-    autocmd BufRead *.txt set tw=78
-    " When editing a file, always jump to the last cursor position
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
-  augroup END
+	augroup redhat
+		" In text files, always limit the width of text to 78 characters
+		autocmd BufRead *.txt set tw=78
+		" When editing a file, always jump to the last cursor position
+		autocmd BufReadPost *
+		\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+		\		exe "normal! g'\"" |
+		\ endif
+	augroup END
 endif
 
 
 " auto reload $MYVIMRC
 augroup source-vimrc
-  autocmd!
-  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
-  autocmd BufWritePost *init.vim source $MYVIMRC | set foldmethod=marker
-  autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+	autocmd!
+	autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+	autocmd BufWritePost *init.vim source $MYVIMRC | set foldmethod=marker
+	autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
 " load plugins with junegunn/vim-plug
@@ -149,13 +149,13 @@ Plug 'kevinoid/vim-jsonc'
 Plug 'plasticboy/vim-markdown'
 " file manager explorer
 " if has('nvim')
-"   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-"   " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+"	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+"	" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " else
-"   Plug 'Shougo/defx.nvim'
-"   " Plug 'Shougo/denite.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
+"	Plug 'Shougo/defx.nvim'
+"	" Plug 'Shougo/denite.nvim'
+"	Plug 'roxma/nvim-yarp'
+"	Plug 'roxma/vim-hug-neovim-rpc'
 " endif
 " Plug 'kristijanhusak/defx-icons'
 " Plug 'kristijanhusak/defx-git'
@@ -225,7 +225,7 @@ call plug#end()
 " load plugin config files in _config/
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
-  return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+	return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
