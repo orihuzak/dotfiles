@@ -5,13 +5,6 @@ UsePlugin 'elly.vim'
 "" happy_hacking
 " color happy_hacking
 
-
-"" morhetz/gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'soft' " soft, medium(default), hard
-" colorscheme gruvbox
-
-
 "" sainnhe/sonokai
 " style
 " 'default', 'atlantis', 'andromeda', 'shusia', 'maia'
@@ -23,7 +16,14 @@ UsePlugin 'elly.vim'
 " let g:sonokai_diagnostic_text_highlight = 1
 " color sonokai
 
-
-"" ulwlu/elly.vim
-colorscheme elly
+" systemによってcolorschemeを変える
+if IsWsl()
+	"" ulwlu/elly.vim
+	colorscheme elly
+else
+	"" morhetz/gruvbox
+	set background=dark
+	let g:gruvbox_contrast_dark = 'soft' " soft, medium(default), hard
+	colorscheme gruvbox
+endif
 
