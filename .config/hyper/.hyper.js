@@ -42,10 +42,10 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#000',
+    // backgroundColor: '#000',
 
     // terminal selection color
-    selectionColor: 'rgba(248,28,229,0.3)',
+    // selectionColor: 'rgba(248,28,229,0.3)',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -66,7 +66,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '0px 0px 0px 0px', // default '12px 14px',
+    padding: '0 0', // default '12px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -148,10 +148,10 @@ module.exports = {
   plugins: [
     // "hyper-statusline",
     "hyper-search",
-    "hyper-opacity",
     "hyper-pane",
+	"hyper-opacity",
     "hyper-tab-icons-plus",
-    "hyper-material-theme"
+	"hyper-material-theme"
   ],
 
   // in development, you can create a directory under
