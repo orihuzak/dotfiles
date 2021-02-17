@@ -15,7 +15,7 @@ nnoremap <silent> [vim]l :set relativenumber!<CR>
 
 " incsearch
 " remove highlight by tapping ESC twice
-" nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " prefix for help
 nnoremap [help] <Nop>
