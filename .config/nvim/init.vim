@@ -92,6 +92,10 @@ syntax enable " syntax highlighting
 " let g:webdevicons_enable=1
 
 
+function g:IsWsl()
+    return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
+endfunction
+
 
 " remember last cursor position
 if has("autocmd")
@@ -105,6 +109,7 @@ if has("autocmd")
     \ endif
   augroup END
 endif
+
 
 " auto reload $MYVIMRC
 augroup source-vimrc
