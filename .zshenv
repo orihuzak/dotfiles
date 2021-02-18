@@ -28,6 +28,8 @@ export EDITOR=nvim
 if [ -d "/mnt/c" ]; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
   export LIBGL_ALWAYS_INDIRECT=true
+  # autohotkeyのpathを通す
+  export PATH="/mnt/c/Program Files/AutoHotkey:$PATH"
 fi
 
 ### Complete Messages
