@@ -73,6 +73,7 @@ nmap <space>c [coc]
 nnoremap [coc]l :CocList<cr>
 nnoremap [coc]s :CocSearch
 nnoremap [coc]i :CocInstall<CR>
+nnoremap [coc]n :CocUninstall
 nnoremap [coc]q :CocFix<cr>
 nnoremap [coc]c :CocConfig<cr>
 nnoremap [coc]u :CocUpdate<cr>
