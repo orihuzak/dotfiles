@@ -91,10 +91,11 @@ syntax enable " syntax highlighting
 " devicons
 " let g:webdevicons_enable=1
 
-
-function g:IsWsl()
-	return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
-endfunction
+if !exists("g:IsWsl")
+	function g:IsWsl()
+		return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
+	endfunction
+endif
 
 " remember last cursor position
 if has("autocmd")
@@ -136,6 +137,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " auto complete
 " Plug 'prabirshrestha/asyncomplete.vim'
 " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" 括弧などの入力補完
+" Plug 'kana/vim-smartinput'
+Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'lambdalisue/vim-backslash'
 " snippet
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
@@ -147,7 +152,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'softchris/ts-snippets'
 " Plug 'cartant/ts-snippet'
 " Language support
-Plug 'lambdalisue/vim-backslash'
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
 Plug 'kevinoid/vim-jsonc'
@@ -192,11 +196,14 @@ Plug 'djoshea/vim-autoread' " fileの自動再読込
 " session / workspace
 Plug 'thaerkh/vim-workspace'
 " editor
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire' " aeで全選択
+Plug 'kana/vim-textobj-indent' " ai iiがtextobj indent
+Plug 'kana/vim-textobj-line' " al ilがtextobj line
 Plug 'mbbill/undotree'
 Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'tpope/vim-commentary' " commentout/inできる
-Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
