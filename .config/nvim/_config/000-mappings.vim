@@ -17,7 +17,6 @@ nnoremap <silent> [vim]l :set relativenumber!<CR>
 nnoremap [editor] <Nop>
 nmap <space><space> [editor]
 
-
 " incsearch
 " remove highlight by tapping ESC twice
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
@@ -36,7 +35,7 @@ tnoremap <Esc> <C-\><C-n>
 " nmap <CR> i<CR><ESC>
 
 " select all by alt-a
-nnoremap <A-a> ggVG
+" nnoremap <A-a> ggVG
 " delete xを切り取りではなく削除にする
 nnoremap x "_x
 vnoremap x "_x
