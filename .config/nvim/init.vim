@@ -96,7 +96,6 @@ function g:IsWsl()
 	return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
 endfunction
 
-
 " remember last cursor position
 if has("autocmd")
 	augroup redhat
@@ -110,7 +109,6 @@ if has("autocmd")
 	augroup END
 endif
 
-
 " auto reload $MYVIMRC
 augroup source-vimrc
 	autocmd!
@@ -118,6 +116,14 @@ augroup source-vimrc
 	autocmd BufWritePost *init.vim source $MYVIMRC | set foldmethod=marker
 	autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
+
+" insert modeから抜けたときにIMEをOFF
+if IsWsl() && executable('AutoHotkeyU64.exe')
+	augroup insertLeave
+		autocmd!
+		autocmd InsertLeave,CmdwinLeave * :call system('AutoHotkeyU64.exe "C:\tools\ImeDisable.ahk"')
+	augroup END
+endif
 
 " load plugins with junegunn/vim-plug
 call plug#begin()
