@@ -59,6 +59,9 @@ set smartindent " 自動indentの設定
 set tabstop=4 " tab幅の設定
 set shiftwidth=4 " 自動インデント幅
 
+" folding
+set foldmethod=syntax
+
 " scroll
 set scrolloff=999 " number of lines to see or
 set mouse=a " enable mouse scroll
