@@ -9,6 +9,9 @@ alias shells='cat /etc/shells'
 alias reload='exec $SHELL -l'
 alias relogin='exec $SHELL -l'
 
+# list PATH
+alias showpath='echo $PATH | sed -e "s/:/\n/g"'
+
 # list command alias
 # color files, dir, aliases
 alias ls='ls --color=auto'
@@ -146,6 +149,7 @@ alias game='cd ~/game'
 alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
 alias dev='cd ~/dev'
+alias lab='cd ~/lab'
 
 # generate ssh key
 alias genssh='ssh-keygen -t rsa -b 4096 -C "arx.solid@gmail.com"'
