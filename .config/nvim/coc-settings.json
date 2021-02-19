@@ -5,11 +5,6 @@
 	"list.source.gfiles.defaultOptions": [],
 	"list.source.grep.command": "rg",
 	"languageserver": {
-		"efm": {
-			"command": "efm-langserver",
-			"args": [],
-			"filetypes": ["vim", "markdown", "yaml"]
-		}
 	},
 	"suggest.numberSelect": true,
 	"suggest.enablePreview": true,
