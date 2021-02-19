@@ -70,15 +70,19 @@ nmap <space>e :CocCommand explorer<cr>
 nnoremap [coc] <Nop>
 nmap <space>c [coc]
 " coc commands
-nnoremap [coc]l :CocList<cr>
+" nnoremap [coc]l :CocList<cr>
 nnoremap [coc]s :CocSearch
 nnoremap [coc]i :CocInstall<CR>
 nnoremap [coc]n :CocUninstall
-nnoremap [coc]q :CocFix<cr>
+nnoremap [coc]f :CocFix<cr>
 nnoremap [coc]c :CocConfig<cr>
 nnoremap [coc]u :CocUpdate<cr>
-nmap [coc]r <Plug>(coc-rename)
-nmap [coc]f <Plug>(coc-format)
+nnoremap [coc]q :CocRestart<cr>
+nnoremap [coc]r :CocCommand workspace.renameCurrentFile<cr>
+
+" editor mapping <space><space> to [editor]
+nmap [editor]r <Plug>(coc-rename)
+nmap [editor]f <Plug>(coc-format)
 
 " diagnostics
 nnoremap [diag] <Nop>
@@ -99,7 +103,8 @@ nnoremap [coclist] <Nop>
 nmap <space>l [coclist]
 nnoremap [coclist]s :CocList gfiles<cr>
 nnoremap [coclist]b :CocList buffers<cr>
-nnoremap [coclist]l :CocList lines<CR>
+nnoremap [coclist]l :CocList<CR>
+nnoremap [coclist]i :CocList lines<CR>
 nnoremap [coclist]u :CocList mru<cr>
 nnoremap [coclist]c :CocList commands<cr>
 
