@@ -61,9 +61,7 @@ set shiftwidth=4 " 自動インデント幅
 
 " folding
 set foldmethod=syntax
-" 折りたたみ状態を記録する
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+set nofoldenable
 
 " scroll
 set scrolloff=999 " number of lines to see or
