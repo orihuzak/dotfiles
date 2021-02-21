@@ -117,8 +117,8 @@ endif
 " auto reload $MYVIMRC
 augroup source-vimrc
 	autocmd!
-	autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
-	autocmd BufWritePost *init.vim source $MYVIMRC | set foldmethod=marker
+	autocmd BufWritePost *vimrc source $MYVIMRC
+	autocmd BufWritePost *init.vim source $MYVIMRC
 	autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
@@ -204,17 +204,18 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " aeで全選択
 Plug 'kana/vim-textobj-indent' " ai iiがtextobj indent
 Plug 'kana/vim-textobj-line' " al ilがtextobj line
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 Plug 'matze/vim-move' " easy to move lines
-Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
-Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
 Plug 'thinca/vim-quickrun'
 Plug 'kana/vim-tabpagecd'
+" repeat
+" Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
+Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 " cursor move
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 " Plug 'phaazon/hop.nvim' " for nvim 0.5~
