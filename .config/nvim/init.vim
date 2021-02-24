@@ -195,6 +195,7 @@ Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
+Plug 'skanehira/gh.vim'
 Plug '907th/vim-auto-save'
 Plug 'djoshea/vim-autoread' " fileの自動再読込
 " session / workspace
