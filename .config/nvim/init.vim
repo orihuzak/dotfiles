@@ -162,17 +162,17 @@ Plug 'kevinoid/vim-jsonc'
 " Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
 " file manager explorer
-" if has('nvim')
-"	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-"	" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"	Plug 'Shougo/defx.nvim'
-"	" Plug 'Shougo/denite.nvim'
-"	Plug 'roxma/nvim-yarp'
-"	Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" Plug 'kristijanhusak/defx-icons'
-" Plug 'kristijanhusak/defx-git'
+ " if has('nvim')
+	" Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+	" " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+ " else
+	" Plug 'Shougo/defx.nvim'
+	" " Plug 'Shougo/denite.nvim'
+	" Plug 'roxma/nvim-yarp'
+	" Plug 'roxma/vim-hug-neovim-rpc'
+ " endif
+ " Plug 'kristijanhusak/defx-icons'
+ " Plug 'kristijanhusak/defx-git'
 " fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/rpc' }
