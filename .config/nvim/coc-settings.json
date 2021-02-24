@@ -1,15 +1,17 @@
 {
+	"languageserver": {
+	},
 	"coc.preferences.colorSupport": true,
 	"coc.preferences.formatOnType": true,
 	"list.source.files.args": ["--hidden", "--files"],
 	"list.source.gfiles.defaultOptions": [],
 	"list.source.grep.command": "rg",
-	"languageserver": {
-	},
 	"suggest.numberSelect": true,
 	"suggest.enablePreview": true,
 	"session.saveOnVimLeave": false,
 	"session.restartOnSessionLoad": false,
+	"diagnostic.checkCurrentLine": true,
+	"codeLens.enable": true,
 	"explorer.position": "floating",
 	"explorer.floating.position": "center",
 	"explorer.floating.border.enable": true,
