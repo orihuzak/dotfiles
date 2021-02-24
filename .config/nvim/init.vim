@@ -34,7 +34,7 @@ set signcolumn=yes " sign columnを常に表示する
 set concealcursor=""
 
 " cursor
-set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
+" set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
 set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
 
 " line
@@ -214,7 +214,7 @@ Plug 'machakann/vim-swap'
 Plug 'thinca/vim-quickrun'
 Plug 'kana/vim-tabpagecd'
 " repeat
-" Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
+Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
 " cursor move
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
