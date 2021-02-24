@@ -1,10 +1,25 @@
 UsePlugin 'vim-lsp'
 UsePlugin 'vim-lsp-settings'
 
+" if executable("deno")
+" 	augroup LspTypeScript
+" 		autocmd!
+" 		autocmd User lsp_setup call lsp#register_server({
+" 			\ "name": "deno lsp",
+" 			\ "cmd": {server_info -> ["deno", "lsp"]},
+" 			\ "root_uri": {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), "tsconfig.json"))},
+" 			\ "whitelist": ["typescript", "typescript.tsx"],
+" 		\ })
+" 	augroup END
+" endif
+
 let g:lsp_settings = {
   \ 'bash-language-server': { 'allowlist': ['sh', 'zsh'] }
 \}
-" let g:lsp_preview_float = 1
+
+"" options
+let g:lsp_auto_enable = 1
+let g:lsp_preview_float = 1
 " lspの診断機能をon
 let g:lsp_diagnostics_enabled = 1
 " これをonにするとterminalの真ん中にdiagnostics windowが表示されてしまう
@@ -49,6 +64,7 @@ nnoremap [vim-lsp]h :LspHover<cr>
 " 前後の診断(diagnostic)に移動する
 nnoremap [vim-lsp]j :LspNextDiagnostic<cr>
 nnoremap [vim-lsp]k :LspPreviousDiagnostic<cr>
+
 nnoremap [vim-lsp]r :LspRename<cr>
 nnoremap [vim-lsp]z :LspReferences<cr>
 nnoremap [vim-lsp]s :LspDocumentSymbolSearch<cr>
