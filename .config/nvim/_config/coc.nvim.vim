@@ -37,6 +37,15 @@ let g:coc_snippet_prev = '<C-k>'
 
 " coc-git
 autocmd CursorHold * CocCommand git.refresh
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+
 
 " highlighting
 " cocのDiagnosticsの、左横のアイコンの色設定
@@ -79,6 +88,7 @@ nnoremap [coc]c :CocConfig<cr>
 nnoremap [coc]u :CocUpdate<cr>
 nnoremap [coc]q :CocRestart<cr>
 nnoremap [coc]r :CocCommand workspace.renameCurrentFile<cr>
+nnoremap [coc]a :CocAction<CR>
 
 " editor mapping <space><space> to [editor]
 nmap [editor]r <Plug>(coc-rename)
@@ -89,14 +99,14 @@ nnoremap [diag] <Nop>
 nmap <space>d [diag]
 nmap [diag]j <Plug>(coc-diagnostic-next)
 nmap [diag]k <Plug>(coc-diagnostic-prev)
-" nmap [diag]i <Plug>(coc-diagnostic-info)
+nmap [diag]i <Plug>(coc-diagnostic-info)
 nmap [diag]h :call CocAction("doHover")<cr>
 nmap [diag]d :call CocAction("diagnosticPreview")<cr>
 nmap [diag]f <Plug>(coc-definition)
 nmap [diag]c <Plug>(coc-declaration)
 nmap [diag]r <Plug>(coc-references)
 "スペースhでHover
-nmap <space>h :<C-u>call CocAction('doHover')<cr>
+nmap <space>h :call CocAction("doHover")<cr>
 
 " coclist
 nnoremap [coclist] <Nop>
