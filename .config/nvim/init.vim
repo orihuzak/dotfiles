@@ -214,6 +214,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
 Plug 'thinca/vim-quickrun'
 Plug 'kana/vim-tabpagecd'
+Plug 'andymass/vim-matchup'
 " repeat
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
