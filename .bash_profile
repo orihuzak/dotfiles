@@ -103,6 +103,9 @@ if [ -d "/mnt/c" ]; then
   export LIBGL_ALWAYS_INDIRECT=true
 fi
 
+# bash-completion
+[[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+
 ### Complete Messages
 echo "Loding .bash_profile completed!!"
 
