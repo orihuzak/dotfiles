@@ -34,7 +34,7 @@ set signcolumn=yes " sign columnを常に表示する
 set concealcursor=""
 
 "" terminal
-let &shell="bash --login"
+" let &shell="bash --login"
 " if executable('/home/linuxbrew/.linuxbrew/bin/bash')
 " 	let &shell="/home/linuxbrew/.linuxbrew/bin/bash --login"
 " else
