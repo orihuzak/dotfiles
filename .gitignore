@@ -58,4 +58,7 @@
 # hyper
 !/.config/hyper/
 !/.config/hyper/.hyper.js
+# alacritty
+!/.config/alacritty/
+!/.config/alacritty/alacritty.yml
 
