@@ -9,7 +9,6 @@ nnoremap [fzf-p]b :FzfPreviewBuffersRpc<cr>
 nnoremap [fzf-p]u :FzfPreviewProjectMruFilesRpc<cr>
 nnoremap [fzf-p]l :FzfPreviewLinesRpc<cr>
 nnoremap [fzf-p]c :FzfPreviewCommandPaletteRpc<cr>
-nnoremap [fzf-p]g :FzfPreviewProjectGrep<cr>
+nnoremap [fzf-p]g :FzfPreviewProjectGrepRpc<cr>
 nnoremap [fzf-p]r :FzfPreviewFromResourcesRpc<cr>
-
 
