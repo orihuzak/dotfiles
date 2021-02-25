@@ -1,64 +1,40 @@
 ### git ignore these files and dirs
 
-## ignore all
-/*
-/.**
+Session.vim
+Brewfile.lock.json
+selected
 
-# white list
+.git/
+.undodir/
 
-!/.bash_aliases
-!/.bash_profile
-!/.bashrc
-!/.zshenv
-!/.zshrc
-!/.zsh_aliases
-!/.eslintrc.js
-!/.gitconfig
-!/.gitignore
-!/.travis.yml
-!/.vimrc
-!/.editorconfig
-!/Brewfile
-!/Gemfile
-!/Makefile
-!/README.md
-# my shell scripts
-!/setup-crostini.sh
-!/setup-crostini-deb-buster.sh
-!/avconcat.sh
-!/mylist.txt
-!/tom4a.sh
-!/tomp3.sh
+.config/Code/
+.config/TabNine/
+.config/calibre/
+.config/cheat/
+.config/coc/
+.config/configstore/
+.config/dconf/
+.config/enchant/
+.config/fcitx/
+.config/gh/
+.config/google-chrome/
+.config/gtk-3.0/
+.config/nnn/
+.config/pet/
+.config/pulse/
+.config/ranger/
+.config/vivaldi/
+.config/vlc/
 
-!/etc/
-!/etc/**
-!/bin/
-!/bin/**
-
-# emacs
-!/.emacs.d/
-!/.emacs.d/init.el
-!/.emacs.d/kkcrc
-
-## config
-!/.config/
-# youtube-dl
-!/.config/youtube-dl/
-!/.config/youtube-dl/config
-# yarn
-!/.config/yarn/
-!/.config/yarn/global/
-!/.config/yarn/global/package.json
-# nvim
-!/.config/nvim/
-!/.config/nvim/init.vim
-!/.config/nvim/coc-settings.json
-!/.config/nvim/_config/
-!/.config/nvim/_config/**
 # hyper
-!/.config/hyper/
-!/.config/hyper/.hyper.js
-# alacritty
-!/.config/alacritty/
-!/.config/alacritty/alacritty.yml
+.config/Hyper/
+.config/hyper/**
+!.config/hyper/.hyper.js
+
+# nvim
+.config/nvim/.netrwhist
+.config/nvim/plugged/
+
+# yarn
+.config/yarn/global/node_modules/
 
