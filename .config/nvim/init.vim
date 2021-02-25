@@ -33,6 +33,14 @@ set laststatus=2 " ステータスラインを常に表示
 set signcolumn=yes " sign columnを常に表示する
 set concealcursor=""
 
+"" terminal
+let &shell="bash --login"
+" if executable('/home/linuxbrew/.linuxbrew/bin/bash')
+" 	let &shell="/home/linuxbrew/.linuxbrew/bin/bash --login"
+" else
+" 	let &shell="bash --login"
+" endif
+
 " cursor
 " set virtualedit=onemore " 行末の１文字先までカーソル移動できるようにする
 set whichwrap=b,s,h,l,<,>,[,] " 行をまたいで移動
