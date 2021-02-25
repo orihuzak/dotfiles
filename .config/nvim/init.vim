@@ -134,13 +134,13 @@ endif
 call plug#begin()
 
 " language server protocol
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " vim-lsp and vim-lsp-settings
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 " auto complete
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " 括弧などの入力補完
 " Plug 'kana/vim-smartinput'
 Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
@@ -148,9 +148,9 @@ Plug 'lambdalisue/vim-backslash'
 " snippet
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
-" Plug 'SirVer/ultisnips'
-" Plug 'thomasfaingnaert/vim-lsp-snippets'
-" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 " Plug 'xabikos/vscode-javascript'
 " Plug 'softchris/node-snippets'
 " Plug 'softchris/ts-snippets'
@@ -193,7 +193,7 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'ryanoasis/vim-devicons' " file explorerやlightlineのicon
 " git
 Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'skanehira/gh.vim'
 Plug '907th/vim-auto-save'
