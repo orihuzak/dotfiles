@@ -5,6 +5,7 @@
 
 
 alias shells='cat /etc/shells'
+alias shell="echo $SHELL"
 alias reload='. ~/.bash_profile'
 
 # list
