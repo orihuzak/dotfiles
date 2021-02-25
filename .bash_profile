@@ -97,6 +97,8 @@ export PATH="$HOME/.deno/bin:$PATH"
 # rubygem
 export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin:$PATH"
 
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/.ripgreprc"
+
 # for wsl
 if [ -d "/mnt/c" ]; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
