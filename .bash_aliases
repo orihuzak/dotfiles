@@ -6,7 +6,9 @@
 
 alias shells='cat /etc/shells'
 alias shell="echo $SHELL"
-alias reload='. ~/.bash_profile'
+alias reload='exec $SHELL -l'
+alias restart='exec $SHELL -l'
+alias relogin='exec $SHELL -l'
 
 # list
 alias ll='ls -lha'
