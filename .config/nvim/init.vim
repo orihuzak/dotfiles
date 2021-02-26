@@ -142,27 +142,29 @@ endif
 call plug#begin()
 
 " language server protocol
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " vim-lsp and vim-lsp-settings
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
 " auto complete
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" 括弧などの入力補完
-" Plug 'kana/vim-smartinput'
-Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
-Plug 'lambdalisue/vim-backslash'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " snippet
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'SirVer/ultisnips'
-Plug 'thomasfaingnaert/vim-lsp-snippets'
-Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'thomasfaingnaert/vim-lsp-snippets'
+" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+" Plug 'codota/tabnine-vim'
 " Plug 'xabikos/vscode-javascript'
 " Plug 'softchris/node-snippets'
 " Plug 'softchris/ts-snippets'
 " Plug 'cartant/ts-snippet'
+" 括弧などの入力補完
+" Plug 'kana/vim-smartinput'
+Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'lambdalisue/vim-backslash'
 " Language support
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
@@ -207,7 +209,9 @@ Plug 'skanehira/gh.vim'
 Plug '907th/vim-auto-save'
 Plug 'djoshea/vim-autoread' " fileの自動再読込
 " session / workspace
-Plug 'thaerkh/vim-workspace'
+" Plug 'thaerkh/vim-workspace'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 " editor
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " aeで全選択
