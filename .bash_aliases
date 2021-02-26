@@ -117,10 +117,6 @@ alias yaudio="youtube-dl --extract-audio"
 alias ylive="youtube-dl --hls-use-mpegts --extract-audio"
 alias ylivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio"
 
-# 特定のチャンネル向けのDL alias, ライブ終了直後に実行する
-alias reina="youtube-dl -o '~/koe/reina/柚木玲奈-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
-alias rin="youtube-dl -o '~/koe/rin/柚木凛-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
-alias moa="youtube-dl -o '~/koe/moa/まどろみもあ-$(date +'%Y%m%d')-%(title)s.%(ext)s' --extract-audio"
 # open youtube live with vlc without video
 alias vlcaudio='vlc --no-video'
 
@@ -154,6 +150,7 @@ alias game='cd ~/game'
 alias dot='cd ~/dotfiles'
 alias dotfiles='cd ~/dotfiles'
 alias dev='cd ~/dev'
+alias lab='cd ~/lab'
 
 # generate ssh key
 alias genssh='ssh-keygen -t rsa -b 4096 -C "arx.solid@gmail.com"'
