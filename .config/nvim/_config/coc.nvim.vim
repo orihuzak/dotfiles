@@ -11,6 +11,7 @@ let g:coc_global_extensions = [
 \ 'coc-python',
 \ 'coc-tsserver',
 \ 'coc-deno',
+\ 'coc-denoland',
 \ 'coc-vetur',
 \ 'coc-rls',
 \ 'coc-yaml',
@@ -77,7 +78,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " coc explorer file manager
 nmap <space>e :CocCommand explorer<cr>
 nnoremap [coc] <Nop>
-nmap <space>c [coc]
+nmap <space>l [coc]
 " coc commands
 " nnoremap [coc]l :CocList<cr>
 nnoremap [coc]s :CocSearch
