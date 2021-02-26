@@ -94,10 +94,10 @@ nnoremap [coc]r :CocCommand workspace.renameCurrentFile<cr>
 nnoremap [coc]a :CocAction<CR>
 
 " session
-nnoremap [session] <Nop>
-nmap <space>s [session]
-nnoremap [session]s :CocCommand session.save<cr>
-nnoremap [session]l :CocCommand session.load<cr>
+" nnoremap [session] <Nop>
+" nmap <space>s [session]
+" nnoremap [session]s :CocCommand session.save<cr>
+" nnoremap [session]l :CocCommand session.load<cr>
 
 " editor mapping <space><space> to [editor]
 nmap [editor]r <Plug>(coc-rename)
