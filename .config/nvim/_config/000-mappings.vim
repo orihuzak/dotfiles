@@ -55,7 +55,7 @@ inoremap <C-l> <right>
 
 "" command line
 
-" ctrl-xで現在のパス(バッファ名)を補完する
+" ctrl-xで現在のバッファのパスを補完する
 cnoremap <c-x> <c-r>=expand('%:p')<CR>
 
 
@@ -88,7 +88,7 @@ nnoremap sH <C-w>H
 nnoremap sr <C-w>r
 " move focus between tabs
 nnoremap sn :tabnext<CR>
-nnoremap sp :tabprevious<CR>
+" nnoremap sp :tabprevious<CR>
 " command lineの高さを増やす
 nnoremap s= <C-w>=
 " command lineの高さをもとに戻す
