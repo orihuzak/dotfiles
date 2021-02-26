@@ -15,9 +15,11 @@ let g:coc_global_extensions = [
 \ 'coc-vetur',
 \ 'coc-rls',
 \ 'coc-yaml',
+\ 'coc-toml',
 \ 'coc-eslint',
 \ 'coc-stylelintplus',
 \ 'coc-markdownlint',
+\ 'coc-diagnostic',
 \ 'coc-emmet',
 \ 'coc-snippets',
 \ 'coc-tabnine',
@@ -78,7 +80,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " coc explorer file manager
 nmap <space>e :CocCommand explorer<cr>
 nnoremap [coc] <Nop>
-nmap <space>l [coc]
+nmap <space>c [coc]
 " coc commands
 " nnoremap [coc]l :CocList<cr>
 nnoremap [coc]s :CocSearch
@@ -90,6 +92,12 @@ nnoremap [coc]u :CocUpdate<cr>
 nnoremap [coc]q :CocRestart<cr>
 nnoremap [coc]r :CocCommand workspace.renameCurrentFile<cr>
 nnoremap [coc]a :CocAction<CR>
+
+" session
+nnoremap [session] <Nop>
+nmap <space>s [session]
+nnoremap [session]s :CocCommand session.save<cr>
+nnoremap [session]l :CocCommand session.load<cr>
 
 " editor mapping <space><space> to [editor]
 nmap [editor]r <Plug>(coc-rename)
