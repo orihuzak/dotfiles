@@ -3,6 +3,7 @@
 	},
 	"coc.preferences.colorSupport": true,
 	"coc.preferences.formatOnType": true,
+	"eslint.enable": false,
 	"list.source.files.args": ["--hidden", "--files"],
 	"list.source.gfiles.defaultOptions": [],
 	"list.source.grep.command": "rg",
