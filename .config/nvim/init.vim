@@ -161,9 +161,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'softchris/node-snippets'
 " Plug 'softchris/ts-snippets'
 " Plug 'cartant/ts-snippet'
-" 括弧などの入力補完
+" 括弧の補完
 " Plug 'kana/vim-smartinput'
-Plug 'cohama/lexima.vim' " 閉じ括弧の自動補完
+Plug 'cohama/lexima.vim'
 Plug 'lambdalisue/vim-backslash'
 " Language support
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
@@ -212,7 +212,7 @@ Plug 'djoshea/vim-autoread' " fileの自動再読込
 " Plug 'thaerkh/vim-workspace'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-" editor
+" editing
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " aeで全選択
 Plug 'kana/vim-textobj-indent' " ai iiがtextobj indent
