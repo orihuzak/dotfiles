@@ -1,8 +1,8 @@
 UsePlugin 'vim-session'
 
 " options
-let g:session_autoload = 'prompt'
-let g:session_autosave = 'prompt'
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
 
 " map
 nnoremap [session] <Nop>
