@@ -13,6 +13,10 @@ if executable("deno")
 			\ "enable": v:true,
 			\ "lint": v:true,
 			\ "unstable": v:true,
+			\ "codeLens": {
+			\ 	"references": v:true,
+			\ 	"referencesAllFunctions": v:true
+			\ }
 		\ },
 	\ })
 	augroup END
@@ -36,9 +40,9 @@ let g:lsp_diagnostics_float_cursor = 1
 
 " diagnostics signs
 let g:lsp_diagnostics_signs_enabled = 1
-let g:lsp_diagnostics_signs_error = {'text': '💩'}
-let g:lsp_diagnostics_signs_warning = {'text': '⚠'}
-let g:lsp_diagnostics_signs_hint = {'text': '💡'}
+let g:lsp_diagnostics_signs_error = {'text': ''}
+let g:lsp_diagnostics_signs_warning = {'text': ''}
+let g:lsp_diagnostics_signs_hint = {'text': 'ﯦ'}
 
 " highilight
 let g:lsp_document_highlight_enabled = 1
