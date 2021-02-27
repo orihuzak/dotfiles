@@ -7,6 +7,7 @@ UsePlugin 'nord-vim'
 UsePlugin 'vim-dogrun'
 UsePlugin 'srcery-vim'
 UsePlugin 'minimalist'
+UsePlugin 'vim'
 UsePlugin 'iceberg.vim'
 
 " dikiaap/minimalist
@@ -51,9 +52,9 @@ else
   "" morhetz/gruvbox
   set background=dark
   " soft, medium(default), hard
-  let g:gruvbox_contrast_dark = 'soft'
+  let g:gruvbox_contrast_dark = 'medium'
   let g:gruvbox_italic_comments = 1
-  let g:gruvbox_underline = 1
+  " let g:gruvbox_underline = 1
   colorscheme gruvbox
   " color sonokai
   " color iceberg
