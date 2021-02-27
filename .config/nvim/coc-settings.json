@@ -38,7 +38,7 @@
 	"json.format.enable": true,
 	"javascript.format.enabled": true,
 	"typescript.format.enabled": true,
-	"deno.enable": true,
+	"deno.enable": false,
 	"tsserver.enable": false,
 	"snippets.extends": {
 		"cpp": ["c"],
