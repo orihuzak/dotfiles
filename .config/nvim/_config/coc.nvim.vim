@@ -29,25 +29,20 @@ let g:coc_global_extensions = [
 \ 'coc-explorer',
 \ ]
 
-" extensions memo
-" \ 'coc-fzf-preview',
-" coc-fzf-preview
-" nnoremap <space>f :CocCommand fzf-preview.GitFiles<cr>
+" auto switch tsserver and deno
+" node_modulesがあればtsserver、なければdeno lspを起動する
+function! s:switch_coc_ts() abort
+  let l:path = empty(expand('%')) ? '.' : '%:p:h'
+  if empty(finddir('node_modules', l:path . ';'))
+    call coc#config('deno.enable', v:true)
+    call coc#config('tsserver.enable', v:false)
+  else
+    call coc#config('deno.enable', v:false)
+    call coc#config('tsserver.enable', v:true)
+  endif
+endfunction
 
-" trigger key for move focus to the next snippet position
-let g:coc_snippet_next = '<C-j>'
-let g:coc_snippet_prev = '<C-k>'
-
-" coc-git
-autocmd CursorHold * CocCommand git.refresh
-" navigate chunks of current buffer
-nmap [g <Plug>(coc-git-prevchunk)
-nmap ]g <Plug>(coc-git-nextchunk)
-" create text object for git chunks
-omap ig <Plug>(coc-git-chunk-inner)
-xmap ig <Plug>(coc-git-chunk-inner)
-omap ag <Plug>(coc-git-chunk-outer)
-xmap ag <Plug>(coc-git-chunk-outer)
+autocmd FileType typescript,typescript.tsx ++once call s:switch_coc_ts()
 
 
 " highlighting
@@ -66,6 +61,22 @@ let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 """ map
+
+" trigger key for move focus to the next snippet position
+let g:coc_snippet_next = '<C-j>'
+let g:coc_snippet_prev = '<C-k>'
+
+" coc-git
+autocmd CursorHold * CocCommand git.refresh
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+
 "" completion
 " <cr> to confirm completion
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -74,8 +85,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " <cr> to confirm completion with format
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " tab to navigate the completion list
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " coc explorer file manager
 nmap <space>e :CocCommand explorer<cr>
