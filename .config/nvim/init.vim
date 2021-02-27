@@ -152,22 +152,6 @@ Plug 'mattn/vim-lsp-settings'
 " auto complete
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'high-moctane/asyncomplete-nextword.vim'
-" Plug 'prabirshrestha/asyncomplete-emoji.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
-" Plug 'prabirshrestha/asyncomplete-buffer.vim'
-" Plug 'laixintao/asyncomplete-gitcommit'
-" Plug 'yami-beta/asyncomplete-omni.vim'
-" if has('python3')
-" 	Plug 'SirVer/ultisnips'
-" 	Plug 'honza/vim-snippets'
-" 	Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
-" endif
-" if has('win32') || has('win64')
-"   Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': 'powershell.exe .\install.ps1' }
-" else
-"   Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': './install.sh' }
-" endif
 " snippet
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
@@ -254,9 +238,14 @@ Plug 'junegunn/vim-easy-align'
 " resize window
 Plug 'simeji/winresizer'
 " color scheme
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'rainglow/vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'ulwlu/elly.vim'
+Plug 'morhetz/gruvbox'
+Plug 'rainglow/vim'
+Plug 'sainnhe/sonokai'
+Plug 'dikiaap/minimalist'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'cocopon/iceberg.vim'
 " indent line
 Plug 'hecal3/vim-leader-guide'
 Plug 'Yggdroot/indentLine'
