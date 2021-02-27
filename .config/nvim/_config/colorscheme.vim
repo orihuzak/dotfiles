@@ -1,9 +1,35 @@
-UsePlugin 'awesome-vim-colorschemes'
-UsePlugin 'vim'
+UsePlugin 'sonokai'
 UsePlugin 'elly.vim'
+UsePlugin 'gruvbox'
+UsePlugin 'vim-nightfly-guicolors'
+UsePlugin 'Sierra'
+UsePlugin 'nord-vim'
+UsePlugin 'vim-dogrun'
+UsePlugin 'srcery-vim'
+UsePlugin 'minimalist'
+UsePlugin 'iceberg.vim'
 
-"" happy_hacking
-" color happy_hacking
+" dikiaap/minimalist
+" colorscheme minimalist
+
+"" srcery
+" colorscheme srcery
+
+" vim-dogrun
+" colorscheme dogrun
+
+" arcticicestudio/nord-vim
+" colorscheme nord
+
+"" Sierra
+" let g:sierra_Pitch = 1
+" colorscheme sierra
+
+"" nightfly
+" let g:nightflyCursorColor = 1
+" let g:nightflyTerminalColors = 1
+" let g:nightflyUnderlineMatchParen = 1
+" colorscheme nightfly
 
 "" sainnhe/sonokai
 " style
@@ -16,14 +42,18 @@ UsePlugin 'elly.vim'
 " let g:sonokai_diagnostic_text_highlight = 1
 " color sonokai
 
-" systemによってcolorschemeを変える
+"" morhetz/gruvbox
+" set background=dark
+" soft, medium(default), hard
+" let g:gruvbox_contrast_dark = 'medium'
+" color gruvbox
+
+" システムによってcolorschemeを変更する
 if IsWsl()
-	"" ulwlu/elly.vim
-	colorscheme elly
+  "" elly
+  color elly
 else
-	"" morhetz/gruvbox
-	set background=dark
-	let g:gruvbox_contrast_dark = 'soft' " soft, medium(default), hard
-	colorscheme gruvbox
+  " color sonokai
+  color iceberg
 endif
 
