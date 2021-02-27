@@ -13,7 +13,7 @@
 	"session.restartOnSessionLoad": true,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.errorSign": "",
-	"diagnostic.warningSign": "",
+	"diagnostic.warningSign": "",
 	"diagnostic.infoSign": "",
 	"diagnostic.hintSign": "ﯦ",
 	"codeLens.enable": true,
