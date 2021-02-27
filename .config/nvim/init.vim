@@ -106,11 +106,9 @@ syntax enable " syntax highlighting
 " devicons
 " let g:webdevicons_enable=1
 
-if !exists("g:IsWsl")
-	function g:IsWsl()
-		return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
-	endfunction
-endif
+function! g:IsWsl()
+	return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
+endfunction
 
 " remember last cursor position
 if has("autocmd")
