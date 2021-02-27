@@ -43,17 +43,17 @@ UsePlugin 'iceberg.vim'
 " color sonokai
 
 "" morhetz/gruvbox
-" set background=dark
+set background=dark
 " soft, medium(default), hard
-" let g:gruvbox_contrast_dark = 'medium'
-" color gruvbox
+let g:gruvbox_contrast_dark = 'soft'
 
 " システムによってcolorschemeを変更する
 if IsWsl()
   "" elly
   color elly
 else
+  color gruvbox
   " color sonokai
-  color iceberg
+  " color iceberg
 endif
 
