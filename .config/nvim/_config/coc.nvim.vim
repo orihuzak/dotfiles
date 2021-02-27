@@ -10,7 +10,6 @@ let g:coc_global_extensions = [
 \ 'coc-vimlsp',
 \ 'coc-python',
 \ 'coc-tsserver',
-\ 'coc-deno',
 \ 'coc-denoland',
 \ 'coc-vetur',
 \ 'coc-rls',
