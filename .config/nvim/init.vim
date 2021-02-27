@@ -33,6 +33,9 @@ set laststatus=2 " ステータスラインを常に表示
 set signcolumn=yes " sign columnを常に表示する
 set concealcursor=""
 
+" complete
+set completeopt="menuone,popup,noinsert"
+
 "" terminal
 " let &shell="bash --login"
 " if executable('/home/linuxbrew/.linuxbrew/bin/bash')
@@ -142,20 +145,32 @@ endif
 call plug#begin()
 
 " language server protocol
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " vim-lsp and vim-lsp-settings
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 " auto complete
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'high-moctane/asyncomplete-nextword.vim'
+" Plug 'prabirshrestha/asyncomplete-emoji.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+" Plug 'prabirshrestha/asyncomplete-buffer.vim'
+" Plug 'laixintao/asyncomplete-gitcommit'
+" Plug 'yami-beta/asyncomplete-omni.vim'
+" if has('python3')
+" 	Plug 'SirVer/ultisnips'
+" 	Plug 'honza/vim-snippets'
+" 	Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+" endif
+" if has('win32') || has('win64')
+"   Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': 'powershell.exe .\install.ps1' }
+" else
+"   Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': './install.sh' }
+" endif
 " snippet
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-" Plug 'thomasfaingnaert/vim-lsp-snippets'
-" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 " Plug 'codota/tabnine-vim'
 " Plug 'xabikos/vscode-javascript'
 " Plug 'softchris/node-snippets'
