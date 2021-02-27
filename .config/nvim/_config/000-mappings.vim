@@ -40,7 +40,6 @@ tnoremap <Esc> <C-\><C-n>
 " nnoremap x "_x
 " vnoremap x "_x
 
-
 "" cursor move
 
 " 折り返し行上のカーソル移動について、表示上の行を移動できるようにする
@@ -52,6 +51,11 @@ inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
+
+" Tab to select complete
+inoremap <expr> <Tab>	pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>	pumvisible() ? "\<C-y>" : "\<cr>"
 
 "" command line
 
