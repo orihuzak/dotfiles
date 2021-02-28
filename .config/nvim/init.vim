@@ -28,13 +28,12 @@ set hidden " バッファ編集中でも他のファイルを開けるように
 set wildmenu " vimバーからファイルを選択可能
 set laststatus=2 " ステータスラインを常に表示
 
-
 "" editor
 set signcolumn=yes " sign columnを常に表示する
 set concealcursor=""
 
 " complete
-set completeopt="menuone,popup,noinsert,noselect"
+set completeopt="menuone,popup,noinsert"
 
 "" terminal
 " let &shell="bash --login"
