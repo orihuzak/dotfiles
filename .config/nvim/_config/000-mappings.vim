@@ -4,6 +4,12 @@
 let g:mapleader = ","
 " let g:maplocalleader = ','
 
+" swap : and ;
+noremap ; :
+noremap : ;
+
+" open $MYVIMRC
+nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 
 " prefix for vim features
 nnoremap [vim] <Nop>
