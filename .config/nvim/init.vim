@@ -34,7 +34,7 @@ set signcolumn=yes " sign columnを常に表示する
 set concealcursor=""
 
 " complete
-set completeopt="menuone,popup,noinsert"
+set completeopt="menuone,popup,noinsert,noselect"
 
 "" terminal
 " let &shell="bash --login"
