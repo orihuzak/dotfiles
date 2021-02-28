@@ -214,6 +214,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " aeで全選択
 Plug 'kana/vim-textobj-indent' " ai iiがtextobj indent
 Plug 'kana/vim-textobj-line' " al ilがtextobj line
+Plug 'kana/vim-textobj-help' " textobj for help doc
 " Plug 'mbbill/undotree'
 Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-commentary' " commentout/inできる
