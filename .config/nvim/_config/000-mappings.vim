@@ -33,7 +33,7 @@ nmap <space>q [help]
 nnoremap <silent> [help]m :help index.txt<cr>
 
 " nvim terminal
-map <C-s> :terminal<CR>
+noremap <C-s> :terminal<CR>
 " Esc to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
 
