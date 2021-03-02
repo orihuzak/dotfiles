@@ -10,6 +10,8 @@ noremap : ;
 
 " open $MYVIMRC
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
+" help
+nnoremap <C-h> :<C-u>help<Space>
 
 " prefix for vim features
 nnoremap [vim] <Nop>
