@@ -208,6 +208,7 @@ Plug 'djoshea/vim-autoread' " fileの自動再読込
 " Plug 'thaerkh/vim-workspace'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+" Plug 'tpope/vim-obsession'
 " editing
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " aeで全選択
