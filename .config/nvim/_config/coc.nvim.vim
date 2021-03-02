@@ -88,7 +88,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " coc explorer file manager
-nmap <space>e :CocCommand explorer<cr>
+nnoremap <space>e :CocCommand explorer<cr>
 nnoremap [coc] <Nop>
 nmap <space>c [coc]
 " coc commands
