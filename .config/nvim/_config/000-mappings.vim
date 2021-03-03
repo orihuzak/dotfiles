@@ -129,3 +129,7 @@ nnoremap tj :<C-u>tag<CR>
 nnoremap tk :<C-u>pop<CR>
 nnoremap tl :<C-u>tags<CR>
 
+"" show registers and marks
+nnoremap <Space>m :<C-u>marks
+nnoremap <Space>r :<C-u>registers
+
