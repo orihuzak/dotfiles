@@ -228,9 +228,10 @@ Plug 'andymass/vim-matchup'
 " repeat
 Plug 'tpope/vim-repeat' " pluginでの操作もrepeatできるようにする
 Plug 'kana/vim-submode' " 繰り返し操作を簡単にする
-" cursor move
+" cursor
 Plug 'easymotion/vim-easymotion' " cursor移動を高速にする
 " Plug 'phaazon/hop.nvim' " for nvim 0.5~
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " multi cursor
 " align
 Plug 'junegunn/vim-easy-align'
 " Plug 'godlygeek/tabular'
