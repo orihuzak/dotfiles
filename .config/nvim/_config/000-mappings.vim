@@ -122,3 +122,10 @@ nnoremap <C-t>o :<C-u>tabonly<CR>
 nnoremap <C-t>j :<C-u>tabnext<CR>
 nnoremap <C-t>k :<C-u>tabprevious<CR>
 
+"" tags and searches
+nnoremap t <Nop>
+nnoremap tt <C-]>
+nnoremap tj :<C-u>tag<CR>
+nnoremap tk :<C-u>pop<CR>
+nnoremap tl :<C-u>tags<CR>
+
