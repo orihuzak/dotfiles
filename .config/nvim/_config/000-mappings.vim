@@ -133,3 +133,7 @@ nnoremap tl :<C-u>tags<CR>
 nnoremap <Space>m :<C-u>marks
 nnoremap <Space>r :<C-u>registers
 
+" easily search / and ?
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+
