@@ -5,8 +5,10 @@
 
 
 alias shells='cat /etc/shells'
+alias shell="echo $SHELL"
 # relogin shell
 alias reload='exec $SHELL -l'
+alias restart='exec $SHELL -l'
 alias relogin='exec $SHELL -l'
 
 # list PATH
@@ -16,6 +18,9 @@ alias showpath='echo $PATH | sed -e "s/:/\n/g"'
 # color files, dir, aliases
 alias ls='ls --color=auto'
 alias ll='ls -lha'
+
+# tree
+alias tree='tree -a -I "\.DS_Store|\.git|node_modules" -N'
 
 # git
 alias gs='git status'
@@ -101,6 +106,11 @@ fi
 if is_exists nnn; then
   alias nnn='nnn -H'
   alias nn='nnn'
+fi
+
+# tldr
+if is_exists tldr; then
+  alias tld='tldr'
 fi
 
 # youtube-dl
