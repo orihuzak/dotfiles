@@ -88,6 +88,9 @@ alias pip='pip3'
 alias de='deno'
 alias deug='deno upgrade'
 
+# tree
+alias tree='tree -a -I "\.DS_Store|\.git|node_modules" -N'
+
 # t
 if is_exists t; then
   alias tw='t'
