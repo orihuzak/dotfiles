@@ -10,6 +10,7 @@ selected
 
 # hyper
 .config/Hyper/
+.config/hyper/.hyper_plugins/
 
 # alacritty
 
@@ -23,8 +24,19 @@ Session.vim
 
 # yarn
 .config/yarn/global/yarn.lock
+.config/yarn/global/node_modules/
 
-# other
+.config/calibre/
+.config/cheat/
+.config/Code/
+.config/dconf/
+.config/enchant/
+.config/Code/
+.config/fcitx/
+.config/pet/
+.config/pulse/
+.config/vivaldi/
+.config/vlc/
 .config/bukuma/
 .config/wslu/
 .config/configstore/
