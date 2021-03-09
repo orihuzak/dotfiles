@@ -7,34 +7,22 @@ selected
 .git/
 .undodir/
 
-.config/Code/
-.config/TabNine/
-.config/calibre/
-.config/cheat/
-.config/coc/
-.config/configstore/
-.config/dconf/
-.config/enchant/
-.config/fcitx/
-.config/gh/
-.config/google-chrome/
-.config/gtk-3.0/
-.config/nnn/
-.config/pet/
-.config/pulse/
-.config/ranger/
-.config/vivaldi/
-.config/vlc/
+.config/**
 
 # hyper
-.config/Hyper/
-.config/hyper/**
 !.config/hyper/.hyper.js
 
+# alacritty
+!.config/alacritty/alacritty.yml
+
 # nvim
-.config/nvim/.netrwhist
-.config/nvim/plugged/
+!.config/nvim/init.vim
+!.config/nvim/coc-settings.json
+!.config/nvim/_config/
 
 # yarn
-.config/yarn/global/node_modules/
+!.config/yarn/global/package.json
+
+# youtube-dl
+!.config/youtube-dl/config
 
