@@ -1,5 +1,13 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # 履歴ファイルの保存先
 HISTFILE=~/.histfile
@@ -63,7 +71,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zsh theme
-zplug "romkatv/powerlevel10k", as:theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "agnoster/agnoster-zsh-theme"
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -88,4 +96,3 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
   . ~/.ssh-agent
 fi
 ssh-add -l >& /dev/null || ssh-add
-
