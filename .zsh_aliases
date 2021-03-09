@@ -22,6 +22,11 @@ alias ll='ls -lha'
 # tree
 alias tree='tree -a -I "\.DS_Store|\.git|node_modules" -N'
 
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # git
 alias gs='git status'
 alias ga='git add'
