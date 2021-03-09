@@ -216,7 +216,7 @@ Plug 'kana/vim-textobj-indent' " ai iiがtextobj indent
 Plug 'kana/vim-textobj-line' " al ilがtextobj line
 Plug 'kana/vim-textobj-help' " textobj for help doc
 " Plug 'mbbill/undotree'
-Plug 'matze/vim-move' " easy to move lines
+" Plug 'matze/vim-move' " easy to move lines
 Plug 'tpope/vim-commentary' " commentout/inできる
 Plug 'tpope/vim-surround' " html tagや括弧などのテキストを囲む
 Plug 'terryma/vim-expand-region' " 選択範囲の拡大縮小
