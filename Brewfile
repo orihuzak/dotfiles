@@ -1,6 +1,7 @@
 # Homebrew bundle file
 
 brew "zsh"
+brew "zplug"
 brew "node"
 brew "python"
 brew "ruby"
