@@ -10,8 +10,15 @@ alias reload='exec $SHELL -l'
 alias restart='exec $SHELL -l'
 alias relogin='exec $SHELL -l'
 
+# list PATH
+alias showpath='echo $PATH | sed -e "s/:/\n/g"'
+
 # list
+alias ls='ls --color=auto'
 alias ll='ls -lha'
+
+# tree
+alias tree='tree -a -I "\.DS_Store|\.git|node_modules" -N'
 
 # git
 alias gs='git status'
@@ -88,9 +95,6 @@ alias pip='pip3'
 alias de='deno'
 alias deug='deno upgrade'
 
-# tree
-alias tree='tree -a -I "\.DS_Store|\.git|node_modules" -N'
-
 # t
 if is_exists t; then
   alias tw='t'
@@ -120,8 +124,6 @@ alias yaudio="youtube-dl --extract-audio"
 alias ylive="youtube-dl --hls-use-mpegts --extract-audio"
 alias ylivef="youtube-dl --hls-prefer-ffmpeg --hls-use-mpegts --extract-audio"
 
-# open youtube live with vlc without video
-alias vlcaudio='vlc --no-video'
 
 # video and audio file management
 
@@ -142,8 +144,10 @@ alias ..3='cd ../../..'
 # - 環境に合わせてgdriveのpathを変える
 if is_exists cmd.exe; then
   alias gdrive='cd /mnt/d/GoogleDrive'
+  alias vw='cd /mnt/d/GoogleDrive/vimwiki'
 elif [ -d /mnt/chromeos ]; then
   alias gdrive='cd /mnt/chromeos/GoogleDrive/MyDrive'
+  alias vw='cd /mnt/chromeos/GoogleDrive/MyDrive/vimwiki'
   alias gkoe='cd /mnt/chromeos/GoogleDrive/MyDrive/koe'
   alias koe='cd ~/koe'
   alias koedl='cd ~/koe-dl'
