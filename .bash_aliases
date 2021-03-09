@@ -20,6 +20,11 @@ alias ll='ls -lha'
 # tree
 alias tree='tree -a -I "\.DS_Store|\.git|node_modules" -N'
 
+# bat
+if is_exists bat; then
+  alias cat='bat'
+fi
+
 # git
 alias gs='git status'
 alias ga='git add'
