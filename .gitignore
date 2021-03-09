@@ -1,28 +1,31 @@
 ### git ignore these files and dirs
 
-Session.vim
 Brewfile.lock.json
 selected
 
+# git
 .git/
-.undodir/
-
-.config/**
+.config/hub
+.config/gh/
 
 # hyper
-!.config/hyper/.hyper.js
+.config/Hyper/
 
 # alacritty
-!.config/alacritty/alacritty.yml
 
 # nvim
-!.config/nvim/init.vim
-!.config/nvim/coc-settings.json
-!.config/nvim/_config/
+Session.vim
+.undodir/
+.config/nvim/plugged/
+.config/nvim/.netrwhist
+.config/coc/
+.config/TabNine/
 
 # yarn
-!.config/yarn/global/package.json
+.config/yarn/global/yarn.lock
 
-# youtube-dl
-!.config/youtube-dl/config
+# other
+.config/bukuma/
+.config/wslu/
+.config/configstore/
 
