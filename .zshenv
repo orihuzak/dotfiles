@@ -1,7 +1,8 @@
 # .zshenv
 # config environment vars
 
-# export LANG=ja_JP.UTF-8
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 # export LANGUAGE="ja_JP:ja"
 
 # 文字コード、ロケールを設定
@@ -21,8 +22,17 @@ export PATH="$HOME/.deno/bin:$PATH"
 # rubygem
 export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin:$PATH"
 
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/.ripgreprc"
+
+# user commands settings
+if is_exists fzf; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+fi
+
 # 標準エディタの設定
-export EDITOR=nvim
+if is_exists nvim; then
+  export EDITOR=nvim
+fi
 
 # for wsl
 if [ -d "/mnt/c" ]; then
