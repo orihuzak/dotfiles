@@ -1,13 +1,7 @@
 # .zshenv
 # config environment vars
 
-export LANG=ja_JP.UTF-8
-export LC_ALL=ja_JP.UTF-8
-# export LANGUAGE="ja_JP:ja"
-
-# 文字コード、ロケールを設定
-export TREE_CHARSET="UTF-8"
-# export LC_COLLATE="C"
+export LANG=ja_JP.utf8
 
 # add paths
 export PATH="$HOME/.local/bin:$PATH"
