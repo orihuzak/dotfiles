@@ -1,5 +1,7 @@
 # Homebrew bundle file
 
+brew "git"
+brew "gh"
 brew "zsh"
 brew "zplug"
 brew "node"
@@ -15,7 +17,6 @@ brew "the_silver_searcher"
 brew "fd"
 brew "fzy"
 brew "peco"
-brew "gh"
 brew "unrar"
 brew "p7zip"
 brew "ffmpeg"
