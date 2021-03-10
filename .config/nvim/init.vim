@@ -3,11 +3,11 @@
 " Language support
 let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
 " language settings
-autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+" autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
+" autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 set nocompatible
-filetype plugin on
+filetype plugin indent on
 set encoding=UTF-8 " 文字コードをutf8に設定
 set fileformats=unix " 改行コードの設定
 " set nofixeol " ファイル末尾への自動改行文字入力を無効化
@@ -163,7 +163,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 括弧の補完
 " Plug 'kana/vim-smartinput'
 Plug 'cohama/lexima.vim'
-Plug 'lambdalisue/vim-backslash'
+" Plug 'lambdalisue/vim-backslash'
 " Language support
 Plug 'heavenshell/vim-jsdoc' " generate jsdoc
 Plug 'elzr/vim-json' " to show json double quote
