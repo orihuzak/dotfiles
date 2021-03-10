@@ -105,6 +105,9 @@ syntax enable " syntax highlighting
 " devicons
 " let g:webdevicons_enable=1
 
+" man command
+runtime! ftplugin/man.vim
+
 function! g:IsWsl()
 	return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
 endfunction
