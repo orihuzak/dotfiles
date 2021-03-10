@@ -39,20 +39,6 @@ setopt hist_ignore_all_dups
 # 例： <Space>echo hello と入力
 setopt hist_ignore_space
 
-# user functions
-
-# Check if the command is exists
-is_exists() {
-  type "$1" >/dev/null 2>&1
-  return $?
-}
-
-# PATHの追加と削除を容易にする関数
-# usage path_func("path/to/any")
-path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
-path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
-path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
-
 
 # load alias setting file
 if [ -f ~/.zsh_aliases ]; then
