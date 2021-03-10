@@ -34,16 +34,20 @@ let g:coc_global_extensions = [
 function! s:switch_coc_ts() abort
   let l:path = empty(expand('%')) ? '.' : '%:p:h'
   if empty(finddir('node_modules', l:path . ';'))
-    call coc#config('deno.enable', v:true)
     call coc#config('tsserver.enable', v:false)
+    call coc#config('deno.enable', v:true)
+    call coc#config('deno.unstable', v:true)
+    call coc#config('deno.lint', v:true)
+    call coc#config('deno.codeLens.implementations', v:true)
+    call coc#config('deno.codeLens.referencesAllFunctions', v:true)
+    call coc#config('deno.importMap', './import_map.json')
   else
     call coc#config('deno.enable', v:false)
     call coc#config('tsserver.enable', v:true)
   endif
 endfunction
 
-autocmd FileType typescript,typescript.tsx ++once call s:switch_coc_ts()
-
+autocmd FileType typescript,typescript.tsx,javascript ++once call s:switch_coc_ts()
 
 " highlighting
 " cocのDiagnosticsの、左横のアイコンの色設定
@@ -94,9 +98,9 @@ nnoremap [coc] <Nop>
 nmap <space>c [coc]
 " coc commands
 " nnoremap [coc]l :CocList<cr>
-nnoremap [coc]s :CocSearch
+nnoremap [coc]s :CocSearch 
 nnoremap [coc]i :CocInstall<CR>
-nnoremap [coc]n :CocUninstall
+nnoremap [coc]n :CocUninstall 
 nnoremap [coc]f :CocFix<cr>
 nnoremap [coc]c :CocConfig<cr>
 nnoremap [coc]u :CocUpdate<cr>
