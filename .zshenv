@@ -15,7 +15,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 # rubygem
 export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin:$PATH"
-
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/.ripgreprc"
 
 
@@ -42,6 +41,10 @@ fi
 # 標準エディタの設定
 if is_exists nvim; then
   export EDITOR=nvim
+  export MANPAGER=nvim
+else
+  export EDITOR=vim
+  export MANPAGER=vim
 fi
 
 # for wsl
