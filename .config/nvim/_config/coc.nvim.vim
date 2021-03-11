@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \ 'coc-denoland',
 \ 'coc-rls',
+\ 'coc-rust-analyzer',
 \ 'coc-go',
 \ 'coc-vetur',
 \ 'coc-yaml',
