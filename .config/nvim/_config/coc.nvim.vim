@@ -11,7 +11,6 @@ let g:coc_global_extensions = [
 \ 'coc-python',
 \ 'coc-tsserver',
 \ 'coc-denoland',
-\ 'coc-rls',
 \ 'coc-rust-analyzer',
 \ 'coc-go',
 \ 'coc-vetur',
@@ -29,6 +28,9 @@ let g:coc_global_extensions = [
 \ 'coc-lists',
 \ 'coc-explorer',
 \ ]
+
+" disable extensions but want to remember
+" \ 'coc-rls',
 
 " auto switch tsserver and deno
 " node_modulesがあればtsserver、なければdeno lspを起動する
