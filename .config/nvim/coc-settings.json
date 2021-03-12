@@ -11,7 +11,7 @@
 	"suggest.floatEnable": true,
 	"suggest.detailField": "preview",
 	"suggest.autoTrigger": "always",
-	"suggest.numberSelect": true,
+	"suggest.numberSelect": false,
 	"suggest.noselect": false,
 	"suggest.keepCompleteopt": false,
 	"session.saveOnVimLeave": false,
